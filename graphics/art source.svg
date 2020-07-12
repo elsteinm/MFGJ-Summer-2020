@@ -31,7 +31,7 @@
     </linearGradient>
     <radialGradient
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-93.214641,60.110572)"
+       gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-93.214644,72.281374)"
        r="8.4666668"
        fy="110.52739"
        fx="114.4107"
@@ -46,7 +46,7 @@
        fx="114.4107"
        cy="110.52739"
        cx="114.4107"
-       gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-38.366544,39.737625)"
+       gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-59.295074,39.208486)"
        gradientUnits="userSpaceOnUse"
        id="radialGradient869"
        xlink:href="#linearGradient863"
@@ -57,7 +57,7 @@
        fx="114.4107"
        cy="110.52739"
        cx="114.4107"
-       gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-291.75682,-65.162075)"
+       gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-291.75682,-65.162078)"
        gradientUnits="userSpaceOnUse"
        id="radialGradient875"
        xlink:href="#linearGradient863"
@@ -68,7 +68,7 @@
        fx="114.4107"
        cy="110.52739"
        cx="114.4107"
-       gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-291.75682,5.8256259)"
+       gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-291.75682,1.8568662)"
        gradientUnits="userSpaceOnUse"
        id="radialGradient881"
        xlink:href="#linearGradient863"
@@ -436,9 +436,9 @@
      inkscape:document-rotation="0"
      inkscape:current-layer="layer1"
      inkscape:document-units="mm"
-     inkscape:cy="615.92785"
-     inkscape:cx="415.5943"
-     inkscape:zoom="0.98994949"
+     inkscape:cy="645.70108"
+     inkscape:cx="439.11072"
+     inkscape:zoom="1.979899"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
      borderopacity="1.0"
@@ -468,7 +468,7 @@
        cy="76.311073"
        cx="64.038559"
        id="path833"
-       style="fill:none;fill-opacity:1;stroke:#f21a1d;stroke-width:1.00788;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+       style="fill:none;fill-opacity:1;stroke:#ffba08;stroke-width:1.00788;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <path
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
@@ -498,24 +498,27 @@
        id="rect845"
        style="fill:none;fill-opacity:1;stroke:#5ca4a9;stroke-width:0.906606;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
     <rect
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       y="181.20926"
+       y="193.38007"
        x="55.936691"
        height="0.025259107"
        width="16.164843"
        id="rect847"
        style="fill:none;fill-opacity:1;stroke:url(#radialGradient865);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
     <rect
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
        style="fill:none;fill-opacity:1;stroke:url(#radialGradient869);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
        id="rect867"
        width="16.164843"
        height="0.025259107"
-       x="110.78481"
-       y="160.8363" />
+       x="89.856285"
+       y="160.30716" />
     <rect
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
        transform="rotate(-90)"
@@ -526,6 +529,7 @@
        id="rect871"
        style="fill:none;fill-opacity:1;stroke:url(#radialGradient875);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
     <rect
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
        style="fill:none;fill-opacity:1;stroke:url(#radialGradient881);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
@@ -533,12 +537,13 @@
        width="16.164843"
        height="0.025259107"
        x="-142.60532"
-       y="126.9244"
+       y="122.95565"
        transform="rotate(-90)" />
     <g
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       transform="translate(18.282713,-16.933334)"
+       transform="translate(16.959797,-16.933334)"
        id="g1033">
       <rect
          transform="rotate(-90)"
@@ -561,9 +566,10 @@
          inkscape:export-ydpi="96" />
     </g>
     <g
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       transform="translate(-15.583954,1.3229296)"
+       transform="translate(-16.90687,1.2904406e-5)"
        id="g1041">
       <rect
          transform="rotate(90)"
@@ -587,9 +593,10 @@
          inkscape:export-ydpi="96" />
     </g>
     <g
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       transform="translate(-14.234583,1.3229296)"
+       transform="translate(-16.880416,1.2904406e-5)"
        id="g1045">
       <rect
          style="fill:none;fill-opacity:1;stroke:url(#radialGradient915);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
@@ -613,9 +620,10 @@
          inkscape:export-ydpi="96" />
     </g>
     <g
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       transform="translate(-12.885187,19.57919)"
+       transform="translate(-16.853937,16.933356)"
        id="g1051">
       <rect
          transform="matrix(0,1,1,0,0,0)"
@@ -659,9 +667,10 @@
          inkscape:export-ydpi="96" />
     </g>
     <g
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       transform="translate(-67.733331,39.158371)"
+       transform="translate(-33.813735,16.933361)"
        id="g1071">
       <rect
          inkscape:export-ydpi="96"
@@ -695,9 +704,10 @@
          transform="scale(-1,1)" />
     </g>
     <g
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       transform="translate(-14.234568,2.6458552)"
+       transform="translate(-33.840199,2.1904707e-5)"
        id="g1066">
       <rect
          transform="rotate(-90)"
@@ -731,9 +741,10 @@
          transform="scale(-1)" />
     </g>
     <g
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       transform="translate(19.632095,-16.933334)"
+       transform="translate(16.986262,-16.933334)"
        id="g1037">
       <rect
          style="fill:none;fill-opacity:1;stroke:url(#radialGradient897);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
@@ -757,9 +768,10 @@
          style="fill:none;fill-opacity:1;stroke:url(#radialGradient1075);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
     </g>
     <g
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       transform="translate(-15.583954,2.6458552)"
+       transform="translate(-33.866668,2.1904707e-5)"
        id="g1061">
       <rect
          inkscape:export-ydpi="96"
@@ -793,9 +805,10 @@
          inkscape:export-ydpi="96" />
     </g>
     <g
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       transform="translate(-16.933336,2.6458552)"
+       transform="translate(33.946059,-16.933321)"
        id="g1056">
       <rect
          transform="matrix(0,1,1,0,0,0)"
@@ -829,9 +842,10 @@
          transform="scale(1,-1)" />
     </g>
     <g
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
+       transform="translate(-9.1308597e-8,-1.3229063)"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       transform="translate(-3.9771652e-7,1.0410945e-5)"
        id="g1087">
       <rect
          inkscape:export-ydpi="96"
@@ -855,10 +869,11 @@
          inkscape:export-ydpi="96" />
     </g>
     <g
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
        id="g1103"
-       transform="matrix(-1,0,0,1,164.63012,36.51253)">
+       transform="matrix(-1,0,0,1,144.99802,32.54378)">
       <rect
          inkscape:export-ydpi="96"
          inkscape:export-xdpi="96"
@@ -881,10 +896,11 @@
          inkscape:export-ydpi="96" />
     </g>
     <g
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
        id="g1113"
-       transform="matrix(1,0,0,-1,54.848144,342.07079)">
+       transform="matrix(1,0,0,-1,50.879394,338.10204)">
       <rect
          inkscape:export-ydpi="96"
          inkscape:export-xdpi="96"
@@ -907,9 +923,10 @@
          inkscape:export-ydpi="96" />
     </g>
     <g
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       transform="rotate(180,73.173698,180.16354)"
+       transform="rotate(180,64.032341,177.51769)"
        id="g1123">
       <rect
          style="fill:none;fill-opacity:1;stroke:url(#radialGradient1125);stroke-width:0.744171;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
