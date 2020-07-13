@@ -16,7 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Untitled Game Jam Game"
+run/main_scene="res://Source/Scenes/Level.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Constants="*res://Source/Scripts/Global Scripts/Constants.gd"
+PlayerInput="*res://Source/Scripts/Global Scripts/PlayerInput.gd"
 
 [display]
 
