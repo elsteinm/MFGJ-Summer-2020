@@ -9,6 +9,7 @@ points = PoolVector2Array( 24, 27, 0, 12, -24, 27, 0, -28 )
 
 [node name="PlayerCharacter" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+is_controlled = true
 
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 3 )
