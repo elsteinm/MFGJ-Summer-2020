@@ -25,7 +25,7 @@ func finish():
 	self.queue_free()
 func guard_test_function():
 	if Input.is_action_just_pressed("p_action"):
-		var path = $Navigation2D.get_simple_path($EnemyCharacter.get_global_position(),get_global_mouse_position())
+		var path = $Navigation2D.get_simple_path($EnemyCharacter.get_global_position(),get_global_mouse_position(), false)
 		path.remove(0)
 		print(path)
 		$EnemyCharacter.path_points = path

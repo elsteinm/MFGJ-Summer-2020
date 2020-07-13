@@ -12,6 +12,10 @@ func _init(control, acc, max_sp).(control):
 	
 	velocity = Vector2.ZERO
 
+func check_if_can_turn(angle_to_add):
+	var tranform = get_transform()
+	tranform = tranform.rotated(angle_to_add)
+	return test_move(transform, Vector2.ZERO)
 func move(input, delta):
 	if input != Vector2.ZERO:
 		velocity = velocity.move_toward(input * max_speed, acceleration * delta)
