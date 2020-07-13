@@ -6,16 +6,18 @@ var acceleration
 var max_speed
 var velocity
 
+#Initialize with characters speed and stuff
 func _init(control, acc, max_sp).(control):
 	acceleration = acc
 	max_speed = max_sp
 	
 	velocity = Vector2.ZERO
 
+#Move the character with an input vector recieved from PlayerInput
 func move(input, delta):
-	if input != Vector2.ZERO:
+	if input != Vector2.ZERO: #If there is movement, do the moving calculations
 		velocity = velocity.move_toward(input * max_speed, acceleration * delta)
-	else:
+	else: #Otherwise, slow down cause friction
 		velocity = velocity.move_toward(Vector2.ZERO, Constants.FRICTION * delta)
-	velocity = move_and_slide(velocity)
-	self.rotation += (get_local_mouse_position().angle()+PI/2) *TURN_SPEED
+	velocity = move_and_slide(velocity) #Move
+	self.rotation += (get_local_mouse_position().angle()+PI/2) *TURN_SPEED #Direction rotation
