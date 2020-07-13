@@ -14,7 +14,7 @@ is_controlled = true
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 3, 64, 50, 56 )
+region_rect = Rect2( 0, 64, 56, 56 )
 
 [node name="ObjectCollision" parent="." index="1"]
 shape = SubResource( 1 )
