@@ -16,5 +16,5 @@ func move(input, delta):
 		velocity = velocity.move_toward(input * max_speed, acceleration * delta)
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, Constants.FRICTION * delta)
-	rotation += (get_local_mouse_position().angle()+PI/2) *TURN_SPEED
 	velocity = move_and_slide(velocity)
+	rotation += (get_local_mouse_position().angle()+PI/2) *TURN_SPEED
