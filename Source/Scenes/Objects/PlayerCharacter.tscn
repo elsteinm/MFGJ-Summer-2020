@@ -18,6 +18,3 @@ region_rect = Rect2( 3, 64, 50, 56 )
 
 [node name="ObjectCollision" parent="." index="1"]
 shape = SubResource( 1 )
-
-[node name="Camera2D" parent="." index="2"]
-current = true

@@ -1,11 +1,12 @@
 extends "res://Source/Scripts/Objects/ControllableObject.gd"
 
+var TURN_SPEED = 0.5
+
 var acceleration
 var max_speed
-var TURN_SPEED = 0.5
 var velocity
 
-func _init(acc, max_sp):
+func _init(control, acc, max_sp).(control):
 	acceleration = acc
 	max_speed = max_sp
 	
@@ -17,4 +18,4 @@ func move(input, delta):
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, Constants.FRICTION * delta)
 	velocity = move_and_slide(velocity)
-	rotation += (get_local_mouse_position().angle()+PI/2) *TURN_SPEED
+	self.rotation += (get_local_mouse_position().angle()+PI/2) *TURN_SPEED
