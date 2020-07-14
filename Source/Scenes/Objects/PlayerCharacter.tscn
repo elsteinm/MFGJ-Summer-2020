@@ -18,3 +18,9 @@ region_rect = Rect2( 1, 39, 32, 35 )
 
 [node name="ObjectCollision" parent="." index="1"]
 shape = SubResource( 1 )
+
+[node name="Sprite2" parent="." index="3"]
+visible = true
+position = Vector2( 0, 18 )
+rotation = 3.14159
+scale = Vector2( 0.7, 1 )

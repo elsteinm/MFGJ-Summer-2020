@@ -17,4 +17,8 @@ region_enabled = true
 region_rect = Rect2( 39, 0, 35, 35 )
 
 [node name="ObjectCollision" parent="." index="1"]
+visible = false
 shape = SubResource( 1 )
+
+[node name="Sprite2" parent="." index="3"]
+visible = true
