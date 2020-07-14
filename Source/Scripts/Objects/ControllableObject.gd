@@ -31,6 +31,7 @@ func set_active(value):
 	if is_active == false:
 		sprite.modulate = Color.black #Turns the character dark
 		set_process(false) #Turns off process so the object stops
+		$Light2D.enabled = false
 		Main.remove_object_from_level(self)
 
 #Sets the is_controlled variable

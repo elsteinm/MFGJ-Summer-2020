@@ -10,7 +10,7 @@
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 15, 16, 0, 7, -14, 16, 0, -16 )
 
-[sub_resource type="ShaderMaterial" id=5]
+[sub_resource type="ShaderMaterial" id=2]
 shader = ExtResource( 5 )
 shader_param/center = Vector2( 0.5, 0.8 )
 shader_param/OCTAVES = 6
@@ -30,7 +30,7 @@ shape = SubResource( 1 )
 [node name="Sprite2" type="Sprite" parent="." index="3"]
 visible = false
 modulate = Color( 0.113725, 0.027451, 0.329412, 1 )
-material = SubResource( 5 )
+material = SubResource( 2 )
 position = Vector2( 0, 18 )
 rotation = -3.14159
 scale = Vector2( 0.7, 1 )

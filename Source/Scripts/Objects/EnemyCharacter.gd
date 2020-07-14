@@ -25,6 +25,13 @@ func move_on_path(delta):
 		speed = clamp(speed + acceleration,0,max_speed)
 		move_and_slide(move_vector.normalized() * speed)
 		look_at(path_points[path_index]+move_vector)
+func move(input, delta):
+	if input != Vector2.ZERO: #If there is movement, do the moving calculations
+		velocity = velocity.move_toward(input * max_speed, acceleration * delta)
+	else: #Otherwise, slow down cause friction
+		velocity = velocity.move_toward(Vector2.ZERO, Constants.FRICTION * delta)
+	velocity = move_and_slide(velocity) #Move
+	self.rotation += (get_local_mouse_position().angle()) *TURN_SPEED #Direction rotation
 
 #		var facing_vector = to_global(Vector2(cos(rotation), sin(rotation)))
 #		look_at(facing_vector.linear_interpolate(path_points[path_index], 0.1))
