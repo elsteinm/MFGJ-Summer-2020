@@ -18,5 +18,3 @@ region_rect = Rect2( 64, 0, 56, 56 )
 
 [node name="ObjectCollision" parent="." index="1"]
 shape = SubResource( 1 )
-
-[node name="Tween" type="Tween" parent="." index="3"]
