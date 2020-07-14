@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Dim"
-run/main_scene="res://Source/Scenes/Level.tscn"
+run/main_scene="res://Source/Scenes/Levels/Level1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
