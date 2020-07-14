@@ -5,7 +5,7 @@
 [ext_resource path="res://Resources/Graphics/Objects/character sprite sheet.png" type="Texture" id=3]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
-points = PoolVector2Array( 24, 27, 0, 12, -24, 27, 0, -28 )
+points = PoolVector2Array( 15, 16, 0, 7, -14, 16, 0, -16 )
 
 [node name="PlayerCharacter" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -14,7 +14,7 @@ is_controlled = true
 [node name="Sprite" parent="." index="0"]
 texture = ExtResource( 3 )
 region_enabled = true
-region_rect = Rect2( 0, 64, 56, 56 )
+region_rect = Rect2( 1, 39, 32, 35 )
 
 [node name="ObjectCollision" parent="." index="1"]
 shape = SubResource( 1 )
