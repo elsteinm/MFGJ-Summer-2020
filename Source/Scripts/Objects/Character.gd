@@ -13,14 +13,12 @@ func _init(control, acc, max_sp).(control):
 	
 	velocity = Vector2.ZERO
 
-<<<<<<< HEAD
 func check_if_can_turn(angle_to_add):
 	var tranform = get_transform()
 	tranform = tranform.rotated(angle_to_add)
 	return test_move(transform, Vector2.ZERO)
-=======
+
 #Move the character with an input vector recieved from PlayerInput
->>>>>>> 60454b7725b82b80e23e7b467e1d6bcbd11fa151
 func move(input, delta):
 	if input != Vector2.ZERO: #If there is movement, do the moving calculations
 		velocity = velocity.move_toward(input * max_speed, acceleration * delta)

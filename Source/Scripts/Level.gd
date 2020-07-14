@@ -37,4 +37,5 @@ func guard_test_function():
 		path.remove(0)
 		print(path)
 		$EnemyCharacter.path_points = path
+		$EnemyCharacter.path_index = 0
 
