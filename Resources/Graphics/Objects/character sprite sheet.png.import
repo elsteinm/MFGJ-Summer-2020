@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/character sprite sheet.png-a7f6ec698db2d957cccfc76a719c0680.stex"
+path="res://.import/character sprite sheet.png-cff0149f0818f8e1a06eb7a7f75c6dda.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Graphics Files/Player Character/character sprite sheet.png"
-dest_files=[ "res://.import/character sprite sheet.png-a7f6ec698db2d957cccfc76a719c0680.stex" ]
+source_file="res://Resources/Graphics/Objects/character sprite sheet.png"
+dest_files=[ "res://.import/character sprite sheet.png-cff0149f0818f8e1a06eb7a7f75c6dda.stex" ]
 
 [params]
 

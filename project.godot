@@ -23,6 +23,7 @@ config/icon="res://icon.png"
 
 Constants="*res://Source/Scripts/Global Scripts/Constants.gd"
 PlayerInput="*res://Source/Scripts/Global Scripts/PlayerInput.gd"
+Main="*res://Source/Scripts/Global Scripts/Main.gd"
 
 [display]
 

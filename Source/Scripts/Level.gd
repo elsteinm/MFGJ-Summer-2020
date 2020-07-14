@@ -1,41 +1,30 @@
 extends Node2D
 
+var objects : Array = []
+
 func _init():
+	Main.current_level = self
 	var _error
-	_error = PlayerInput.connect("switch_control", self, "switch_player_host") #Tells the level that the player has changed host
-	_error = PlayerInput.connect("finish_level", self, "finish") #Tells the level when the player has been turned off
+	_error = PlayerInput.connect("finish_level", self, "check_objectives")
 
-func _ready():
-	#Test code just to make 2 characters
-	var PlayerCharacter = load("res://Source/Scenes/Objects/PlayerCharacter.tscn")
-	var p1 = PlayerCharacter.instance()
-	var p2 = PlayerCharacter.instance()
-	p2.is_controlled = false
-	p1.connect("switch_control", self, "switch_player_host")
-	p2.connect("switch_control", self, "switch_player_host")
-	
-	self.add_child(p1)
-	self.add_child(p2)
-	PlayerInput.control = p1 #Set the players control on P1
+func add_object(o):
+	objects.append(o)
 
-#Switches the player control into a new character
-func switch_player_host(new_host):
-	PlayerInput.control = new_host
+func remove_object(o):
+	objects.erase(o)
 
-func _process(delta):
-	guard_test_function()
+func check_objectives():
+	if objects.empty() == true:
+		return true
+	return false
 
-#Finish the level
-func finish():
-	#Just erase everything for now
-	PlayerInput.queue_free()
-	self.queue_free()
+#func _process(delta):
+#	guard_test_function()
 
-func guard_test_function():
-	if Input.is_action_just_pressed("p_action"):
-		var path = $Navigation2D.get_simple_path($EnemyCharacter.get_global_position(),get_global_mouse_position(), false)
-		path.remove(0)
-		print(path)
-		$EnemyCharacter.path_points = path
-		$EnemyCharacter.path_index = 0
-
+#func guard_test_function():
+#	if Input.is_action_just_pressed("p_action"):
+#		var path = $Navigation2D.get_simple_path($EnemyCharacter.get_global_position(),get_global_mouse_position(), false)
+#		path.remove(0)
+#		print(path)
+#		$EnemyCharacter.path_points = path
+#		$EnemyCharacter.path_index = 0

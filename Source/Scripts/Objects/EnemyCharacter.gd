@@ -23,7 +23,8 @@ func move_on_path(delta):
 		path_index += 1
 	else:
 		speed = clamp(speed+ acceleration,0,max_speed)
-		move_and_slide(move_vector.normalized() * speed)
+		velocity = move_vector.normalized() * speed
+		move_and_slide(velocity)
 		look_at(path_points[path_index])
 	#var current_location = to_global(position)
 	#animationTree.set("parameters/blend_position", vector)
