@@ -8,487 +8,487 @@
    xmlns:xlink="http://www.w3.org/1999/xlink"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="210mm"
-   height="297mm"
-   viewBox="0 0 210 297"
-   version="1.1"
-   id="svg8"
+   sodipodi:docname="art source.svg"
    inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   sodipodi:docname="art source.svg">
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 210 297"
+   height="297mm"
+   width="210mm">
   <defs
      id="defs2">
     <linearGradient
-       inkscape:collect="always"
-       id="linearGradient863">
+       id="linearGradient863"
+       inkscape:collect="always">
       <stop
-         style="stop-color:#fffec3;stop-opacity:1"
+         id="stop859"
          offset="0"
-         id="stop859" />
+         style="stop-color:#fffec3;stop-opacity:1" />
       <stop
-         style="stop-color:#fdf700;stop-opacity:1"
+         id="stop861"
          offset="1"
-         id="stop861" />
+         style="stop-color:#fdf700;stop-opacity:1" />
     </linearGradient>
     <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient865"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668"
+       gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-93.214644,72.281374)"
-       gradientUnits="userSpaceOnUse" />
-    <radialGradient
-       inkscape:collect="always"
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
+       id="radialGradient865"
        xlink:href="#linearGradient863"
-       id="radialGradient869"
-       gradientUnits="userSpaceOnUse"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-59.295074,39.208486)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient875"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient869"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-291.75682,-65.162078)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient881"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient875"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-291.75682,1.8568662)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient887"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient881"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-308.69016,-65.162072)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient891"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient887"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-93.188181,38.414709)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient897"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient891"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-238.1862,38.414709)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient905"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient897"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-255.11953,-264.49776)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient907"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient905"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-5.7776958,-227.09343)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient913"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient907"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-42.388166,-264.49776)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient915"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient913"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-5.7776958,-14.362066)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient921"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient915"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-25.454843,-264.49776)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient923"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient921"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-5.7776958,2.5712567)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient929"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient923"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-288.98619,38.414709)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient931"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient929"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-308.69016,-260.96009)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient939"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient931"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-288.98619,55.348045)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient941"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient939"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-325.6235,-260.96009)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient943"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient941"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,11.15564,2.5712567)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient951"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient943"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-272.05286,-281.43109)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient953"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient951"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,11.155633,-244.02676)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient955"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient953"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-325.62349,-14.362076)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient1007"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient955"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,11.155638,-227.09343)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient1011"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient1007"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-255.11953,-281.4311)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient1015"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient1011"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-255.11953,-297.57069)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient1023"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient1015"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-76.254847,-297.57069)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient1025"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient1023"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-76.254847,-281.4311)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient1027"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient1025"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,11.155638,-48.228747)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient1075"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient1027"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(1.3474728,-0.03173168,0.02658742,1.1290217,-308.69016,-210.1601)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient1075"
        xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
+       gradientTransform="matrix(0.64373364,-0.06228374,0.01270172,2.2160721,-223.66181,-181.77116)"
+       gradientUnits="userSpaceOnUse"
        id="radialGradient1079"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.64373364,-0.06228374,0.01270172,2.2160721,-223.66181,-181.77116)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
+       gradientTransform="matrix(0.64373364,-0.06228374,0.01270172,2.2160721,-134.9018,-382.42976)"
+       gradientUnits="userSpaceOnUse"
        id="radialGradient1083"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.64373364,-0.06228374,0.01270172,2.2160721,-134.9018,-382.42976)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
+       gradientTransform="matrix(0.64373364,-0.06228374,0.01270172,2.2160721,-223.66181,-181.77116)"
+       gradientUnits="userSpaceOnUse"
        id="radialGradient1105"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.64373364,-0.06228374,0.01270172,2.2160721,-223.66181,-181.77116)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
+       gradientTransform="matrix(0.64373364,-0.06228374,0.01270172,2.2160721,-134.9018,-382.42976)"
+       gradientUnits="userSpaceOnUse"
        id="radialGradient1107"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.64373364,-0.06228374,0.01270172,2.2160721,-134.9018,-382.42976)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
+       gradientTransform="matrix(0.64373364,-0.06228374,0.01270172,2.2160721,-223.66181,-181.77116)"
+       gradientUnits="userSpaceOnUse"
        id="radialGradient1115"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.64373364,-0.06228374,0.01270172,2.2160721,-223.66181,-181.77116)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
+       gradientTransform="matrix(0.64373364,-0.06228374,0.01270172,2.2160721,-134.9018,-382.42976)"
+       gradientUnits="userSpaceOnUse"
        id="radialGradient1117"
-       gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.64373364,-0.06228374,0.01270172,2.2160721,-134.9018,-382.42976)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
        xlink:href="#linearGradient863"
-       id="radialGradient1125"
-       gradientUnits="userSpaceOnUse"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(0.64373364,-0.06228374,0.01270172,2.2160721,-223.66181,-181.77116)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient1127"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient1125"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(0.64373364,-0.06228374,0.01270172,2.2160721,-134.9018,-382.42976)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient1139"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient1127"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(0.23540311,2.433009,-8.3757056,0.0480065,1235.0331,496.53003)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient1151"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient1139"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(0.06228374,0.64373362,-2.2160721,0.01270172,327.5628,131.37357)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient1157"
        gradientUnits="userSpaceOnUse"
+       id="radialGradient1151"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
+       fy="110.52739"
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
        gradientTransform="matrix(0.06228374,0.64373362,-2.2160721,0.01270172,326.76905,132.16745)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
-       fy="110.52739"
-       r="8.4666668" />
-    <radialGradient
-       inkscape:collect="always"
-       xlink:href="#linearGradient863"
-       id="radialGradient1161"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(0.06228374,0.64373362,-2.2160721,0.01270172,327.5628,132.16745)"
-       cx="114.4107"
-       cy="110.52739"
-       fx="114.4107"
+       id="radialGradient1157"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
+    <radialGradient
+       r="8.4666668"
        fy="110.52739"
-       r="8.4666668" />
+       fx="114.4107"
+       cy="110.52739"
+       cx="114.4107"
+       gradientTransform="matrix(0.06228374,0.64373362,-2.2160721,0.01270172,327.5628,132.16745)"
+       gradientUnits="userSpaceOnUse"
+       id="radialGradient1161"
+       xlink:href="#linearGradient863"
+       inkscape:collect="always" />
   </defs>
   <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="3.959798"
-     inkscape:cx="314.8922"
-     inkscape:cy="326.68843"
-     inkscape:document-units="mm"
-     inkscape:current-layer="layer1"
-     inkscape:document-rotation="0"
-     showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1001"
-     inkscape:window-x="-9"
+     inkscape:window-maximized="1"
      inkscape:window-y="-9"
-     inkscape:window-maximized="1" />
+     inkscape:window-x="-9"
+     inkscape:window-height="1001"
+     inkscape:window-width="1920"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="326.68843"
+     inkscape:cx="314.8922"
+     inkscape:zoom="3.959798"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -502,535 +502,539 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Layer 1"
+     id="layer1"
      inkscape:groupmode="layer"
-     id="layer1">
+     inkscape:label="Layer 1">
     <ellipse
-       ry="6.8829904"
-       rx="6.9669046"
-       style="fill:none;fill-opacity:1;stroke:#ffba08;stroke-width:0.876507;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:export-filename="C:\Users\drors\Desktop\MFGJ-Summer-2020\Graphics Files\Player Character\character sprite sheet.png"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       cy="72.464401"
+       cx="61.877193"
        id="path833"
-       cx="64.714302"
-       cy="75.259438"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
+       style="fill:none;fill-opacity:1;stroke:#ffba08;stroke-width:0.540506;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       rx="4.2977977"
+       ry="4.2428951" />
     <path
-       sodipodi:type="star"
-       style="fill:none;fill-opacity:1;stroke:#f21a1d;stroke-width:1.72698;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="path841"
-       sodipodi:sides="3"
-       sodipodi:cx="54.790253"
-       sodipodi:cy="116.52951"
-       sodipodi:r1="17.142792"
-       sodipodi:r2="8.5713959"
-       sodipodi:arg1="0.52359878"
-       sodipodi:arg2="1.5707963"
-       inkscape:flatsided="true"
-       inkscape:rounded="0"
-       inkscape:randomized="0"
+       inkscape:export-filename="C:\Users\drors\Desktop\MFGJ-Summer-2020\Graphics Files\Player Character\character sprite sheet.png"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       transform="matrix(0.27956507,0,0,0.31885904,57.002637,36.812107)"
+       inkscape:transform-center-y="-1.3665355"
        d="m 69.636346,125.10091 -29.692186,0 14.846093,-25.714191 z"
-       inkscape:transform-center-y="-2.2168454"
-       transform="matrix(0.45318637,0,0,0.51726564,56.812447,17.422893)"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
+       inkscape:randomized="0"
+       inkscape:rounded="0"
+       inkscape:flatsided="true"
+       sodipodi:arg2="1.5707963"
+       sodipodi:arg1="0.52359878"
+       sodipodi:r2="8.5713959"
+       sodipodi:r1="17.142792"
+       sodipodi:cy="116.52951"
+       sodipodi:cx="54.790253"
+       sodipodi:sides="3"
+       id="path841"
+       style="fill:none;fill-opacity:1;stroke:#f21a1d;stroke-width:1.72698;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       sodipodi:type="star" />
     <rect
-       style="fill:none;fill-opacity:1;stroke:#5ca4a9;stroke-width:0.788434;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       inkscape:export-filename="C:\Users\drors\Desktop\MFGJ-Summer-2020\Graphics Files\Player Character\character sprite sheet.png"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       y="78.665237"
+       x="67.994949"
+       height="8.5397549"
+       width="8.6502571"
        id="rect845"
-       width="14.02242"
-       height="13.853525"
-       x="74.631432"
-       y="85.318672"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
+       style="fill:none;fill-opacity:1;stroke:#5ca4a9;stroke-width:0.486196;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
     <rect
-       style="fill:none;fill-opacity:1;stroke:url(#radialGradient865);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-       id="rect847"
-       width="16.164843"
-       height="0.025259107"
-       x="55.936691"
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
        y="193.38007"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png" />
-    <rect
-       y="160.30716"
-       x="89.856285"
+       x="55.936691"
        height="0.025259107"
        width="16.164843"
-       id="rect867"
+       id="rect847"
+       style="fill:none;fill-opacity:1;stroke:url(#radialGradient865);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+    <rect
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
        style="fill:none;fill-opacity:1;stroke:url(#radialGradient869);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png" />
-    <rect
-       style="fill:none;fill-opacity:1;stroke:url(#radialGradient875);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-       id="rect871"
+       id="rect867"
        width="16.164843"
        height="0.025259107"
-       x="-142.60532"
+       x="89.856285"
+       y="160.30716" />
+    <rect
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       transform="rotate(-90)"
        y="55.936691"
-       transform="rotate(-90)"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png" />
-    <rect
-       transform="rotate(-90)"
-       y="122.95565"
        x="-142.60532"
        height="0.025259107"
        width="16.164843"
-       id="rect877"
+       id="rect871"
+       style="fill:none;fill-opacity:1;stroke:url(#radialGradient875);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+    <rect
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
        style="fill:none;fill-opacity:1;stroke:url(#radialGradient881);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png" />
+       id="rect877"
+       width="16.164843"
+       height="0.025259107"
+       x="-142.60532"
+       y="122.95565"
+       transform="rotate(-90)" />
     <g
-       id="g1033"
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
        transform="translate(16.959797,-16.933334)"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png">
+       id="g1033">
       <rect
-         inkscape:export-ydpi="96"
-         inkscape:export-xdpi="96"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient887);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect885"
-         width="16.164843"
-         height="0.025259107"
-         x="-159.53865"
+         transform="rotate(-90)"
          y="55.936691"
-         transform="rotate(-90)" />
-      <rect
-         inkscape:export-ydpi="96"
-         inkscape:export-xdpi="96"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient891);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect889"
-         width="16.164843"
+         x="-159.53865"
          height="0.025259107"
+         width="16.164843"
+         id="rect885"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient887);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <rect
+         y="159.5134"
          x="55.96315"
-         y="159.5134" />
+         height="0.025259107"
+         width="16.164843"
+         id="rect889"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient891);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
     </g>
     <g
-       id="g1041"
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
        transform="translate(-16.90687,1.2904406e-5)"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png">
+       id="g1041">
       <rect
-         inkscape:export-ydpi="96"
-         inkscape:export-xdpi="96"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient907);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect901"
-         width="16.164843"
-         height="0.025259107"
-         x="143.37381"
+         transform="rotate(90)"
          y="-105.99466"
-         transform="rotate(90)" />
-      <rect
-         inkscape:export-ydpi="96"
-         inkscape:export-xdpi="96"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient905);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect903"
-         width="16.164843"
+         x="143.37381"
          height="0.025259107"
-         x="-105.9682"
+         width="16.164843"
+         id="rect901"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient907);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <rect
+         transform="scale(-1)"
          y="-143.39906"
-         transform="scale(-1)" />
+         x="-105.9682"
+         height="0.025259107"
+         width="16.164843"
+         id="rect903"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient905);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
     </g>
     <g
-       id="g1045"
-       transform="translate(-16.880416,1.2904406e-5)"
-       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png">
+       inkscape:export-xdpi="96"
+       transform="translate(-16.880416,1.2904406e-5)"
+       id="g1045">
       <rect
-         inkscape:export-ydpi="96"
-         inkscape:export-xdpi="96"
-         transform="matrix(0,1,1,0,0,0)"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient915);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect909"
+         width="16.164843"
+         height="0.025259107"
+         x="143.37381"
          y="106.7367"
+         transform="matrix(0,1,1,0,0,0)"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient913);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect911"
+         width="16.164843"
+         height="0.025259107"
+         x="106.76315"
+         y="-143.39906"
+         transform="scale(1,-1)"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+    </g>
+    <g
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       transform="translate(-16.853937,16.933356)"
+       id="g1051">
+      <rect
+         transform="matrix(0,1,1,0,0,0)"
+         y="123.67002"
          x="143.37381"
          height="0.025259107"
          width="16.164843"
-         id="rect909"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient915);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
-      <rect
-         inkscape:export-ydpi="96"
+         id="rect917"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient923);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
          inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <rect
          transform="scale(1,-1)"
          y="-143.39906"
-         x="106.76315"
+         x="123.69647"
          height="0.025259107"
          width="16.164843"
-         id="rect911"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient913);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+         id="rect919"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient921);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <rect
+         transform="matrix(0,-1,-1,0,0,0)"
+         y="-139.86131"
+         x="-159.53865"
+         height="0.025259107"
+         width="16.164843"
+         id="rect925"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient931);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <rect
+         transform="scale(-1,1)"
+         y="159.5134"
+         x="-139.83487"
+         height="0.025259107"
+         width="16.164843"
+         id="rect927"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient929);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
     </g>
     <g
-       id="g1051"
-       transform="translate(-16.853937,16.933356)"
-       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png">
+       inkscape:export-xdpi="96"
+       transform="translate(-33.813735,16.933361)"
+       id="g1071">
       <rect
          inkscape:export-ydpi="96"
          inkscape:export-xdpi="96"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient923);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect917"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient943);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect933"
          width="16.164843"
          height="0.025259107"
-         x="143.37381"
+         x="160.30714"
          y="123.67002"
          transform="matrix(0,1,1,0,0,0)" />
       <rect
          inkscape:export-ydpi="96"
          inkscape:export-xdpi="96"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient921);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect919"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient941);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect935"
          width="16.164843"
          height="0.025259107"
-         x="123.69647"
-         y="-143.39906"
-         transform="scale(1,-1)" />
-      <rect
-         inkscape:export-ydpi="96"
-         inkscape:export-xdpi="96"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient931);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect925"
-         width="16.164843"
-         height="0.025259107"
-         x="-159.53865"
+         x="-176.47198"
          y="-139.86131"
          transform="matrix(0,-1,-1,0,0,0)" />
       <rect
          inkscape:export-ydpi="96"
          inkscape:export-xdpi="96"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient929);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect927"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient939);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect937"
          width="16.164843"
          height="0.025259107"
          x="-139.83487"
-         y="159.5134"
+         y="176.44673"
          transform="scale(-1,1)" />
     </g>
     <g
-       id="g1071"
-       transform="translate(-33.813735,16.933361)"
-       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png">
-      <rect
-         transform="matrix(0,1,1,0,0,0)"
-         y="123.67002"
-         x="160.30714"
-         height="0.025259107"
-         width="16.164843"
-         id="rect933"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient943);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         inkscape:export-xdpi="96"
-         inkscape:export-ydpi="96" />
-      <rect
-         transform="matrix(0,-1,-1,0,0,0)"
-         y="-139.86131"
-         x="-176.47198"
-         height="0.025259107"
-         width="16.164843"
-         id="rect935"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient941);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         inkscape:export-xdpi="96"
-         inkscape:export-ydpi="96" />
-      <rect
-         transform="scale(-1,1)"
-         y="176.44673"
-         x="-139.83487"
-         height="0.025259107"
-         width="16.164843"
-         id="rect937"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient939);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         inkscape:export-xdpi="96"
-         inkscape:export-ydpi="96" />
-    </g>
-    <g
-       id="g1066"
+       inkscape:export-xdpi="96"
        transform="translate(-33.840199,2.1904707e-5)"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png">
+       id="g1066">
       <rect
-         inkscape:export-ydpi="96"
-         inkscape:export-xdpi="96"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient955);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect945"
-         width="16.164843"
-         height="0.025259107"
-         x="-176.47198"
+         transform="rotate(-90)"
          y="106.73669"
-         transform="rotate(-90)" />
-      <rect
-         inkscape:export-ydpi="96"
-         inkscape:export-xdpi="96"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient953);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect947"
-         width="16.164843"
-         height="0.025259107"
-         x="160.30714"
-         y="-122.92799"
-         transform="rotate(90)" />
-      <rect
-         transform="scale(-1)"
-         inkscape:export-ydpi="96"
-         inkscape:export-xdpi="96"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient951);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect949"
-         width="16.164843"
-         height="0.025259107"
-         x="-122.90154"
-         y="-160.3324" />
-    </g>
-    <g
-       id="g1037"
-       transform="translate(16.986262,-16.933334)"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png">
-      <rect
-         inkscape:export-ydpi="96"
-         inkscape:export-xdpi="96"
-         transform="scale(-1,1)"
-         y="159.5134"
-         x="-89.034866"
+         x="-176.47198"
          height="0.025259107"
          width="16.164843"
-         id="rect895"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient897);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
-      <rect
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1075);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect969"
-         width="16.164843"
-         height="0.025259107"
-         x="-159.53865"
-         y="-89.061325"
-         transform="matrix(0,-1,-1,0,0,0)"
+         id="rect945"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient955);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
          inkscape:export-xdpi="96"
          inkscape:export-ydpi="96" />
-    </g>
-    <g
-       id="g1061"
-       transform="translate(-33.866668,2.1904707e-5)"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png">
       <rect
          transform="rotate(90)"
-         y="-105.99466"
+         y="-122.92799"
          x="160.30714"
          height="0.025259107"
          width="16.164843"
-         id="rect1005"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1007);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect947"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient953);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
          inkscape:export-xdpi="96"
          inkscape:export-ydpi="96" />
       <rect
-         transform="scale(-1)"
          y="-160.3324"
-         x="-105.9682"
+         x="-122.90154"
          height="0.025259107"
          width="16.164843"
-         id="rect1009"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1011);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect949"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient951);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
          inkscape:export-xdpi="96"
-         inkscape:export-ydpi="96" />
-      <rect
          inkscape:export-ydpi="96"
-         inkscape:export-xdpi="96"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1015);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect1013"
-         width="16.164843"
-         height="0.025259107"
-         x="-105.9682"
-         y="-176.47198"
          transform="scale(-1)" />
     </g>
     <g
-       id="g1056"
-       transform="translate(33.946059,-16.933321)"
-       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png">
+       inkscape:export-xdpi="96"
+       transform="translate(16.986262,-16.933334)"
+       id="g1037">
+      <rect
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient897);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect895"
+         width="16.164843"
+         height="0.025259107"
+         x="-89.034866"
+         y="159.5134"
+         transform="scale(-1,1)"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
       <rect
          inkscape:export-ydpi="96"
          inkscape:export-xdpi="96"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1027);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect1017"
+         transform="matrix(0,-1,-1,0,0,0)"
+         y="-89.061325"
+         x="-159.53865"
+         height="0.025259107"
+         width="16.164843"
+         id="rect969"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1075);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+    </g>
+    <g
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       transform="translate(-33.866668,2.1904707e-5)"
+       id="g1061">
+      <rect
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1007);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect1005"
          width="16.164843"
          height="0.025259107"
          x="160.30714"
-         y="72.870026"
-         transform="matrix(0,1,1,0,0,0)" />
+         y="-105.99466"
+         transform="rotate(90)" />
       <rect
          inkscape:export-ydpi="96"
          inkscape:export-xdpi="96"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1025);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect1019"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1011);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect1009"
          width="16.164843"
          height="0.025259107"
-         x="72.896484"
+         x="-105.9682"
          y="-160.3324"
-         transform="scale(1,-1)" />
+         transform="scale(-1)" />
+      <rect
+         transform="scale(-1)"
+         y="-176.47198"
+         x="-105.9682"
+         height="0.025259107"
+         width="16.164843"
+         id="rect1013"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1015);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+    </g>
+    <g
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       transform="translate(33.946059,-16.933321)"
+       id="g1056">
+      <rect
+         transform="matrix(0,1,1,0,0,0)"
+         y="72.870026"
+         x="160.30714"
+         height="0.025259107"
+         width="16.164843"
+         id="rect1017"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1027);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
       <rect
          transform="scale(1,-1)"
-         y="-176.47198"
+         y="-160.3324"
          x="72.896484"
          height="0.025259107"
          width="16.164843"
-         id="rect1021"
+         id="rect1019"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1025);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
+      <rect
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
          style="fill:none;fill-opacity:1;stroke:url(#radialGradient1023);stroke-width:0.768491;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         inkscape:export-xdpi="96"
-         inkscape:export-ydpi="96" />
+         id="rect1021"
+         width="16.164843"
+         height="0.025259107"
+         x="72.896484"
+         y="-176.47198"
+         transform="scale(1,-1)" />
     </g>
     <g
-       id="g1087"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        transform="translate(-9.1308597e-8,-1.3229063)"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png">
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       id="g1087">
       <rect
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1079);stroke-width:0.744171;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         transform="rotate(-90)"
+         y="55.92453"
+         x="-152.40706"
+         height="0.049579211"
+         width="7.7224956"
          id="rect1077"
-         width="7.7224956"
-         height="0.049579211"
-         x="-152.40706"
-         y="55.92453"
-         transform="rotate(-90)"
-         inkscape:export-xdpi="96"
-         inkscape:export-ydpi="96" />
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1079);stroke-width:0.744171;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
       <rect
-         inkscape:export-ydpi="96"
-         inkscape:export-xdpi="96"
-         transform="scale(-1)"
-         y="-144.73415"
-         x="-63.647026"
-         height="0.049579211"
-         width="7.7224956"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1083);stroke-width:0.744171;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
          id="rect1081"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1083);stroke-width:0.744171;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+         width="7.7224956"
+         height="0.049579211"
+         x="-63.647026"
+         y="-144.73415"
+         transform="scale(-1)"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
     </g>
     <g
-       transform="matrix(-1,0,0,1,144.99802,32.54378)"
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
        id="g1103"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png">
+       transform="matrix(-1,0,0,1,144.99802,32.54378)">
       <rect
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1105);stroke-width:0.744171;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         inkscape:export-ydpi="96"
+         inkscape:export-xdpi="96"
+         transform="rotate(-90)"
+         y="55.92453"
+         x="-152.40706"
+         height="0.049579211"
+         width="7.7224956"
          id="rect1099"
-         width="7.7224956"
-         height="0.049579211"
-         x="-152.40706"
-         y="55.92453"
-         transform="rotate(-90)"
-         inkscape:export-xdpi="96"
-         inkscape:export-ydpi="96" />
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1105);stroke-width:0.744171;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
       <rect
-         inkscape:export-ydpi="96"
-         inkscape:export-xdpi="96"
-         transform="scale(-1)"
-         y="-144.73415"
-         x="-63.647026"
-         height="0.049579211"
-         width="7.7224956"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1107);stroke-width:0.744171;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
          id="rect1101"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1107);stroke-width:0.744171;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+         width="7.7224956"
+         height="0.049579211"
+         x="-63.647026"
+         y="-144.73415"
+         transform="scale(-1)"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
     </g>
     <g
-       transform="matrix(1,0,0,-1,50.879394,338.10204)"
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
        id="g1113"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png">
-      <rect
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1115);stroke-width:0.744171;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect1109"
-         width="7.7224956"
-         height="0.049579211"
-         x="-152.40706"
-         y="55.92453"
-         transform="rotate(-90)"
-         inkscape:export-xdpi="96"
-         inkscape:export-ydpi="96" />
+       transform="matrix(1,0,0,-1,50.879394,338.10204)">
       <rect
          inkscape:export-ydpi="96"
          inkscape:export-xdpi="96"
-         transform="scale(-1)"
-         y="-144.73415"
-         x="-63.647026"
+         transform="rotate(-90)"
+         y="55.92453"
+         x="-152.40706"
          height="0.049579211"
          width="7.7224956"
+         id="rect1109"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1115);stroke-width:0.744171;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+      <rect
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1117);stroke-width:0.744171;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
          id="rect1111"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1117);stroke-width:0.744171;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
+         width="7.7224956"
+         height="0.049579211"
+         x="-63.647026"
+         y="-144.73415"
+         transform="scale(-1)"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
     </g>
     <g
-       id="g1123"
-       transform="rotate(180,64.032341,177.51769)"
-       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
        inkscape:export-ydpi="96"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png">
+       inkscape:export-xdpi="96"
+       transform="rotate(180,64.032341,177.51769)"
+       id="g1123">
+      <rect
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1125);stroke-width:0.744171;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+         id="rect1119"
+         width="7.7224956"
+         height="0.049579211"
+         x="-152.40706"
+         y="55.92453"
+         transform="rotate(-90)"
+         inkscape:export-xdpi="96"
+         inkscape:export-ydpi="96" />
       <rect
          inkscape:export-ydpi="96"
          inkscape:export-xdpi="96"
-         transform="rotate(-90)"
-         y="55.92453"
-         x="-152.40706"
-         height="0.049579211"
-         width="7.7224956"
-         id="rect1119"
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1125);stroke-width:0.744171;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
-      <rect
-         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1127);stroke-width:0.744171;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-         id="rect1121"
-         width="7.7224956"
-         height="0.049579211"
-         x="-63.647026"
-         y="-144.73415"
          transform="scale(-1)"
-         inkscape:export-xdpi="96"
-         inkscape:export-ydpi="96" />
+         y="-144.73415"
+         x="-63.647026"
+         height="0.049579211"
+         width="7.7224956"
+         id="rect1121"
+         style="fill:none;fill-opacity:1;stroke:url(#radialGradient1127);stroke-width:0.744171;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers" />
     </g>
-    <path
-       id="rect1129"
-       style="fill:none;fill-opacity:1;stroke:url(#radialGradient1139);stroke-width:2.81261;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-       d="M 336.46875 794.83984 L 336.46875 795.02734 L 336.65625 795.02734 L 336.65625 794.83984 L 336.46875 794.83984 z "
-       transform="scale(0.26458333)"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
-    <path
-       d="m 89.817656,210.30137 v 0.0496 h 0.04961 v -0.0496 z"
-       style="fill:none;fill-opacity:1;stroke:url(#radialGradient1151);stroke-width:0.74417;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-       id="path1149"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
-    <path
-       id="path1153"
-       style="fill:none;fill-opacity:1;stroke:url(#radialGradient1157);stroke-width:0.74417;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-       d="m 89.023906,211.09525 v 0.0496 h 0.04961 v -0.0496 z"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
-    <path
-       d="m 89.817656,211.09525 v 0.0496 h 0.04961 v -0.0496 z"
-       style="fill:none;fill-opacity:1;stroke:url(#radialGradient1161);stroke-width:0.74417;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
-       id="path1159"
-       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
-       inkscape:export-xdpi="96"
-       inkscape:export-ydpi="96" />
     <path
        inkscape:export-ydpi="96"
        inkscape:export-xdpi="96"
-       inkscape:transform-center-x="2.3424598e-06"
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
+       transform="scale(0.26458333)"
+       d="M 336.46875 794.83984 L 336.46875 795.02734 L 336.65625 795.02734 L 336.65625 794.83984 L 336.46875 794.83984 z "
+       style="fill:none;fill-opacity:1;stroke:url(#radialGradient1139);stroke-width:2.81261;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="rect1129" />
+    <path
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
+       id="path1149"
+       style="fill:none;fill-opacity:1;stroke:url(#radialGradient1151);stroke-width:0.74417;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       d="m 89.817656,210.30137 v 0.0496 h 0.04961 v -0.0496 z" />
+    <path
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
+       d="m 89.023906,211.09525 v 0.0496 h 0.04961 v -0.0496 z"
+       style="fill:none;fill-opacity:1;stroke:url(#radialGradient1157);stroke-width:0.74417;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       id="path1153" />
+    <path
+       inkscape:export-ydpi="96"
+       inkscape:export-xdpi="96"
+       inkscape:export-filename="C:\Users\drors\Desktop\walls tile map.png"
+       id="path1159"
+       style="fill:none;fill-opacity:1;stroke:url(#radialGradient1161);stroke-width:0.74417;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;paint-order:stroke fill markers"
+       d="m 89.817656,211.09525 v 0.0496 h 0.04961 v -0.0496 z" />
+    <path
+       inkscape:export-filename="C:\Users\drors\Desktop\MFGJ-Summer-2020\Graphics Files\Player Character\character sprite sheet.png"
+       id="path933"
+       style="fill:none;fill-opacity:1;stroke:#5ca4a9;stroke-width:0.504605;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:transform-center-y="-1.3942254"
+       d="m 65.773253,87.315236 -3.896056,-2.87681 -3.896064,2.87681 3.896064,-8.365351 z"
        sodipodi:nodetypes="ccccc"
-       d="m 71.029974,99.351048 -6.315666,-4.666876 -6.315677,4.666876 6.315677,-13.570602 z"
-       inkscape:transform-center-y="-2.2617673"
-       style="fill:none;fill-opacity:1;stroke:#5ca4a9;stroke-width:0.818287;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="path933" />
+       inkscape:transform-center-x="2.1559253e-06"
+       inkscape:export-xdpi="96"
+       inkscape:export-ydpi="96" />
   </g>
 </svg>
