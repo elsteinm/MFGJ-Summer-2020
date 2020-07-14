@@ -1,11 +1,13 @@
 extends KinematicBody2D
 
 onready var sprite = $Sprite
+onready var control_effect = $ControlEffect
+onready var camera = $Camera2D
 
 var is_moveable = false
 
 export var is_active = true setget set_active
-export var is_controlled = false setget set_control
+export var is_controlled : bool setget set_control
 
 signal switch_control(new_host) #Signals switching to this object
 
@@ -27,7 +29,7 @@ func _input_event(_viewport, event, _shape_idx):
 func set_active(value):
 	is_active = value
 	if is_active == false:
-		$Sprite.modulate = Color.black #Turns the character dark
+		sprite.modulate = Color.black #Turns the character dark
 		set_process(false) #Turns off process so the object stops
 		Main.remove_object_from_level(self)
 
@@ -35,6 +37,8 @@ func set_active(value):
 func set_control(value):
 	is_controlled = value
 	if is_controlled == true:
+		$ControlEffect.visible = true
 		$Camera2D.current = true #Sets the camera to the current controlled object
 	else:
+		$ControlEffect.visible = false
 		$Camera2D.current = false #Turns object's camera off when not controlled
