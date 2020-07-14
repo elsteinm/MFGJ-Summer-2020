@@ -12,19 +12,27 @@ var path_index = 0
 
 func _init().(false, 500, 150):
 	pass
-func _physics_process(delta):	
+func _physics_process(delta):
+	#if the character isn't controlled by player and is active	
 	if is_active == true and is_controlled == false:
+		#if there is a path the character needs to go on
 		if path_points != null and path_points.size()>0 and path_index < path_points.size():
 			move_on_path(delta)
 		
 func move_on_path(delta):
+	#move vector is target of movement
 	var move_vector = path_points[path_index] - global_position
+	#if we are close to next point, move to the next one
 	if move_vector.length() < min_distance:
 		path_index += 1
 	else:
+		#calculate new speed with accelration, maxed at max speed
 		speed = clamp(speed + acceleration,0,max_speed)
 		move_and_slide(move_vector.normalized() * speed)
+		#turn to where we are going
+		#TODO - smooth rotation
 		look_at(path_points[path_index]+move_vector)
+#repeated function to remove the addition of PI/2 in the rotation
 func move(input, delta):
 	if input != Vector2.ZERO: #If there is movement, do the moving calculations
 		velocity = velocity.move_toward(input * max_speed, acceleration * delta)
