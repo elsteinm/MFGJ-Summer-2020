@@ -1,5 +1,7 @@
 extends "res://Source/Scripts/Objects/Character.gd"
+
 export var health = 50
+
 #Just initalizes with preset stuff
 func _init().(true, 500, 150):
 	pass

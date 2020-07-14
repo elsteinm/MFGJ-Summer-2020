@@ -10,7 +10,7 @@ signal next
 signal menu
 
 func set_result(num_objects, dim_num):
-	var ratio = stepify((float(dim_num) / float(num_objects)) * 100, 0.01)
+	var ratio = stepify((float(dim_num) / float(num_objects)) * 100, 0.01) #Ratio of objects dimmed in level
 	label.text = "You have dimmed " + str(ratio) + "% of the world."
 	if ratio == 100:
 		next_button.disabled = false

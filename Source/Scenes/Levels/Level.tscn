@@ -6,11 +6,11 @@
 [ext_resource path="res://Graphics Files/lights/background light.png" type="Texture" id=4]
 [ext_resource path="res://Resources/shaders/tilemap glow.shader" type="Shader" id=5]
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
 shader_param/color_of_border = Color( 0.376471, 0.34902, 0, 1 )
 
-[sub_resource type="Environment" id=1]
+[sub_resource type="Environment" id=2]
 background_mode = 4
 glow_enabled = true
 glow_intensity = 1.5
@@ -22,7 +22,7 @@ script = ExtResource( 2 )
 [node name="Navigation2D" type="Navigation2D" parent="."]
 
 [node name="TileMap" type="TileMap" parent="Navigation2D"]
-material = SubResource( 2 )
+material = SubResource( 1 )
 tile_set = ExtResource( 1 )
 format = 1
 
@@ -33,9 +33,10 @@ texture = ExtResource( 4 )
 energy = 0.2
 
 [node name="PlayerCharacter" parent="." instance=ExtResource( 3 )]
+input_pickable = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.380392, 0.356863, 0.356863, 1 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 1 )
+environment = SubResource( 2 )

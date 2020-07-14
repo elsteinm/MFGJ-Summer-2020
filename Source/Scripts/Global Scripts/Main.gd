@@ -12,9 +12,15 @@ func _ready():
 	_error = PlayerInput.connect("finish_level", self, "finish_level") #Tells the level when the player has been turned off
 	self.level_number = 1
 
+#Load the level
 func load_level():
 	current_level = LevelPackedScene.instance()
 	get_tree().root.add_child(current_level)
+
+#Erase and remove the current level
+func erase_level():
+	get_tree().root.remove_child(current_level)
+	current_level.queue_free()
 
 #Switches the player control into a new character
 func switch_player_host(new_host):
@@ -31,13 +37,11 @@ func finish_level():
 	finished_screen.set_result(current_level.object_number, current_level.objects_dimmed)
 
 func reload_level():
-	get_tree().root.remove_child(current_level)
-	current_level.queue_free()
+	erase_level()
 	load_level()
 
 func load_next_level():
-	get_tree().root.remove_child(current_level)
-	current_level.queue_free()
+	erase_level()
 	self.level_number += 1
 	load_level()
 
@@ -48,14 +52,16 @@ func close():
 	self.queue_free()
 
 func set_level_number(num):
-	if num <= Constants.LEVELS:
+	if num <= Constants.LEVELS: #If level X exists
 		level_number = num
 	else:
 		level_number = 1
-	LevelPackedScene = load("res://Source/Scenes/Levels/Level" + str(level_number) + ".tscn")
+	LevelPackedScene = load("res://Source/Scenes/Levels/Level" + str(level_number) + ".tscn") #Get level scene
 
+#Add object to the current level objectives
 func add_object_to_level(o):
 	current_level.add_object(o)
 
+#Remove object from the current level objectives
 func remove_object_from_level(o):
 	current_level.remove_object(o)
