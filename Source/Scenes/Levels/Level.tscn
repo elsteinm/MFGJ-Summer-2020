@@ -1,16 +1,17 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Resources/Theme/Wall Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Source/Scripts/Level.gd" type="Script" id=2]
 [ext_resource path="res://Source/Scenes/Objects/PlayerCharacter.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Graphics Files/lights/background light.png" type="Texture" id=4]
 [ext_resource path="res://Resources/shaders/tilemap glow.shader" type="Shader" id=5]
+[ext_resource path="res://Source/Scripts/Objects/TileMapOcclusion.gd" type="Script" id=6]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
 shader_param/color_of_border = Color( 0.376471, 0.34902, 0, 1 )
 
-[sub_resource type="Environment" id=4]
+[sub_resource type="Environment" id=2]
 background_mode = 4
 glow_enabled = true
 glow_intensity = 1.5
@@ -28,6 +29,7 @@ __meta__ = {
 material = SubResource( 1 )
 tile_set = ExtResource( 1 )
 format = 1
+script = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -50,4 +52,4 @@ __meta__ = {
 }
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 4 )
+environment = SubResource( 2 )
