@@ -9,15 +9,3 @@ void fragment(){
 	}
 	COLOR = current;
 }
-void light()
-{
-	vec4 point = texture(TEXTURE,UV);
-	if(point == color_of_border)
-	{
-		LIGHT = vec4(1,1,1,1);
-	}
-	else
-	{
-		LIGHT = vec4(0,0,0,1);
-	}
-}

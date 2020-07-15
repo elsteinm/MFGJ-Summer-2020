@@ -10,7 +10,7 @@
 shader = ExtResource( 5 )
 shader_param/color_of_border = Color( 0.376471, 0.34902, 0, 1 )
 
-[sub_resource type="Environment" id=2]
+[sub_resource type="Environment" id=4]
 background_mode = 4
 glow_enabled = true
 glow_intensity = 1.5
@@ -50,4 +50,4 @@ __meta__ = {
 }
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 2 )
+environment = SubResource( 4 )

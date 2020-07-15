@@ -28,3 +28,4 @@ rotation = -1.5708
 texture = ExtResource( 3 )
 
 [node name="Light2D" type="Light2D" parent="."]
+shadow_enabled = true
