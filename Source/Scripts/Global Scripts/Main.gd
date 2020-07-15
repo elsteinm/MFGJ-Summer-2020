@@ -57,7 +57,7 @@ func set_level_number(num):
 	if num <= Constants.LEVELS: #If level X exists
 		level_number = num
 	else:
-		level_number = 1
+		level_number = 2020
 	LevelPackedScene = load("res://Source/Scenes/Levels/Level" + str(level_number) + ".tscn") #Get level scene
 
 #Add object to the current level objectives
