@@ -6,6 +6,7 @@ var objects_dimmed = 0
 
 func _init():
 	Main.current_level = self
+	PlayerInput.playing = true
 
 #Add object to objectives array
 func add_object(o):

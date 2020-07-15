@@ -21,7 +21,7 @@ func _process(delta):
 			var player_shape = player_collision.get_shape()
 			var light_collision = shape_owner_get_owner(shape_find_owner(shape))
 			var overlap = player_shape.collide_and_get_contacts(player_collision.get_transform(), light_collision.get_shape(), light_collision.get_transform())
-		
+	
 
 func set_brightness(value):
 	brightness = value

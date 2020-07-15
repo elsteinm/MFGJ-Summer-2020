@@ -16,7 +16,6 @@ tile_data = PoolIntArray( -196612, 1, 0, -196611, 1, 0, -196610, 1, 0, -196609, 
 
 [node name="PlayerCharacter" parent="." index="1"]
 position = Vector2( 32, 40 )
-input_pickable = true
 
 [node name="Path2D" type="Path2D" parent="." index="4"]
 curve = SubResource( 1 )
@@ -28,7 +27,6 @@ offset = 200.0
 
 [node name="EnemyCharacter" parent="Path2D/PathFollow2D" index="0" instance=ExtResource( 2 )]
 position = Vector2( 1.52588e-05, -7.62939e-06 )
-input_pickable = true
 
 [node name="Object" parent="." index="5" instance=ExtResource( 3 )]
 position = Vector2( 184, 56 )

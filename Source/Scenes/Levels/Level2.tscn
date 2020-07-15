@@ -21,3 +21,4 @@ position = Vector2( 224, 160 )
 
 [node name="EnemyCharacter" parent="." index="6" instance=ExtResource( 3 )]
 position = Vector2( 216, 24 )
+current_state = 2

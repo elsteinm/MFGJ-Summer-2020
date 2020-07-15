@@ -10,7 +10,7 @@ enum State {
 	RETURN
 }
 
-var current_state = State.PATROL
+export(State) var current_state = State.PATROL
 var speed = 0
 var min_distance = 10
 
