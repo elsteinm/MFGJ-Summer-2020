@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Source/Scenes/Objects/ControllableObject.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Graphics/Objects/character sprite sheet.png" type="Texture" id=2]
@@ -8,7 +8,12 @@
 [sub_resource type="CircleShape2D" id=1]
 radius = 18.0
 
+[sub_resource type="CircleShape2D" id=2]
+radius = 73.0
+
 [node name="Object" instance=ExtResource( 1 )]
+collision_layer = 4
+collision_mask = 7
 script = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="0"]
@@ -22,3 +27,10 @@ shape = SubResource( 1 )
 [node name="Light2D" parent="." index="4"]
 texture = ExtResource( 4 )
 color = Color( 1, 0.94902, 0.0392157, 1 )
+
+[node name="LightArea" parent="." index="5"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="LightArea" index="0"]
+shape = SubResource( 2 )
