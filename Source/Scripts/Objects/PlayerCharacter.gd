@@ -7,4 +7,4 @@ func _init().(true, 500, 150):
 	pass
 
 func _enter_tree():
-	PlayerInput.control = self #Makes the Player Character the initial control
+	emit_signal("switch_control", self) #Makes the Player Character the initial control

@@ -16,3 +16,6 @@ func add_object(o):
 func remove_object(o):
 	objects_dimmed += 1
 	objects.erase(o)
+
+func _exit_tree():
+	queue_free()

@@ -1,5 +1,6 @@
 extends Node
 
+var MainMenu = preload("res://Source/Scenes/Interface/MainMenu.tscn")
 var LevelFinishedScreen = preload("res://Source/Scenes/Interface/LevelFinishedScreen.tscn")
 var LevelPackedScene
 
@@ -13,14 +14,16 @@ func _ready():
 	self.level_number = 1
 
 #Load the level
-func load_level():
+func load_level(lvl_num):
+	self.level_number = lvl_num
 	current_level = LevelPackedScene.instance()
 	get_tree().root.add_child(current_level)
+	PlayerInput.playing = true
 
 #Erase and remove the current level
 func erase_level():
 	get_tree().root.remove_child(current_level)
-	current_level.queue_free()
+	PlayerInput.playing = false
 
 #Switches the player control into a new character
 func switch_player_host(new_host):
@@ -32,24 +35,23 @@ func finish_level():
 	var _error
 	_error = finished_screen.connect("retry", self, "reload_level")
 	_error = finished_screen.connect("next", self, "load_next_level")
-	_error = finished_screen.connect("menu", self, "close")
+	_error = finished_screen.connect("menu", self, "load_menu")
 	current_level.add_child(finished_screen)
 	finished_screen.set_result(current_level.object_number, current_level.objects_dimmed)
 
 func reload_level():
 	erase_level()
-	load_level()
+	load_level(level_number)
 
 func load_next_level():
 	erase_level()
 	self.level_number += 1
-	load_level()
+	load_level(level_number)
 
-func close():
-	#Just erase everything for now
-	current_level.queue_free()
-	PlayerInput.queue_free()
-	self.queue_free()
+func load_menu():
+	erase_level()
+	var menu = MainMenu.instance()
+	get_tree().root.add_child(menu)
 
 func set_level_number(num):
 	if num <= Constants.LEVELS: #If level X exists
@@ -65,3 +67,6 @@ func add_object_to_level(o):
 #Remove object from the current level objectives
 func remove_object_from_level(o):
 	current_level.remove_object(o)
+
+func _exit_tree():
+	queue_free()

@@ -43,3 +43,6 @@ func set_control(value):
 	else:
 		$ControlEffect.visible = false
 		$Camera2D.current = false #Turns object's camera off when not controlled
+
+func _exit_tree():
+	queue_free()

@@ -33,7 +33,6 @@ texture = ExtResource( 4 )
 energy = 0.2
 
 [node name="PlayerCharacter" parent="." instance=ExtResource( 3 )]
-input_pickable = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.380392, 0.356863, 0.356863, 1 )

@@ -23,3 +23,6 @@ func _on_NextButton_pressed():
 
 func _on_MenuButton_pressed():
 	emit_signal("menu")
+
+func _exit_tree():
+	queue_free()

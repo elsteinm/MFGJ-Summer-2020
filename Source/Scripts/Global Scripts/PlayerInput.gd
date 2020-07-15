@@ -2,11 +2,14 @@ extends Node
 
 var control setget set_control #The object the player is currently controlling
 var control_queue = Array() #The queue of previously controlled objects
+var playing = false setget set_playing
 
 signal switch_control(new_host) #Switches control over to the new host
 signal finish_level #Signals the player turning off the player character to finish the level
 
 func _physics_process(delta):
+	if playing == false:
+		return
 	if control.is_moveable == true:
 		#Gets the direction the player wants to move
 		var input_vector = Vector2.ZERO
@@ -17,6 +20,13 @@ func _physics_process(delta):
 	#Turn off command
 	if Input.is_action_just_pressed("p_turn_off"):
 		turn_off()
+
+func set_playing(value):
+	playing = value
+	if playing == false:
+		pass
+		control = null
+		control_queue = Array()
 
 #Sets the control variable
 func set_control(character):
