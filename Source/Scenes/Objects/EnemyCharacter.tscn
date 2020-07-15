@@ -36,13 +36,10 @@ position = Vector2( -10, 0 )
 rotation = -1.5708
 texture = ExtResource( 5 )
 
-[node name="Light2D" parent="." index="4"]
+[node name="Light2D" parent="." index="5"]
 position = Vector2( 36.8273, -8.22969e-07 )
 rotation = -1.5708
 texture = ExtResource( 4 )
 offset = Vector2( 0, 61 )
 texture_scale = 1.5
 color = Color( 0.929412, 0.368627, 0.368627, 1 )
-
-[node name="ControlEffect" parent="." index="5"]
-visible = false
