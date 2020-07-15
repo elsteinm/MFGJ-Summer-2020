@@ -9,3 +9,7 @@ void fragment(){
 	}
 	COLOR = current;
 }
+void light()
+{
+	
+}
