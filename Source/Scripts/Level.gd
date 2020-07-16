@@ -7,7 +7,8 @@ var objects_dimmed = 0
 func _init():
 	Main.current_level = self
 	PlayerInput.playing = true
-
+func _ready():
+	get_tree().call_group("enemy", "get_nav",$Navigation2D)
 #Add object to objectives array
 func add_object(o):
 	object_number += 1
