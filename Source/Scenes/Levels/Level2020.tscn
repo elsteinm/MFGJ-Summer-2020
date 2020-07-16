@@ -24,6 +24,7 @@ curve = SubResource( 1 )
 position = Vector2( 352, 154.081 )
 rotation = 1.5708
 offset = 200.0
+lookahead = 35.0
 
 [node name="EnemyCharacter" parent="Path2D/PathFollow2D" index="0" instance=ExtResource( 2 )]
 position = Vector2( 1.52588e-05, -7.62939e-06 )
