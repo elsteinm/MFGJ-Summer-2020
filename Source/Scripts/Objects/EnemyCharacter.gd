@@ -127,7 +127,7 @@ func move(input, delta):
 	if input != Vector2.ZERO: #If there is movement, do the moving calculations
 		velocity = velocity.move_toward(input * max_speed, acceleration * delta)
 	else: #Otherwise, slow down cause friction
-		velocity = velocity.move_toward(Vector2.ZERO, Constants.FRICTION * delta)
+		velocity = velocity.move_toward(Vector2.ZERO, Helper.FRICTION * delta)
 	velocity = move_and_slide(velocity) #Move
 	self.rotation += (get_local_mouse_position().angle()) *TURN_SPEED #Direction rotation
 

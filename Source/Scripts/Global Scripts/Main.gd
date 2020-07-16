@@ -54,7 +54,7 @@ func load_menu():
 	get_tree().root.add_child(menu)
 
 func set_level_number(num):
-	if num <= Constants.LEVELS: #If level X exists
+	if num <= Helper.LEVELS: #If level X exists
 		level_number = num
 	else:
 		level_number = 2020

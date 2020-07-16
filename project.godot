@@ -21,7 +21,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Constants="*res://Source/Scripts/Global Scripts/Constants.gd"
+Helper="*res://Source/Scripts/Global Scripts/Helper.gd"
 Main="*res://Source/Scripts/Global Scripts/Main.gd"
 PlayerInput="*res://Source/Scripts/Global Scripts/PlayerInput.gd"
 
