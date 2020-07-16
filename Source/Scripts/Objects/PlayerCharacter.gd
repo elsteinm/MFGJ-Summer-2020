@@ -14,7 +14,9 @@ var lights = []
 var in_red_light = false
 var red_lights = []
 
-var detectability = 0.1
+var detectability = 0.25
+
+signal dead
 
 #Just initalizes with preset stuff
 func _init().(true, 500, 150):
@@ -33,10 +35,16 @@ func _enter_tree():
 	PlayerInput.player_character = self
 
 func _process(delta):
+	detectability = 0.45 + brightness
 	if in_light == true:
 		for light in lights:
 			var overlap = calculate_intersect(light)
-			var area = Helper.get_polygon_area(overlap)
+			if overlap != null:
+				var area = Helper.get_polygon_area(overlap)
+				var ratio = float(player_area)/float(area)
+				detectability += ratio/2
+				if red_lights.has(light):
+					brightness += ratio/10
 
 func calculate_intersect(light_shape):
 	var light_polygon = light_shape.get_shape()
@@ -55,11 +63,15 @@ func calculate_intersect(light_shape):
 			global_shape.append(global_point)
 		light_polygon = light_polygon.points
 	var overlap = Geometry.intersect_polygons_2d(global_player_polygon, global_shape)
+	if overlap.empty():
+		return null
 	return overlap[0]
 
 func set_brightness(value):
 	brightness = value
 	light.energy = float(brightness)/100
+	if brightness > 1:
+		emit_signal("dead")
 
 func _on_LightArea_area_shape_entered(area_id, area, area_shape, self_shape):
 	in_light = true
