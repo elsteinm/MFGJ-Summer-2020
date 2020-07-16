@@ -21,11 +21,12 @@ var direction = Vector2(1, 0)
 var awareness = 0
 
 var speed = 0
-var min_distance = 10
+var min_distance = 2
 
 #var patrol_path
 var patrol_index = 0 setget set_patrol_index
 
+var original_path
 var path_points
 var path_index = 0
 
@@ -40,6 +41,14 @@ func _ready():
 	#patrol_path = patrol.polygon
 	patrol_index = 0
 	#patrol.visible = false
+	#pre bake the patrol path into the path points
+	original_path = PoolVector2Array()
+	var path = patrol_path.get_parent().curve.get_baked_points()
+	var step = 1.0/path.size() * 5
+	for i in range(path.size() * 5):
+		original_path.append(patrol_path.get_global_position())
+		patrol_path.unit_offset += step 
+	path_points = original_path
 
 func _process(delta):
 	if player_in_cone == true:
@@ -79,10 +88,15 @@ func _physics_process(delta):
 		#	move_on_path(path_points, path_index, delta)
 
 func patrol_state(delta):
-	speed = clamp(speed + acceleration,0,max_speed)
-	var prepos = patrol_path.get_global_position()
-	patrol_path.set_offset(patrol_path.get_offset() + (speed * delta))
-	var pos = patrol_path.get_global_position()
+	var distance = global_position.distance_to(path_points[path_index])
+	#if we are close to next point, move to the next one
+	if distance < min_distance:
+		path_index = wrapi(path_index+1,0,path_points.size())
+	move_on_path(path_points,path_index,delta)
+#	speed = clamp(speed + acceleration,0,max_speed)
+#	var prepos = patrol_path.get_global_position()
+#	patrol_path.set_offset(patrol_path.get_offset() + (speed * delta))
+#	var pos = patrol_path.get_global_position()
 	#move_direction = (pos.angle_to_point(prepos) / PI)*180
 
 func chase_state(delta):
@@ -111,16 +125,19 @@ func move_on_path(path, index, delta):
 	#move vector is target of movement
 	var move_vector = path[index] - global_position
 	#if we are close to next point, move to the next one
-	if move_vector.length() < min_distance:
-		return true
-	else:
+#	if move_vector.length() < min_distance:
+#		return true
+#	else:
 		#calculate new speed with accelration, maxed at max speed
-		speed = clamp(speed + acceleration,0,max_speed)
-		move_and_slide(move_vector.normalized() * speed)
-		#turn to where we are going
-		#TODO - smooth rotation
-		look_at(path[index]+move_vector)
-		return false
+	
+	speed = clamp(speed + acceleration,0,max_speed)
+	move_and_slide(move_vector.normalized() * speed)
+	#turn to where we are going
+	#TODO - smooth rotation
+	var direction = (path[index] + move_vector)
+	self.rotation += get_angle_to(direction) * 0.1
+#	look_at(direction)
+	return false
 		#repeated function to remove the addition of PI/2 in the rotation
 
 func move(input, delta):
