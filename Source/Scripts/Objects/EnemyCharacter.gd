@@ -11,7 +11,7 @@ onready var timer = $WaitTimer
 onready var patrol_path = get_parent()
 onready var player = PlayerInput.player_character
 onready var raycast = $LightCast
-
+var navigation_source
 export(State) var current_state = State.PATROL
 
 var player_in_cone = false
@@ -30,7 +30,7 @@ var original_path
 var path_points
 var path_index = 0
 
-func _init().(false, 500, 150):
+func _init().(false, 500, 100):
 	pass
 
 func _ready():
@@ -100,7 +100,16 @@ func patrol_state(delta):
 	#move_direction = (pos.angle_to_point(prepos) / PI)*180
 
 func chase_state(delta):
-	pass
+	var new_path = navigation_source.get_simple_path(global_position,player.global_position,true)
+	path_points = new_path
+	path_index = 0
+	var distance = global_position.distance_to(path_points[path_index])
+	if distance < min_distance:
+		if path_index == path_points.size() - 1:
+			return
+		else:
+			path_index += 1
+	move_on_path(path_points,path_index,delta)
 
 func search_state(delta):
 	pass
@@ -160,3 +169,5 @@ func _on_LightArea_body_entered(body):
 func _on_LightArea_body_exited(body):
 	player_in_cone = false
 	player_in_view = false
+func get_nav(nav_source):
+	navigation_source = nav_source
