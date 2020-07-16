@@ -37,13 +37,19 @@ color = Color( 0.929412, 0.368627, 0.368627, 1 )
 [node name="LightArea" parent="." index="5"]
 position = Vector2( -16, 0 )
 collision_layer = 16
-collision_mask = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" parent="LightArea" index="0"]
 shape = SubResource( 2 )
 
 [node name="LightCast" parent="." index="6"]
-collision_mask = 1
+enabled = true
+exclude_parent = false
+cast_to = Vector2( 1, 0 )
+collision_mask = 3
+collide_with_areas = true
 
 [node name="WaitTimer" type="Timer" parent="." index="7"]
 one_shot = true
+[connection signal="body_entered" from="LightArea" to="." method="_on_LightArea_body_entered"]
+[connection signal="body_exited" from="LightArea" to="." method="_on_LightArea_body_exited"]

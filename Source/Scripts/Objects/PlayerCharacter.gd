@@ -8,12 +8,15 @@ export var brightness = 0 setget set_brightness
 var in_light = false
 var lights = []
 
+var detectability = 0.1
+
 #Just initalizes with preset stuff
 func _init().(true, 500, 150):
 	pass
 
 func _enter_tree():
 	emit_signal("switch_control", self) #Makes the Player Character the initial control
+	PlayerInput.player_character = self
 
 func _process(delta):
 	if in_light == true:

@@ -1,5 +1,6 @@
 extends Node
 
+var player_character
 var control setget set_control #The object the player is currently controlling
 var control_queue = Array() #The queue of previously controlled objects
 var playing = false setget set_playing

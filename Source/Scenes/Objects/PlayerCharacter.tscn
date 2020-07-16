@@ -8,7 +8,7 @@
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 15, 16, 0, 7, -14, 16, 0, -16 )
 
-[sub_resource type="ConvexPolygonShape2D" id=3]
+[sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 15, 16, 0, 7, -14, 16, 0, -16 )
 
 [node name="PlayerCharacter" instance=ExtResource( 1 )]
@@ -38,7 +38,7 @@ collision_layer = 2
 collision_mask = 24
 
 [node name="CollisionShape2D" parent="LightArea" index="0"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="LightCast" parent="." index="6"]
 collision_mask = 1
