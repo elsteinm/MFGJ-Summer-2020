@@ -2,7 +2,7 @@ extends Control
 
 func _on_StartButton_pressed():
 	get_tree().root.remove_child(self)
-	Main.load_level(2020)
+	Main.load_level(1)
 
 func _on_HelpButton_pressed():
 	$HelpPanel.visible = true

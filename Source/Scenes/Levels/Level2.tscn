@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Source/Scenes/Levels/Level.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Source/Scenes/Objects/Object.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Source/Scenes/Objects/EnemyCharacter.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 218.538, 23.5486, 0, 0, 0, 0, 425.305, 22.0503, 0, 0, 0, 0, 413.318, 102.959, 0, 0, 0, 0, 409.573, 41.5283, 0, 0, 0, 0, 218.538, 44.5249, 0, 0, 0, 0, 219.288, 22.0503, 0, 0, 0, 0, 218.538, 23.5486 )
+}
 
 [node name="Level2" instance=ExtResource( 1 )]
 
@@ -19,6 +24,11 @@ position = Vector2( 416, 160 )
 [node name="Object2" parent="." index="5" instance=ExtResource( 2 )]
 position = Vector2( 224, 160 )
 
-[node name="EnemyCharacter" parent="." index="6" instance=ExtResource( 3 )]
+[node name="Path2D" type="Path2D" parent="." index="6"]
+curve = SubResource( 1 )
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" index="0"]
+lookahead = 35.0
+
+[node name="EnemyCharacter" parent="Path2D/PathFollow2D" index="0" instance=ExtResource( 3 )]
 position = Vector2( 216, 24 )
-current_state = 2
