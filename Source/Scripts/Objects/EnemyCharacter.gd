@@ -19,6 +19,7 @@ var player_in_view = false
 var player_exists = false
 var direction = Vector2(1, 0)
 var awareness = 0
+export var rotation_speed = 1
 
 var speed = 0
 var min_distance = 2
@@ -75,15 +76,17 @@ func _physics_process(delta):
 			State.CHASE:
 				chase_state(delta)
 				if awareness <= 0.5:
+					timer.start()
 					current_state = State.SEARCH
-					rotation = 0
 			State.SEARCH:
 				search_state(delta)
-				current_state = State.RETURN
+				if awareness >= 0.8:
+					current_state = State.CHASE
+					look_at(player.transform.get_origin())
+#				current_state = State.RETURN
 			State.RETURN:
 				return_state(delta)
-				current_state = State.PATROL
-		#if there is a path the character needs to go on
+		#if there is a path the character need	s to go on
 		#if path_points != null and path_points.size()>0 and path_index < path_points.size():
 		#	move_on_path(path_points, path_index, delta)
 
@@ -103,7 +106,7 @@ func chase_state(delta):
 	var new_path = navigation_source.get_simple_path(global_position,player.global_position,true)
 	path_points = new_path
 	path_index = 0
-	if path_points.size() != null:
+	if path_points.size() != 0:
 		var distance = global_position.distance_to(path_points[path_index])
 		if distance < min_distance:
 			if path_index == path_points.size() - 1:
@@ -113,10 +116,24 @@ func chase_state(delta):
 		move_on_path(path_points,path_index,delta)
 
 func search_state(delta):
-	pass
-
+	rotation += delta * rotation_speed
+	
 func return_state(delta):
-	pass
+	if path_points.size() != 0:
+		var distance = global_position.distance_to(path_points[path_index])
+		if distance < min_distance:
+			if path_index == path_points.size() - 1:
+				path_points = original_path
+				path_index = patrol_index
+				current_state = State.PATROL
+				return
+			else:
+				path_index += 1
+		move_on_path(path_points,path_index,delta)
+	else:
+		path_points = original_path
+		path_index = patrol_index
+		current_state = State.PATROL
 
 func detect_player(facing, pos):
 	if player_exists == true:
@@ -172,3 +189,25 @@ func _on_LightArea_body_exited(body):
 	player_in_view = false
 func get_nav(nav_source):
 	navigation_source = nav_source
+
+
+func _on_WaitTimer_timeout():
+	current_state = State.RETURN
+	find_shortest_distance_patrol()
+	
+func find_shortest_distance_patrol():
+	var shortest_distance = 9223372036854775807 #max int
+	var shortest_path = null
+	var shortest_goal = -1
+	for j in range(original_path.size()):
+		var point = original_path[j]
+		var path = navigation_source.get_simple_path(global_position,point,false)
+		var total_distance = 0
+		for i in range(path.size()-1):
+			total_distance += path[i].distance_to(path[i+1])
+		if shortest_distance > total_distance:
+			shortest_distance = total_distance
+			shortest_path = path
+			shortest_goal = j
+	path_points = shortest_path
+	patrol_index = shortest_goal
