@@ -19,12 +19,13 @@ var player_in_view = false
 var player_exists = false
 var direction = Vector2(1, 0)
 var awareness = 0
+var last_player_location = Vector2.ZERO
 
 var speed = 0
 var min_distance = 2
 
 #var patrol_path
-var patrol_index = 0 setget set_patrol_index
+var patrol_index = 0
 
 var original_path
 var path_points
@@ -45,7 +46,7 @@ func _ready():
 	original_path = PoolVector2Array()
 	var path = patrol_path.get_parent().curve.get_baked_points()
 	var step = 1.0/path.size() * 5
-	for i in range(path.size() * 5):
+	for _i in range(path.size() * 5):
 		original_path.append(patrol_path.get_global_position())
 		patrol_path.unit_offset += step 
 	path_points = original_path
@@ -59,7 +60,6 @@ func _process(delta):
 		else:
 			player_in_view = false
 	var current_position = transform.get_origin()
-	var facing = raycast.get_cast_to()
 	detect_player(direction, current_position)
 
 func _physics_process(delta):
@@ -69,20 +69,29 @@ func _physics_process(delta):
 			State.PATROL:
 				patrol_state(delta)
 				if awareness >= 1:
+					last_player_location = player.global_position
+					look_at(last_player_location)
 					current_state = State.CHASE
-					look_at(player.transform.get_origin())
 					#raycast.set_cast_to(direction)
 			State.CHASE:
 				chase_state(delta)
 				if awareness <= 0.5:
-					current_state = State.SEARCH
 					rotation = 0
+					current_state = State.SEARCH
+				elif awareness >= 0.75:
+					last_player_location = player.global_position
 			State.SEARCH:
 				search_state(delta)
 				current_state = State.RETURN
 			State.RETURN:
-				return_state(delta)
-				current_state = State.PATROL
+				if awareness >= 0.9:
+					last_player_location = player.global_position
+					current_state = State.CHASE
+				var ret = return_state(delta)
+				if ret == true:
+					path_points = original_path
+					path_index = patrol_index
+					current_state = State.PATROL
 		#if there is a path the character needs to go on
 		#if path_points != null and path_points.size()>0 and path_index < path_points.size():
 		#	move_on_path(path_points, path_index, delta)
@@ -92,6 +101,7 @@ func patrol_state(delta):
 	#if we are close to next point, move to the next one
 	if distance < min_distance:
 		path_index = wrapi(path_index+1,0,path_points.size())
+		patrol_index = path_index
 	move_on_path(path_points,path_index,delta)
 #	speed = clamp(speed + acceleration,0,max_speed)
 #	var prepos = patrol_path.get_global_position()
@@ -100,22 +110,21 @@ func patrol_state(delta):
 	#move_direction = (pos.angle_to_point(prepos) / PI)*180
 
 func chase_state(delta):
-	var new_path = navigation_source.get_simple_path(global_position,player.global_position,true)
+	var new_path = navigation_source.get_simple_path(global_position, last_player_location, true)
 	path_points = new_path
 	path_index = 0
-	var distance = global_position.distance_to(path_points[path_index])
-	if distance < min_distance:
-		if path_index == path_points.size() - 1:
-			return
-		else:
-			path_index += 1
-	move_on_path(path_points,path_index,delta)
+	var progress = path_progress(delta)
 
 func search_state(delta):
-	pass
+	var progress = path_progress(delta)
+	if progress == true:
+		pass
 
 func return_state(delta):
-	pass
+	var return_path = navigation_source.get_simple_path(global_position, original_path[patrol_index], true)
+	path_points = return_path
+	path_index = 0
+	return path_progress(delta)
 
 func detect_player(facing, pos):
 	if player_exists == true:
@@ -128,7 +137,17 @@ func detect_player(facing, pos):
 				awareness += player.detectability
 		else:
 			if awareness > 0:
-				awareness -= 0.1
+				awareness -= 0.005
+
+func path_progress(delta):
+	var distance = global_position.distance_to(path_points[path_index])
+	if distance < min_distance:
+		if path_index == path_points.size() - 1:
+			return true
+		else:
+			path_index += 1
+	move_on_path(path_points,path_index,delta)
+	return false
 
 func move_on_path(path, index, delta):
 	#move vector is target of movement
@@ -143,7 +162,7 @@ func move_on_path(path, index, delta):
 	move_and_slide(move_vector.normalized() * speed)
 	#turn to where we are going
 	#TODO - smooth rotation
-	var direction = (path[index] + move_vector)
+	direction = (path[index] + move_vector)
 	self.rotation += get_angle_to(direction) * 0.1
 #	look_at(direction)
 	return false
@@ -157,16 +176,10 @@ func move(input, delta):
 	velocity = move_and_slide(velocity) #Move
 	self.rotation += (get_local_mouse_position().angle()) *TURN_SPEED #Direction rotation
 
-func set_patrol_index(value):
-	if value < patrol_path.size():
-		patrol_index = value
-	else:
-		patrol_index = 0
-
-func _on_LightArea_body_entered(body):
+func _on_LightArea_body_entered(_body):
 	player_in_cone = true
 
-func _on_LightArea_body_exited(body):
+func _on_LightArea_body_exited(_body):
 	player_in_cone = false
 	player_in_view = false
 func get_nav(nav_source):
