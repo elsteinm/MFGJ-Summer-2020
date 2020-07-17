@@ -2,6 +2,7 @@ extends Node
 
 var MainMenu = preload("res://Source/Scenes/Interface/MainMenu.tscn")
 var LevelFinishedScreen = preload("res://Source/Scenes/Interface/LevelFinishedScreen.tscn")
+var GameOverScreen = preload("res://Source/Scenes/Interface/GameOverScreen.tscn")
 var LevelPackedScene
 
 var level_number setget set_level_number
@@ -11,7 +12,7 @@ func _ready():
 	var _error
 	_error = PlayerInput.connect("switch_control", self, "switch_player_host") #Tells the level that the player has changed host
 	_error = PlayerInput.connect("finish_level", self, "finish_level") #Tells the level when the player has been turned off
-	self.level_number = 1
+	self.level_number = 2020
 
 #Load the level
 func load_level(lvl_num):
@@ -38,6 +39,13 @@ func finish_level():
 	_error = finished_screen.connect("menu", self, "load_menu")
 	current_level.add_child(finished_screen)
 	finished_screen.set_result(current_level.object_number, current_level.objects_dimmed)
+
+func game_over():
+	var game_over_screen = GameOverScreen.instance()
+	var _error
+	_error = game_over_screen.connect("retry", self, "reload_level")
+	_error = game_over_screen.connect("menu", self, "load_menu")
+	current_level.add_child(game_over_screen)
 
 func reload_level():
 	erase_level()
