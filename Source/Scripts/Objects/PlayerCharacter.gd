@@ -3,6 +3,7 @@ extends "res://Source/Scripts/Objects/Character.gd"
 onready var light = $Light2D
 onready var player_collision = $LightArea/CollisionShape2D
 onready var light_area = $LightArea
+onready var raycast = $LightCast
 
 var global_player_polygon
 var player_area
@@ -34,11 +35,11 @@ func _enter_tree():
 	emit_signal("switch_control", self) #Makes the Player Character the initial control
 	PlayerInput.player_character = self
 
-func _process(delta):
+func _process(_delta):
 	detectability = 0.45 + brightness
 	if in_light == true:
-		for light in lights:
-			var overlap = calculate_intersect(light)
+		for light_shape in lights:
+			var overlap = calculate_intersect(light_shape)
 			if overlap != null:
 				var area = Helper.get_polygon_area(overlap)
 				var ratio = float(player_area)/float(area)
@@ -51,7 +52,6 @@ func calculate_intersect(light_shape):
 	var global_shape = PoolVector2Array()
 	if light_polygon is CircleShape2D:
 		var rad = light_polygon.radius
-		var temp_polygon = PoolVector2Array()
 		var angle = 0
 		while angle < 2*PI:
 			var point = light_shape.get_global_position() + Vector2(rad*cos(angle), rad*sin(angle))
@@ -73,22 +73,26 @@ func set_brightness(value):
 	if brightness > 1:
 		emit_signal("dead")
 
-func _on_LightArea_area_shape_entered(area_id, area, area_shape, self_shape):
-	in_light = true
+func _on_LightArea_area_shape_entered(_area_id, area, area_shape, _self_shape):
 	var shape_owner = area.shape_find_owner(area_shape)
 	var light_shape = area.shape_owner_get_owner(shape_owner)
-	lights.append(light_shape)
-	if area.get_collision_layer_bit(4) == true:
-		in_red_light = true
-		red_lights.append(light_shape)
+	var space = get_world_2d().direct_space_state
+	var result = space.intersect_ray(global_position, light_shape.get_global_position(), [self], raycast.collision_mask)
+	if result["collider"].is_a_parent_of(light_shape):
+		in_light = true
+		lights.append(light_shape)
+		if area.get_collision_layer_bit(4) == true:
+			in_red_light = true
+			red_lights.append(light_shape)
 
-func _on_LightArea_area_shape_exited(area_id, area, area_shape, self_shape):
+func _on_LightArea_area_shape_exited(_area_id, area, area_shape, _self_shape):
 	var shape_owner = area.shape_find_owner(area_shape)
 	var light_shape = area.shape_owner_get_owner(shape_owner)
-	lights.erase(light_shape)
-	if lights.empty() == true:
-		in_light = false
-	if area.get_collision_layer_bit(4) == true:
-		red_lights.erase(light_shape)
-		if red_lights.empty() == true:
-			in_red_light = false
+	if lights.has(light_shape):
+		lights.erase(light_shape)
+		if lights.empty() == true:
+			in_light = false
+		if area.get_collision_layer_bit(4) == true:
+			red_lights.erase(light_shape)
+			if red_lights.empty() == true:
+				in_red_light = false
