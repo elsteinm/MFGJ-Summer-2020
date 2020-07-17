@@ -103,13 +103,14 @@ func chase_state(delta):
 	var new_path = navigation_source.get_simple_path(global_position,player.global_position,true)
 	path_points = new_path
 	path_index = 0
-	var distance = global_position.distance_to(path_points[path_index])
-	if distance < min_distance:
-		if path_index == path_points.size() - 1:
-			return
-		else:
-			path_index += 1
-	move_on_path(path_points,path_index,delta)
+	if path_points.size() != null:
+		var distance = global_position.distance_to(path_points[path_index])
+		if distance < min_distance:
+			if path_index == path_points.size() - 1:
+				return
+			else:
+				path_index += 1
+		move_on_path(path_points,path_index,delta)
 
 func search_state(delta):
 	pass
