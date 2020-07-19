@@ -3,7 +3,7 @@ extends Node2D
 var objects : Array = []
 var object_number = 0
 var objects_dimmed = 0
-var freeze = false setget set_freeze
+
 func _init():
 	Main.current_level = self
 	PlayerInput.playing = true
@@ -23,9 +23,3 @@ func remove_object(o):
 
 func _exit_tree():
 	queue_free()
-func set_freeze(value):
-	freeze = value
-	if value == false:
-		set_process(true)
-	else:
-		set_process(false)

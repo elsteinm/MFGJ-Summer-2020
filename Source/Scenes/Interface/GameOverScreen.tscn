@@ -3,9 +3,11 @@
 [ext_resource path="res://Source/Scripts/Interface/GameOverScreen.gd" type="Script" id=1]
 
 [node name="GameOverScreen" type="CanvasLayer"]
+pause_mode = 2
 script = ExtResource( 1 )
 
 [node name="Panel" type="Panel" parent="."]
+self_modulate = Color( 1, 1, 1, 0.392157 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {

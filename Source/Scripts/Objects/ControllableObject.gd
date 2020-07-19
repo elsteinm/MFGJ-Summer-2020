@@ -36,7 +36,10 @@ func set_active(value):
 		light.enabled = false
 		light_area_collision.disabled = true
 		Main.remove_object_from_level(self)
-
+func _notification(what):
+	match what:
+		NOTIFICATION_PAUSED:
+			$ControlEffect.visible = false
 #Sets the is_controlled variable
 func set_control(value):
 	is_controlled = value

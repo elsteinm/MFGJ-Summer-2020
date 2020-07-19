@@ -20,6 +20,7 @@ func load_level(lvl_num):
 	current_level = LevelPackedScene.instance()
 	get_tree().root.add_child(current_level)
 	PlayerInput.playing = true
+	get_tree().paused = false
 
 #Erase and remove the current level
 func erase_level():
@@ -38,7 +39,7 @@ func finish_level():
 	_error = finished_screen.connect("next", self, "load_next_level")
 	_error = finished_screen.connect("menu", self, "load_menu")
 	current_level.add_child(finished_screen)
-	current_level.freeze = true
+	get_tree().paused = true
 	finished_screen.set_result(current_level.object_number, current_level.objects_dimmed)
 
 func game_over():
@@ -47,7 +48,7 @@ func game_over():
 	_error = game_over_screen.connect("retry", self, "reload_level")
 	_error = game_over_screen.connect("menu", self, "load_menu")
 	current_level.add_child(game_over_screen)
-	current_level.freeze = true
+	get_tree().paused = true
 
 func reload_level():
 	erase_level()
@@ -62,6 +63,7 @@ func load_menu():
 	erase_level()
 	var menu = MainMenu.instance()
 	get_tree().root.add_child(menu)
+	get_tree().paused = false
 
 func set_level_number(num):
 	if num <= Helper.LEVELS: #If level X exists
