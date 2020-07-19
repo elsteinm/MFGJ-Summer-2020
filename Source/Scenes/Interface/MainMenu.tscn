@@ -12,14 +12,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="."]
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="GamePanel" type="Panel" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Game Name" type="TextureRect" parent="Panel"]
+[node name="Game Name" type="TextureRect" parent="GamePanel"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -31,7 +36,7 @@ margin_bottom = 250.0
 rect_scale = Vector2( 0.5, 0.5 )
 texture = ExtResource( 2 )
 
-[node name="StartButton" type="Button" parent="Panel"]
+[node name="StartButton" type="Button" parent="GamePanel"]
 anchor_left = 0.4
 anchor_top = 0.694
 anchor_right = 0.6
@@ -40,7 +45,7 @@ margin_top = -9.84
 margin_bottom = 10.16
 text = "Start Game"
 
-[node name="HelpButton" type="Button" parent="Panel"]
+[node name="HelpButton" type="Button" parent="GamePanel"]
 anchor_left = 0.4
 anchor_top = 0.806
 anchor_right = 0.6
@@ -49,7 +54,7 @@ margin_top = -10.16
 margin_bottom = 9.83997
 text = "How To Play"
 
-[node name="QuitButton" type="Button" parent="Panel"]
+[node name="QuitButton" type="Button" parent="GamePanel"]
 anchor_left = 0.4
 anchor_top = 0.917
 anchor_right = 0.6
@@ -76,10 +81,10 @@ bbcode_text = "[center]DIM THE WORLD.
 
 Take control of every object in the level and dim it.
 
-Avoid red lights from patrolling enemies. Lighting up too much can result in Game Over.
+Avoid red lights from patrolling enemies. 
+Lighting up too much can result in Game Over.
 
 Dim yourself to finish the level.
-
 
 
 
@@ -89,17 +94,16 @@ Mouse Move - look around
 
 Left Mouse Click on objects and enemies - take control
 
-Right Mouse Click - Dim currently controlled character
-[/center]"
+Right Mouse Click - Dim currently controlled character[/center]"
 text = "DIM THE WORLD.
 
 
 Take control of every object in the level and dim it.
 
-Avoid red lights from patrolling enemies. Lighting up too much can result in Game Over.
+Avoid red lights from patrolling enemies. 
+Lighting up too much can result in Game Over.
 
 Dim yourself to finish the level.
-
 
 
 
@@ -109,8 +113,7 @@ Mouse Move - look around
 
 Left Mouse Click on objects and enemies - take control
 
-Right Mouse Click - Dim currently controlled character
-"
+Right Mouse Click - Dim currently controlled character"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -127,7 +130,7 @@ text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Panel/StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="pressed" from="Panel/HelpButton" to="." method="_on_HelpButton_pressed"]
-[connection signal="pressed" from="Panel/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="GamePanel/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="GamePanel/HelpButton" to="." method="_on_HelpButton_pressed"]
+[connection signal="pressed" from="GamePanel/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="HelpPanel/BackButton" to="." method="_on_BackButton_pressed"]

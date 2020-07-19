@@ -17,7 +17,8 @@ _global_script_class_icons={
 
 config/name="Dim"
 run/main_scene="res://Source/Scenes/Interface/MainMenu.tscn"
-config/icon="res://icon.png"
+config/icon="res://Resources/Cover.png"
+config/windows_native_icon="res://Resources/Game.ico"
 
 [autoload]
 
@@ -37,6 +38,7 @@ window/stretch/aspect="keep"
 [gui]
 
 theme/custom="res://Resources/Theme/Game Theme.tres"
+theme/custom_font="res://Resources/Theme/Fonts/Pixel Bug.tres"
 
 [input]
 
