@@ -17,8 +17,7 @@ _global_script_class_icons={
 
 config/name="Dim"
 run/main_scene="res://Source/Scenes/Interface/MainMenu.tscn"
-config/icon="res://Resources/Game Icon.png"
-config/windows_native_icon="res://Resources/Game Icon.ico"
+config/icon="res://Resources/Cover.png"
 
 [autoload]
 
