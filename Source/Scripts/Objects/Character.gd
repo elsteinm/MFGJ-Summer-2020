@@ -6,7 +6,7 @@ var acceleration
 var max_speed
 var velocity
 #Initialize with characters speed and stuff
-func _init(control, acc, max_sp).(control, true):
+func _init(control = false, acc = 500, max_sp = 100).(control, true):
 	acceleration = acc
 	max_speed = max_sp
 	

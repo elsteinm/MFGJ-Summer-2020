@@ -18,7 +18,6 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="GamePanel" type="Panel" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -68,6 +67,7 @@ __meta__ = {
 }
 
 [node name="HelpPanel" type="Panel" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
