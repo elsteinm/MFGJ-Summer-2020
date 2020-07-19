@@ -18,6 +18,7 @@ anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
 [node name="GamePanel" type="Panel" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 __meta__ = {
@@ -67,7 +68,6 @@ __meta__ = {
 }
 
 [node name="HelpPanel" type="Panel" parent="."]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 
@@ -78,7 +78,6 @@ margin_bottom = 0.119965
 bbcode_enabled = true
 bbcode_text = "[center]DIM THE WORLD.
 
-
 Take control of every object in the level and dim it.
 
 Avoid red lights from patrolling enemies. 
@@ -87,17 +86,15 @@ Lighting up too much can result in Game Over.
 Dim yourself to finish the level.
 
 
-
 WASD/Arrow Keys - move
 
 Mouse Move - look around
 
-Left Mouse Click on objects and enemies - take control
+Left Mouse Click on objects and enemies - take control.
 
 Right Mouse Click - Dim currently controlled character[/center]"
 text = "DIM THE WORLD.
 
-
 Take control of every object in the level and dim it.
 
 Avoid red lights from patrolling enemies. 
@@ -106,12 +103,11 @@ Lighting up too much can result in Game Over.
 Dim yourself to finish the level.
 
 
-
 WASD/Arrow Keys - move
 
 Mouse Move - look around
 
-Left Mouse Click on objects and enemies - take control
+Left Mouse Click on objects and enemies - take control.
 
 Right Mouse Click - Dim currently controlled character"
 scroll_active = false

@@ -13,10 +13,25 @@ export var is_controlled : bool setget set_control
 
 signal switch_control(new_host) #Signals switching to this object
 
-func _init(control, moveable):
-	self.is_moveable = moveable
-	self.is_active = true
-	self.is_controlled = control
+func _init(control = false, moveable = false):
+	is_moveable = moveable
+	is_active = true
+	is_controlled = control
+
+func _ready():
+	if is_controlled == true:
+		$ControlEffect.visible = true
+		$Camera2D.current = true #Sets the camera to the current controlled object
+	else:
+		$ControlEffect.visible = false
+		$Camera2D.current = false #Turns object's camera off when not controlled
+	
+	if is_active == false:
+		sprite.modulate = Color.black #Turns the character dark
+		set_process(false) #Turns off process so the object stops
+		light.enabled = false
+		light_area_collision.disabled = true
+		Main.remove_object_from_level(self)
 
 func _enter_tree():
 	var _error = self.connect("switch_control", Main, "switch_player_host")
@@ -36,10 +51,12 @@ func set_active(value):
 		light.enabled = false
 		light_area_collision.disabled = true
 		Main.remove_object_from_level(self)
+
 func _notification(what):
 	match what:
 		NOTIFICATION_PAUSED:
 			$ControlEffect.visible = false
+
 #Sets the is_controlled variable
 func set_control(value):
 	is_controlled = value
