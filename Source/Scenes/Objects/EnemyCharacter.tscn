@@ -38,7 +38,7 @@ color = Color( 0.929412, 0.368627, 0.368627, 1 )
 
 [node name="LightArea" parent="." index="5"]
 position = Vector2( -16, 0 )
-collision_layer = 16
+collision_layer = 24
 collision_mask = 2
 
 [node name="CollisionShape2D" parent="LightArea" index="0"]

@@ -2,7 +2,6 @@ extends "res://Source/Scripts/Objects/Character.gd"
 
 var space
 
-onready var light = $Light2D
 onready var player_collision = $LightArea/CollisionShape2D
 onready var light_area = $LightArea
 onready var raycast = $LightCast
@@ -85,7 +84,8 @@ func set_brightness(value):
 func _on_LightArea_area_shape_entered(_area_id, area, area_shape, _self_shape):
 	var shape_owner = area.shape_find_owner(area_shape)
 	var light_shape = area.shape_owner_get_owner(shape_owner)
-	lights.append(light_shape)
+	if area.get_collision_layer_bit(3) == true:
+		lights.append(light_shape)
 	if area.get_collision_layer_bit(4) == true:
 			red_lights.append(light_shape)
 	in_light = true

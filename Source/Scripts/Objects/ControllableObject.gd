@@ -3,6 +3,8 @@ extends KinematicBody2D
 onready var sprite = $Sprite
 onready var control_effect = $ControlEffect
 onready var camera = $Camera2D
+onready var light_area_collision = $LightArea/CollisionShape2D
+onready var light = $Light2D
 
 var is_moveable = false
 
@@ -31,7 +33,8 @@ func set_active(value):
 	if is_active == false:
 		sprite.modulate = Color.black #Turns the character dark
 		set_process(false) #Turns off process so the object stops
-		$Light2D.enabled = false
+		light.enabled = false
+		light_area_collision.disabled = true
 		Main.remove_object_from_level(self)
 
 #Sets the is_controlled variable

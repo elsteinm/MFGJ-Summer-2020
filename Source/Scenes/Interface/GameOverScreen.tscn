@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Source/Scripts/Interface/LevelFinishedScreen.gd" type="Script" id=1]
+[ext_resource path="res://Source/Scripts/Interface/GameOverScreen.gd" type="Script" id=1]
 
 [node name="GameOverScreen" type="CanvasLayer"]
 script = ExtResource( 1 )

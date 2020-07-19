@@ -12,8 +12,11 @@ onready var timer = $WaitTimer #timer for search state
 onready var patrol_path = get_parent() #base patrol path defined in the editor
 onready var player = PlayerInput.player_character 
 onready var raycast = $LightCast #raycast used to search whether the player is in light
+
 var navigation_source #source to get the navigation information from
 export(State) var current_state = State.PATROL
+
+var last_player_location = Vector2.ZERO
 
 var player_in_cone = false
 var player_in_view = false
@@ -80,6 +83,7 @@ func _physics_process(delta):
 				patrol_state(delta)
 				#if the awareness is over 1, we need to start chasing
 				if awareness >= 1:
+					last_player_location = player.get_global_position()
 					current_state = State.CHASE
 					look_at(player.transform.get_origin())
 					#raycast.set_cast_to(direction)
@@ -89,15 +93,22 @@ func _physics_process(delta):
 				if awareness <= 0.5:
 					timer.start()
 					current_state = State.SEARCH
+				elif awareness >= 0.9:
+					last_player_location = player.get_global_position()
 			State.SEARCH:
 				search_state(delta)
 				#if the player came back we go back to chasing him
 				#switching to return state is based on timer
 				if awareness >= 0.8:
+					last_player_location = player.get_global_position()
 					current_state = State.CHASE
 					look_at(player.transform.get_origin())
 			State.RETURN:
 				return_state(delta)
+				if awareness >= 0.9:
+					last_player_location = player.get_global_position()
+					current_state = State.CHASE
+					look_at(player.transform.get_origin())
 #this funcion handles the behavior of the guard in the patrol state
 #we check if the next point is to close, and then move to it if not
 func patrol_state(delta):
@@ -109,7 +120,7 @@ func patrol_state(delta):
 
 #this function gets the path to the player, and then goes towards him
 func chase_state(delta):
-	var new_path = navigation_source.get_simple_path(global_position,player.global_position,true)
+	var new_path = navigation_source.get_simple_path(global_position, last_player_location, true)
 	path_points = new_path
 	path_index = 0
 	if path_points.size() != 0:
@@ -124,7 +135,23 @@ func chase_state(delta):
 		move_on_path(path_points,path_index,delta)
 #search simply turns in a circle and looks for the player
 func search_state(delta):
-	rotation += delta * rotation_speed
+	var last_known_position_distance = global_position.distance_to(last_player_location)
+	if last_known_position_distance < min_distance:
+		rotation += delta * rotation_speed
+	else:
+		var new_path = navigation_source.get_simple_path(global_position, last_player_location, true)
+		path_points = new_path
+		path_index = 0
+		if path_points.size() != 0:
+			var distance = global_position.distance_to(path_points[path_index])
+			if distance < min_distance:
+				if path_index == path_points.size() - 1:
+					#if we are at the player, no need to move
+					return
+				else:
+					#move to the next point on the path, we are near the current one
+					path_index += 1
+			move_on_path(path_points,path_index,delta)
 #the guard moves towards the closest point on the original patrol path
 #once he reaches it he switches back to the original patrol state and
 #continues from the current point on the patrol path
