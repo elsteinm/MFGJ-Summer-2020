@@ -5,7 +5,6 @@ var TURN_SPEED = 0.5
 var acceleration
 var max_speed
 var velocity
-
 #Initialize with characters speed and stuff
 func _init(control, acc, max_sp).(control, true):
 	acceleration = acc
@@ -26,3 +25,7 @@ func move(input, delta):
 		velocity = velocity.move_toward(Vector2.ZERO, Helper.FRICTION * delta)
 	velocity = move_and_slide(velocity) #Move
 	self.rotation += (get_local_mouse_position().angle()+PI/2) *TURN_SPEED #Direction rotation
+
+func set_rotation(value):
+	if check_if_can_turn(value) == true:
+		.set_rotation(value)
