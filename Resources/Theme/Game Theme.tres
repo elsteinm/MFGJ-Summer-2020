@@ -1,32 +1,16 @@
-[gd_resource type="Theme" load_steps=22 format=2]
+[gd_resource type="Theme" load_steps=25 format=2]
 
 [ext_resource path="res://Resources/Theme/Fonts/Pixel Bug.tres" type="DynamicFont" id=1]
 
-[sub_resource type="StyleBoxFlat" id=1]
-content_margin_left = 2.0
-content_margin_right = 2.0
-content_margin_top = 0.0
-content_margin_bottom = 2.0
-bg_color = Color( 0.1708, 0.2075, 0.2867, 1 )
-border_width_left = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color( 0.41, 0.61, 0.91, 0.3 )
+[sub_resource type="StyleBoxEmpty" id=21]
 
-[sub_resource type="StyleBoxFlat" id=2]
-content_margin_left = 8.0
-content_margin_right = 8.0
-content_margin_top = 8.0
-content_margin_bottom = 8.0
-bg_color = Color( 0.125, 0.14375, 0.19375, 1 )
-border_width_left = 1
-border_width_top = 24
-border_width_right = 1
-border_width_bottom = 1
-border_color = Color( 0.125, 0.14375, 0.19375, 1 )
-expand_margin_top = 24.0
-shadow_color = Color( 0, 0, 0, 0.3 )
-shadow_size = 4
+[sub_resource type="StyleBoxEmpty" id=22]
+
+[sub_resource type="StyleBoxEmpty" id=23]
+
+[sub_resource type="StyleBoxEmpty" id=24]
+
+[sub_resource type="StyleBoxEmpty" id=25]
 
 [sub_resource type="StyleBoxFlat" id=3]
 content_margin_left = 10.0
@@ -172,7 +156,7 @@ shadow_size = 8
 
 [sub_resource type="StyleBoxEmpty" id=18]
 
-[sub_resource type="StyleBoxEmpty" id=19]
+[sub_resource type="StyleBoxEmpty" id=26]
 
 [sub_resource type="StyleBoxFlat" id=20]
 content_margin_left = 4.0
@@ -193,11 +177,11 @@ Button/colors/icon_color_hover = Color( 1.15, 1.15, 1.15, 1 )
 Button/colors/icon_color_pressed = Color( 0.4715, 0.7015, 1.0465, 1 )
 Button/constants/hseparation = 2
 Button/fonts/font = null
-Button/styles/disabled = SubResource( 1 )
-Button/styles/focus = SubResource( 2 )
-Button/styles/hover = null
-Button/styles/normal = null
-Button/styles/pressed = null
+Button/styles/disabled = SubResource( 21 )
+Button/styles/focus = SubResource( 22 )
+Button/styles/hover = SubResource( 23 )
+Button/styles/normal = SubResource( 24 )
+Button/styles/pressed = SubResource( 25 )
 CheckBox/colors/font_color = Color( 0, 0, 0, 1 )
 CheckBox/colors/font_color_disabled = Color( 0, 0, 0, 1 )
 CheckBox/colors/font_color_hover = Color( 0, 0, 0, 1 )
@@ -1145,7 +1129,7 @@ OptionButton/styles/focus = null
 OptionButton/styles/hover = null
 OptionButton/styles/normal = null
 OptionButton/styles/pressed = null
-Panel/styles/panel = SubResource( 19 )
+Panel/styles/panel = SubResource( 26 )
 PanelContainer/styles/panel = null
 PopupDialog/styles/panel = null
 PopupMenu/colors/font_color = Color( 0, 0, 0, 1 )
@@ -1180,7 +1164,7 @@ ProgressBar/fonts/font = null
 ProgressBar/styles/bg = null
 ProgressBar/styles/fg = null
 ProjectSettingsEditor/styles/panel = null
-RichTextLabel/colors/default_color = Color( 0, 0, 0, 1 )
+RichTextLabel/colors/default_color = Color( 1, 1, 1, 1 )
 RichTextLabel/colors/font_color_selected = Color( 0, 0, 0, 1 )
 RichTextLabel/colors/font_color_shadow = Color( 0, 0, 0, 1 )
 RichTextLabel/colors/selection_color = Color( 0, 0, 0, 1 )
