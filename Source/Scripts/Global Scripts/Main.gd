@@ -38,6 +38,7 @@ func finish_level():
 	_error = finished_screen.connect("next", self, "load_next_level")
 	_error = finished_screen.connect("menu", self, "load_menu")
 	current_level.add_child(finished_screen)
+	current_level.freeze = true
 	finished_screen.set_result(current_level.object_number, current_level.objects_dimmed)
 
 func game_over():
@@ -46,6 +47,7 @@ func game_over():
 	_error = game_over_screen.connect("retry", self, "reload_level")
 	_error = game_over_screen.connect("menu", self, "load_menu")
 	current_level.add_child(game_over_screen)
+	current_level.freeze = true
 
 func reload_level():
 	erase_level()
