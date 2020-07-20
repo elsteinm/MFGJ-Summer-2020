@@ -1,15 +1,19 @@
 extends Node
 
 var MainMenu = preload("res://Source/Scenes/Interface/MainMenu.tscn")
+var PauseScreen = preload("res://Source/Scenes/Interface/PauseScreen.tscn")
 var LevelFinishedScreen = preload("res://Source/Scenes/Interface/LevelFinishedScreen.tscn")
 var GameOverScreen = preload("res://Source/Scenes/Interface/GameOverScreen.tscn")
 var LevelPackedScene
+
+var game_paused = false setget set_game_paused
 
 var level_number setget set_level_number
 var current_level
 
 func _ready():
 	var _error
+	_error = PlayerInput.connect("pause", self, "pause_game") #Tells the level that the player has paused the game
 	_error = PlayerInput.connect("switch_control", self, "switch_player_host") #Tells the level that the player has changed host
 	_error = PlayerInput.connect("finish_level", self, "finish_level") #Tells the level when the player has been turned off
 	self.level_number = 2020
@@ -20,12 +24,26 @@ func load_level(lvl_num):
 	current_level = LevelPackedScene.instance()
 	get_tree().root.add_child(current_level)
 	PlayerInput.playing = true
-	get_tree().paused = false
+	self.game_paused = false
 
 #Erase and remove the current level
 func erase_level():
 	get_tree().root.remove_child(current_level)
 	PlayerInput.playing = false
+
+#Pauses game
+func pause_game():
+	var pause_screen = PauseScreen.instance()
+	var _error
+	_error = pause_screen.connect("unpause", self, "unpause_game")
+	current_level.add_child(pause_screen)
+	self.game_paused = true
+
+#Unpauses game
+func unpause_game(pause_screen):
+	current_level.remove_child(pause_screen)
+	pause_screen.queue_free()
+	self.game_paused = false
 
 #Switches the player control into a new character
 func switch_player_host(new_host):
@@ -39,7 +57,7 @@ func finish_level():
 	_error = finished_screen.connect("next", self, "load_next_level")
 	_error = finished_screen.connect("menu", self, "load_menu")
 	current_level.add_child(finished_screen)
-	get_tree().paused = true
+	self.game_paused = true
 	finished_screen.set_result(current_level.object_number, current_level.objects_dimmed)
 
 func game_over():
@@ -48,7 +66,7 @@ func game_over():
 	_error = game_over_screen.connect("retry", self, "reload_level")
 	_error = game_over_screen.connect("menu", self, "load_menu")
 	current_level.add_child(game_over_screen)
-	get_tree().paused = true
+	self.game_paused = true
 
 func reload_level():
 	erase_level()
@@ -64,6 +82,14 @@ func load_menu():
 	var menu = MainMenu.instance()
 	get_tree().root.add_child(menu)
 	get_tree().paused = false
+
+func set_game_paused(value):
+	if value == true:
+		game_paused = true
+		get_tree().paused = true
+	else:
+		game_paused = false
+		get_tree().paused = false
 
 func set_level_number(num):
 	if num <= Helper.LEVELS: #If level X exists

@@ -5,6 +5,7 @@ var control setget set_control #The object the player is currently controlling
 var control_queue = Array() #The queue of previously controlled objects
 var playing = false setget set_playing
 
+signal pause
 signal switch_control(new_host) #Switches control over to the new host
 signal finish_level #Signals the player turning off the player character to finish the level
 
@@ -21,6 +22,8 @@ func _physics_process(delta):
 	#Turn off command
 	if Input.is_action_just_pressed("p_turn_off"):
 		turn_off()
+	if Input.is_action_just_pressed("ui_cancel"):
+		emit_signal("pause")
 
 func set_playing(value):
 	playing = value

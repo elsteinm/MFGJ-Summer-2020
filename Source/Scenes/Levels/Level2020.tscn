@@ -31,7 +31,7 @@ tile_data = PoolIntArray( -1048595, 1, 0, -1048594, 1, 0, -1048593, 1, 0, -10485
 position = Vector2( 64, 64 )
 
 [node name="Object" parent="." index="4" instance=ExtResource( 3 )]
-position = Vector2( -272, -320 )
+position = Vector2( -248, -264 )
 rotation = 1.5708
 
 [node name="Object2" parent="." index="5" instance=ExtResource( 3 )]
@@ -82,7 +82,7 @@ curve = SubResource( 3 )
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D3" index="0"]
 position = Vector2( -608.031, -800 )
-rotation = 1.83878
+rotation = 1.8388
 offset = 200.0
 lookahead = 35.0
 __meta__ = {

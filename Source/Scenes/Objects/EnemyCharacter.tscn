@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Source/Scenes/Objects/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Graphics/Objects/character sprite sheet.png" type="Texture" id=2]
@@ -10,6 +10,10 @@ points = PoolVector2Array( 16.5, 16.5, 16.5, -16.5, -16.5, 0 )
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 points = PoolVector2Array( 0, 0, 231, 116, 231, -116 )
+
+[sub_resource type="OccluderPolygon2D" id=3]
+cull_mode = 1
+polygon = PoolVector2Array( -16, 0, 16, -16, 16, 16 )
 
 [node name="EnemyCharacter" groups=[
 "enemy",
@@ -28,15 +32,19 @@ region_rect = Rect2( 39, 0, 35, 35 )
 visible = false
 shape = SubResource( 1 )
 
+[node name="Camera2D" parent="." index="2"]
+visible = false
+
 [node name="Light2D" parent="." index="4"]
-position = Vector2( 40, 0 )
+position = Vector2( -16, 0 )
 rotation = -1.5708
 texture = ExtResource( 4 )
-offset = Vector2( 0, 61 )
+offset = Vector2( 0, 116 )
 texture_scale = 1.5
 color = Color( 0.929412, 0.368627, 0.368627, 1 )
 
 [node name="LightArea" parent="." index="5"]
+visible = false
 position = Vector2( -16, 0 )
 collision_layer = 24
 collision_mask = 2
@@ -44,16 +52,21 @@ collision_mask = 2
 [node name="CollisionShape2D" parent="LightArea" index="0"]
 shape = SubResource( 2 )
 
-[node name="LightCast" parent="." index="6"]
+[node name="LightOccluder2D" parent="." index="6"]
+visible = false
+occluder = SubResource( 3 )
+
+[node name="WaitTimer" type="Timer" parent="." index="7"]
+wait_time = 8.0
+one_shot = true
+
+[node name="LightCast" parent="." index="8"]
+visible = false
 enabled = true
 exclude_parent = false
 cast_to = Vector2( 1, 0 )
 collision_mask = 3
 collide_with_areas = true
-
-[node name="WaitTimer" type="Timer" parent="." index="7"]
-wait_time = 8.0
-one_shot = true
 [connection signal="body_entered" from="LightArea" to="." method="_on_LightArea_body_entered"]
 [connection signal="body_exited" from="LightArea" to="." method="_on_LightArea_body_exited"]
 [connection signal="timeout" from="WaitTimer" to="." method="_on_WaitTimer_timeout"]

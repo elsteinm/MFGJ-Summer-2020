@@ -1,15 +1,19 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Source/Scenes/Objects/ControllableObject.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Graphics/Objects/character sprite sheet.png" type="Texture" id=2]
 [ext_resource path="res://Source/Scripts/Objects/Object.gd" type="Script" id=3]
 [ext_resource path="res://Graphics Files/lights/circle light shape.png" type="Texture" id=4]
 
-[sub_resource type="CircleShape2D" id=1]
+[sub_resource type="CircleShape2D" id=4]
 radius = 18.0
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 73.0
+
+[sub_resource type="OccluderPolygon2D" id=3]
+cull_mode = 1
+polygon = PoolVector2Array( 3, 17, 6, 16, 8, 15, 10, 14, 11, 13, 12, 12, 13, 11, 14, 10, 15, 8, 16, 6, 17, 4, 18, 0, 17, -5, 16, -7, 15, -9, 14, -10, 13, -12, 12, -13, 11, -14, 9, -15, 8, -16, 5, -17, 0, -18, -6, -17, -8, -16, -10, -15, -11, -14, -12, -13, -13, -12, -14, -11, -15, -10, -16, -8, -17, -6, -18, 0, -17, 5, -16, 7, -15, 9, -14, 10, -13, 11, -12, 12, -11, 13, -10, 14, -8, 15, -6, 16, -4, 17, 0, 18 )
 
 [node name="Object" instance=ExtResource( 1 )]
 collision_layer = 4
@@ -22,15 +26,19 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 35, 35 )
 
 [node name="ObjectCollision" parent="." index="1"]
-shape = SubResource( 1 )
+visible = false
+shape = SubResource( 4 )
 
 [node name="Light2D" parent="." index="4"]
 texture = ExtResource( 4 )
 color = Color( 1, 0.94902, 0.0392157, 1 )
 
 [node name="LightArea" parent="." index="5"]
-collision_layer = 8
-collision_mask = 0
+visible = false
 
 [node name="CollisionShape2D" parent="LightArea" index="0"]
+visible = false
 shape = SubResource( 2 )
+
+[node name="LightOccluder2D" parent="." index="6"]
+occluder = SubResource( 3 )
