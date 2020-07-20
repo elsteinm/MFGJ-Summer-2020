@@ -7,7 +7,7 @@ var GameOverScreen = preload("res://Source/Scenes/Interface/GameOverScreen.tscn"
 var LevelPackedScene
 
 var game_paused = false setget set_game_paused
-
+var mouse_control = true
 var level_number setget set_level_number
 var current_level
 

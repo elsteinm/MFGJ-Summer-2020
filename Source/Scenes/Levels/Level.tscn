@@ -33,6 +33,7 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
+generate = false
 
 [node name="base global light" type="Light2D" parent="Navigation2D"]
 position = Vector2( 449.792, 331.359 )

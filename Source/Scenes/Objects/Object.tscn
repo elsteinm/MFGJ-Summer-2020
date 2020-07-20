@@ -5,7 +5,7 @@
 [ext_resource path="res://Source/Scripts/Objects/Object.gd" type="Script" id=3]
 [ext_resource path="res://Graphics Files/lights/circle light shape.png" type="Texture" id=4]
 
-[sub_resource type="CircleShape2D" id=4]
+[sub_resource type="CircleShape2D" id=1]
 radius = 18.0
 
 [sub_resource type="CircleShape2D" id=2]
@@ -27,7 +27,7 @@ region_rect = Rect2( 0, 0, 35, 35 )
 
 [node name="ObjectCollision" parent="." index="1"]
 visible = false
-shape = SubResource( 4 )
+shape = SubResource( 1 )
 
 [node name="Light2D" parent="." index="4"]
 texture = ExtResource( 4 )
