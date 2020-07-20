@@ -3,12 +3,10 @@ extends Node
 var LevelPackedScene
 
 var game_paused = false setget set_game_paused
-<<<<<<< HEAD
 var mouse_control = true
-=======
+
 var pause_screen = null
 
->>>>>>> ac676979d0215660add1f1c5a6a57ef987a4901c
 var level_number setget set_level_number
 var current_level
 

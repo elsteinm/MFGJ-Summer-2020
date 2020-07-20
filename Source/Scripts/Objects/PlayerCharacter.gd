@@ -24,6 +24,7 @@ func _init().(true, 500, 150):
 	pass
 
 func _ready():
+	is_controlled = true
 	space = get_world_2d().direct_space_state
 	var global_player_polygon = get_global_shape()
 	player_area = Helper.get_polygon_area(global_player_polygon)
