@@ -93,7 +93,8 @@ func set_control_target(value):
 func _input(event):
 	if is_controlled == true and is_active == true:
 		if control_target != null and event.is_action_pressed("p_action"):
-			start_take_over(control_target)
+#			start_take_over(control_target)
+			_on_takeOverTween_tween_completed()
 
 func start_take_over(target):
 	$ControlEffect.scale.x = 0.5
@@ -139,6 +140,6 @@ func set_strech_location(value):
 	$ControlEffect.material.set_shader_param('target_strech',value)
 	strech_location = value
 
-func _on_takeOverTween_tween_completed(object, key):
+func _on_takeOverTween_tween_completed(object = null, key = null):
 	emit_signal('switch_control',control_target)
 	set_control_target(null)
