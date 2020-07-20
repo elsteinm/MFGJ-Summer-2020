@@ -54,7 +54,7 @@ func _ready():
 	#the step is based on unit_offset, which ranges from 0-1
 	#the step is the full range of the path devided by the amount of points we want
 	var step = 1.0/path.size() * 5
-	for i in range(path.size() * 5):
+	for _i in range(path.size() * 5):
 		original_path.append(patrol_path.get_global_position())
 		patrol_path.unit_offset += step 
 	path_points = original_path
@@ -62,7 +62,7 @@ func _ready():
 #in the process function we handle player detection. has 2 parts:
 #	1. check if the player is directly in view(based on a raycast)
 #	2. call detect player which handles the rest of the detection
-func _process(delta):
+func _process(_delta):
 	if player_in_cone == true:
 		var space = get_world_2d().direct_space_state
 		var result = space.intersect_ray(global_position, player.transform.get_origin(), [self], raycast.collision_mask)
@@ -71,7 +71,6 @@ func _process(delta):
 		else:
 			player_in_view = false
 	var current_position = transform.get_origin()
-	var facing = raycast.get_cast_to()
 	detect_player(direction, current_position)
 
 #in this function we handle the actual movement of the guard, depending on his state
@@ -190,14 +189,14 @@ func detect_player(facing, pos):
 				#lower level of awareness, player isn't in view
 				awareness -= 0.1
 
-func move_on_path(path, index, delta):
+func move_on_path(path, index, _delta):
 	#move vector is target of movement
 	var move_vector = path[index] - global_position
 	#calculate new speed with accelration, maxed at max speed
 	speed = clamp(speed + acceleration,0,max_speed)
-	move_and_slide(move_vector.normalized() * speed)
+	var _v = move_and_slide(move_vector.normalized() * speed)
 	#turn to where we are going, smoothed out
-	var direction = (path[index] + move_vector)
+	direction = (path[index] + move_vector)
 	self.rotation += get_angle_to(direction) * 0.1
 	#not sure why this return false
 	return false
@@ -218,10 +217,10 @@ func set_patrol_index(value):
 	else:
 		patrol_index = 0
 #the player is in the cone of light
-func _on_LightArea_body_entered(body):
+func _on_LightArea_body_entered(_body):
 	player_in_cone = true
 #player left cone
-func _on_LightArea_body_exited(body):
+func _on_LightArea_body_exited(_body):
 	player_in_cone = false
 	player_in_view = false
 #called by signal from the level, gives the navigation source

@@ -1,22 +1,30 @@
 extends Node
 
-var MainMenu = preload("res://Source/Scenes/Interface/MainMenu.tscn")
-var PauseScreen = preload("res://Source/Scenes/Interface/PauseScreen.tscn")
-var LevelFinishedScreen = preload("res://Source/Scenes/Interface/LevelFinishedScreen.tscn")
-var GameOverScreen = preload("res://Source/Scenes/Interface/GameOverScreen.tscn")
 var LevelPackedScene
 
 var game_paused = false setget set_game_paused
+<<<<<<< HEAD
 var mouse_control = true
+=======
+var pause_screen = null
+
+>>>>>>> ac676979d0215660add1f1c5a6a57ef987a4901c
 var level_number setget set_level_number
 var current_level
 
 func _ready():
+	pause_mode = Node.PAUSE_MODE_PROCESS
 	var _error
-	_error = PlayerInput.connect("pause", self, "pause_game") #Tells the level that the player has paused the game
 	_error = PlayerInput.connect("switch_control", self, "switch_player_host") #Tells the level that the player has changed host
 	_error = PlayerInput.connect("finish_level", self, "finish_level") #Tells the level when the player has been turned off
 	self.level_number = 2020
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		if game_paused == true:
+			unpause_game()
+		else:
+			pause_game()
 
 #Load the level
 func load_level(lvl_num):
@@ -33,16 +41,17 @@ func erase_level():
 
 #Pauses game
 func pause_game():
-	var pause_screen = PauseScreen.instance()
+	pause_screen = Helper.PauseScreen.instance()
 	var _error
-	_error = pause_screen.connect("unpause", self, "unpause_game")
 	current_level.add_child(pause_screen)
+	AudioPlayer.volume_db = -16
 	self.game_paused = true
 
 #Unpauses game
-func unpause_game(pause_screen):
+func unpause_game():
 	current_level.remove_child(pause_screen)
 	pause_screen.queue_free()
+	AudioPlayer.volume_db = 0
 	self.game_paused = false
 
 #Switches the player control into a new character
@@ -51,21 +60,25 @@ func switch_player_host(new_host):
 
 #Finish the level
 func finish_level():
-	var finished_screen = LevelFinishedScreen.instance()
+	var finished_screen = Helper.LevelFinishedScreen.instance()
 	var _error
 	_error = finished_screen.connect("retry", self, "reload_level")
 	_error = finished_screen.connect("next", self, "load_next_level")
 	_error = finished_screen.connect("menu", self, "load_menu")
 	current_level.add_child(finished_screen)
+	AudioPlayer.stop_music()
+	AudioPlayer.play_effect(Helper.end_level_effect)
 	self.game_paused = true
 	finished_screen.set_result(current_level.object_number, current_level.objects_dimmed)
 
 func game_over():
-	var game_over_screen = GameOverScreen.instance()
+	var game_over_screen = Helper.GameOverScreen.instance()
 	var _error
 	_error = game_over_screen.connect("retry", self, "reload_level")
 	_error = game_over_screen.connect("menu", self, "load_menu")
 	current_level.add_child(game_over_screen)
+	AudioPlayer.stop_music()
+	AudioPlayer.play_effect(Helper.end_level_effect)
 	self.game_paused = true
 
 func reload_level():
@@ -79,7 +92,7 @@ func load_next_level():
 
 func load_menu():
 	erase_level()
-	var menu = MainMenu.instance()
+	var menu = Helper.MainMenu.instance()
 	get_tree().root.add_child(menu)
 	get_tree().paused = false
 
