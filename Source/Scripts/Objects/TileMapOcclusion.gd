@@ -15,7 +15,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-func generate_occlusion(value):
+func generate_occlusion(_value):
 	var used = get_used_rect()
 	print("before: " + str(used))
 	used.position = used.position - Vector2(4,4)

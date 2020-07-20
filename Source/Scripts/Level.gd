@@ -1,5 +1,7 @@
 extends Node2D
 
+var level_music = load("res://Resources/Audio/Music/Kevin MacLeod - Envision.ogg")
+
 var objects : Array = []
 var object_number = 0
 var objects_dimmed = 0

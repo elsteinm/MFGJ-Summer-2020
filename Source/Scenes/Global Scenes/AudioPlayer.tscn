@@ -1,3 +1,14 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
 
-[node name="AudioPlayer" type="AudioStreamPlayer"]
+[ext_resource path="res://Source/Scripts/Global Scripts/AudioPlayer.gd" type="Script" id=2]
+
+[node name="AudioPlayer" type="Node"]
+pause_mode = 2
+script = ExtResource( 2 )
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+mix_target = 1
+bus = "MusicBus"
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+bus = "SFXBus"

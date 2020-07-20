@@ -1,5 +1,12 @@
 extends Node
 
+var MainMenu = preload("res://Source/Scenes/Interface/MainMenu.tscn")
+var PauseScreen = preload("res://Source/Scenes/Interface/PauseScreen.tscn")
+var LevelFinishedScreen = preload("res://Source/Scenes/Interface/LevelFinishedScreen.tscn")
+var GameOverScreen = preload("res://Source/Scenes/Interface/GameOverScreen.tscn")
+
+var end_level_effect = load("res://Resources/Audio/Music/EndEffect.wav")
+
 const FRICTION = 750 #Floor friction
 const LEVELS = 2020 #Number of levels in the game
 
