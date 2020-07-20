@@ -28,7 +28,6 @@ func load_level(lvl_num):
 	current_level = LevelPackedScene.instance()
 	get_tree().root.add_child(current_level)
 	PlayerInput.playing = true
-	AudioPlayer.play_music(current_level.level_music)
 	self.game_paused = false
 
 #Erase and remove the current level

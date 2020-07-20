@@ -3,7 +3,7 @@ extends Node2D
 onready var player = $PlayerCharacter
 onready var tween = $Tween
 
-var level_music = load("res://Resources/Audio/Music/Kevin MacLeod - Envision.ogg")
+var level_music = load("res://Resources/Audio/Music/Envision-Loop.ogg")
 
 var objects : Array = []
 var object_number = 0
@@ -18,6 +18,8 @@ func _init():
 func _ready():
 	get_tree().call_group("enemy", "get_nav", $Navigation2D)
 	enemies = get_tree().get_nodes_in_group("enemy")
+	AudioPlayer.play_music(level_music)
+	AudioPlayer.music_pitch = 0.8
 
 func _process(_delta):
 	var shortest_distance = 150
