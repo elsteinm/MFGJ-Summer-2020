@@ -7,7 +7,7 @@ onready var light_area_collision = $LightArea/CollisionShape2D
 onready var light = $Light2D
 
 var is_moveable = false
-
+var strech_location = 0 setget set_strech_location
 export var is_active = true setget set_active
 export var is_controlled : bool setget set_control
 export var radius_of_control = 192
@@ -21,6 +21,7 @@ func _init(control = false, moveable = false):
 	is_controlled = control
 
 func _ready():
+	$ControlEffect.set_material($ControlEffect.get_material().duplicate())
 	if is_controlled == true:
 		$ControlEffect.visible = true
 		$Camera2D.current = true #Sets the camera to the current controlled object
@@ -92,13 +93,14 @@ func set_control_target(value):
 func _input(event):
 	if is_controlled == true and is_active == true:
 		if control_target != null and event.is_action_pressed("p_action"):
-			emit_signal('switch_control',control_target)
-			set_control_target(null)
-#func _input_event(_viewport, event, _shape_idx):
-#	if is_active == true:
-#		if event.is_action_pressed("p_action"): #When the object is pressed
-#			emit_signal("switch_control", self)
+			start_take_over(control_target)
 
+func start_take_over(target):
+	$ControlEffect.scale.x = 0.5
+	$takeOverTween.interpolate_method(self,'set_strech_location',0,global_position.distance_to(target.global_position),1)
+	$takeOverTween.start()
+	$ControlEffect.material.set_shader_param('need_strech',true)
+	set_process(false)
 #Sets the is_active variable
 func set_active(value):
 	is_active = value
@@ -108,6 +110,7 @@ func set_active(value):
 		light.enabled = false
 		light_area_collision.disabled = true
 		Main.remove_object_from_level(self)
+		$ControlEffect.visible = false
 
 func _notification(what):
 	match what:
@@ -119,10 +122,12 @@ func set_control(value):
 	is_controlled = value
 	if is_controlled == true:
 		$ControlEffect.visible = true
+		$ControlEffect.material.set_shader_param('need_strech', false)
+		set_strech_location(0)
+		set_process(true)
 		$marker.visible = true
 		$Camera2D.current = true #Sets the camera to the current controlled object
 	else:
-		$ControlEffect.visible = false
 		$marker.visible = false
 		$Camera2D.current = false #Turns object's camera off when not controlled
 
@@ -130,9 +135,10 @@ func _exit_tree():
 	queue_free()
 
 
-#func _on_controlArea_body_entered(body):
-#	list_of_targets.append(body)
-#
-#
-#func _on_controlArea_body_exited(body):
-#	list_of_targets.remove(body)
+func set_strech_location(value):
+	$ControlEffect.material.set_shader_param('target_strech',value)
+	strech_location = value
+
+func _on_takeOverTween_tween_completed(object, key):
+	emit_signal('switch_control',control_target)
+	set_control_target(null)

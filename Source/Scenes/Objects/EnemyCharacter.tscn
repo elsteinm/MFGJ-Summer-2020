@@ -33,17 +33,9 @@ region_enabled = true
 region_rect = Rect2( 39, 0, 35, 35 )
 
 [node name="ObjectCollision" parent="." index="1"]
-visible = false
 shape = SubResource( 1 )
 
-[node name="Camera2D" parent="." index="2"]
-visible = false
-
-[node name="ControlEffect" parent="." index="3"]
-modulate = Color( 0.113725, 0.027451, 0.329412, 1 )
-
 [node name="Light2D" parent="." index="4"]
-visible = false
 position = Vector2( -16, 0 )
 rotation = -1.5708
 texture = ExtResource( 4 )
@@ -52,7 +44,6 @@ texture_scale = 1.5
 color = Color( 0.929412, 0.368627, 0.368627, 1 )
 
 [node name="LightArea" parent="." index="5"]
-visible = false
 position = Vector2( -16, 0 )
 collision_layer = 24
 collision_mask = 2
@@ -61,7 +52,6 @@ collision_mask = 2
 shape = SubResource( 2 )
 
 [node name="LightOccluder2D" parent="." index="6"]
-visible = false
 occluder = SubResource( 3 )
 
 [node name="WaitTimer" type="Timer" parent="." index="7"]

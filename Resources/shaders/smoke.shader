@@ -6,7 +6,15 @@ shader_type canvas_item;
 uniform vec2 center = vec2(0.5, 0.8);
 
 uniform int OCTAVES = 6;
-
+uniform float target_strech;
+uniform bool need_strech = false;
+void vertex()
+{
+	if (UV.y > 0.5 && need_strech == true)
+	{
+		VERTEX.y += target_strech 
+	}
+}
 float rand(vec2 coord){
 	return fract(sin(dot(coord, vec2(12.9898, 78.233)))* 43758.5453123);
 }
