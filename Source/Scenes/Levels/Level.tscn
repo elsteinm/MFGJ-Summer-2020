@@ -53,3 +53,5 @@ __meta__ = {
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
