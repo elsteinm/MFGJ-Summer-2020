@@ -3,16 +3,16 @@ shader_type canvas_item;
 // Gonkee's smoke shader for Godot 3 - full tutorial https://youtu.be/ZkeRKXCoJNo
 // If you use this shader, I would prefer it if you gave credit to me and my channel
 
-uniform vec2 center = vec2(0.5, 0.8);
+uniform vec2 center = vec2(.0, .0);
 
 uniform int OCTAVES = 6;
 uniform float target_strech;
 uniform bool need_strech = false;
 void vertex()
 {
-	if (UV.y > 0.5 && need_strech == true)
+	if (UV.y > 0.5)
 	{
-		VERTEX.y += target_strech 
+		//VERTEX.y += sin(TIME) * 20.0;
 	}
 }
 float rand(vec2 coord){
@@ -61,7 +61,8 @@ float egg_shape(vec2 coord, float radius){
 }
 
 void fragment() {
-	vec2 scaled_coord = UV * 6.0;
+	vec2 scaled_coord = UV * 20.0;
+	
 	
 	float warp = UV.y;
 	float dist_from_center = abs(UV.x - 0.5) * 4.0;
@@ -84,7 +85,7 @@ void fragment() {
 	smoke_fbm /= egg_s;
 	smoke_fbm = sqrt(smoke_fbm);
 	smoke_fbm = clamp(smoke_fbm, 0.0, 1.0);
-	
+//	COLOR = vec4(1.0);
 	COLOR = vec4(smoke_fbm);
 //	COLOR = vec4(vec3(egg_s), 1.0);
 }

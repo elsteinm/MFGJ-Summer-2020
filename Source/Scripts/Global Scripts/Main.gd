@@ -42,14 +42,14 @@ func pause_game():
 	pause_screen = Helper.PauseScreen.instance()
 	var _error
 	current_level.add_child(pause_screen)
-	AudioPlayer.volume_db = -16
+	AudioPlayer.get_node("MusicPlayer").volume_db = -16
 	self.game_paused = true
 
 #Unpauses game
 func unpause_game():
 	current_level.remove_child(pause_screen)
 	pause_screen.queue_free()
-	AudioPlayer.volume_db = 0
+	AudioPlayer.get_node("MusicPlayer").volume_db = 0
 	self.game_paused = false
 
 #Switches the player control into a new character
@@ -78,6 +78,7 @@ func game_over():
 	AudioPlayer.stop_music()
 	AudioPlayer.play_effect(Helper.end_level_effect)
 	self.game_paused = true
+	
 
 func reload_level():
 	erase_level()
@@ -98,9 +99,11 @@ func set_game_paused(value):
 	if value == true:
 		game_paused = true
 		get_tree().paused = true
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
 		game_paused = false
 		get_tree().paused = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func set_level_number(num):
 	if num <= Helper.LEVELS: #If level X exists

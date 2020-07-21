@@ -72,9 +72,6 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="controlArea" index="0"]
 rotation = -1.5708
 shape = SubResource( 4 )
-
-[node name="marker" parent="." index="10"]
-visible = true
 [connection signal="body_entered" from="LightArea" to="." method="_on_LightArea_body_entered"]
 [connection signal="body_exited" from="LightArea" to="." method="_on_LightArea_body_exited"]
 [connection signal="timeout" from="WaitTimer" to="." method="_on_WaitTimer_timeout"]

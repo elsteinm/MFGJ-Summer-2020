@@ -75,6 +75,7 @@ func move_marker():
 	else:
 		$marker.modulate = Color(1,0,0)
 		in_range = false
+	$marker.rotation = -rotation
 		
 func make_target(make):
 	if make == true:
@@ -85,6 +86,7 @@ func make_target(make):
 func set_control_target(value):
 	if control_target != null and control_target != value:
 		control_target.make_target(false)
+		control_target = null
 	if value != null:
 		value.make_target(true)
 		control_target = value

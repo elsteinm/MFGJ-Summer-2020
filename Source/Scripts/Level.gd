@@ -20,7 +20,8 @@ func _ready():
 	enemies = get_tree().get_nodes_in_group("enemy")
 	AudioPlayer.play_music(level_music)
 	AudioPlayer.music_pitch = 0.8
-
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	
 func _process(_delta):
 	var shortest_distance = 150
 	for enemy in enemies:
