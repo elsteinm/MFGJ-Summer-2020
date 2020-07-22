@@ -76,7 +76,7 @@ func _process(_delta):
 #in this function we handle the actual movement of the guard, depending on his state
 func _physics_process(delta):
 	#if the character isn't controlled by player and is active	
-	if is_active == true and is_controlled == false:
+	if is_active == true and is_controlled == false and freeze == false:
 		match current_state:
 			State.PATROL:
 				patrol_state(delta)

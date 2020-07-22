@@ -19,6 +19,7 @@ func _physics_process(delta):
 		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 		input_vector = input_vector.normalized()
 		control.move(input_vector, delta)
+		 
 #		if last_control != null:
 #			last_control.set_strech_location(last_control.global_position.distance_to(control.global_position))
 	#Turn off command

@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Source/Scripts/Objects/ControllableObject.gd" type="Script" id=1]
+[ext_resource path="res://Source/Scenes/Objects/ControlLine.tscn" type="PackedScene" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://Resources/shaders/smoke.shader" type="Shader" id=4]
 [ext_resource path="res://Resources/Graphics/Objects/crosschairs.png" type="Texture" id=5]
@@ -78,4 +79,8 @@ enabled = true
 collision_mask = 4
 
 [node name="takeOverTween" type="Tween" parent="."]
+
+[node name="ControlLine" parent="." instance=ExtResource( 2 )]
+visible = false
+extend_to = Vector2( 0, 0 )
 [connection signal="tween_completed" from="takeOverTween" to="." method="_on_takeOverTween_tween_completed"]
