@@ -159,6 +159,6 @@ func _on_takeOverTween_tween_completed(_object = null, _key = null):
 	else:
 		PlayerInput.remove_first_after_return()
 #	$Camera2D.position = Vector2(0,0)
-func set_marker(marker):
-	self.marker = marker
+func set_marker(marker_loc):
+	self.marker = marker_loc
 

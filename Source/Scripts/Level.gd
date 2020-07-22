@@ -30,7 +30,6 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	ui.update_progress(progress)
 	get_tree().call_group('controllable objects','set_marker',$Marker)
-	PlayerInput.current_level = self
 	
 func _process(_delta):
 	var shortest_distance = 150

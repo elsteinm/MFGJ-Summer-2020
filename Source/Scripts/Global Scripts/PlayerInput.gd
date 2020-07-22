@@ -39,8 +39,8 @@ func _physics_process(delta):
 
 func set_playing(value):
 	playing = value
+	set_physics_process(playing)
 	if playing == false:
-		pass
 		control = null
 		control_queue = Array()
 
