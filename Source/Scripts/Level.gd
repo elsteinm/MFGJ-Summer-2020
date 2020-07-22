@@ -5,6 +5,7 @@ onready var player = $PlayerCharacter
 
 var level_music = load("res://Resources/Audio/Music/Envision-Loop.ogg")
 
+var MARKER_SPEED = 150
 var object_number = 0
 var objects_dimmed = 0
 var progress = "0/1"
@@ -21,12 +22,15 @@ func _init():
 	PlayerInput.playing = true
 
 func _ready():
+	$Marker.position = $PlayerCharacter.position
 	get_tree().call_group("enemy", "get_nav", $Navigation2D)
 	enemies = get_tree().get_nodes_in_group("enemy")
 	AudioPlayer.play_music(level_music)
 	AudioPlayer.music_pitch = 0.8
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	ui.update_progress(progress)
+	get_tree().call_group('controllable objects','set_marker',$Marker)
+	PlayerInput.current_level = self
 	
 func _process(_delta):
 	var shortest_distance = 150
@@ -62,3 +66,18 @@ func _on_LevelTimer_timeout():
 		timer_min +=1
 	time = str(timer_min) + ":" + str(timer_sec) + ":" + str(timer_ms)
 	ui.update_time(time)
+func move_camera(new_position):
+	$Camera2D.position = to_local(new_position)
+
+func move_marker(mouse_control,move_vector = Vector2.ZERO,delta = 0):
+	if mouse_control == true:
+		$Marker.position = get_local_mouse_position()
+	else:
+		var view_port_rect = get_viewport().get_visible_rect()
+		#var real_view_port = 
+		view_port_rect.position = view_port_rect.position + $Camera2D.position - view_port_rect.size / 2
+		view_port_rect.end = view_port_rect.position + view_port_rect.size
+		var to_add = move_vector * delta * MARKER_SPEED
+		$Marker.position += to_add
+		$Marker.position.x = clamp($Marker.position.x,view_port_rect.position.x,view_port_rect.end.x)
+		$Marker.position.y = clamp($Marker.position.y,view_port_rect.position.y,view_port_rect.end.y)

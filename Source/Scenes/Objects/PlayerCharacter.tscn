@@ -51,8 +51,5 @@ occluder = SubResource( 3 )
 
 [node name="LightCast" parent="." index="7"]
 collision_mask = 5
-
-[node name="marker" parent="." index="8"]
-visible = true
 [connection signal="area_shape_entered" from="LightArea" to="." method="_on_LightArea_area_shape_entered"]
 [connection signal="area_shape_exited" from="LightArea" to="." method="_on_LightArea_area_shape_exited"]

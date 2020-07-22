@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Source/Scripts/Objects/ControllableObject.gd" type="Script" id=1]
 [ext_resource path="res://Source/Scenes/Objects/ControlLine.tscn" type="PackedScene" id=2]
 [ext_resource path="res://icon.png" type="Texture" id=3]
 [ext_resource path="res://Resources/shaders/smoke.shader" type="Shader" id=4]
-[ext_resource path="res://Resources/Graphics/Objects/crosschairs.png" type="Texture" id=5]
 
 [sub_resource type="Shader" id=1]
 code = "shader_type canvas_item;
@@ -36,7 +35,9 @@ shader_param/OCTAVES = 6
 shader_param/target_strech = 0.0
 shader_param/need_strech = false
 
-[node name="ControllableObject" type="KinematicBody2D"]
+[node name="ControllableObject" type="KinematicBody2D" groups=[
+"controllable objects",
+]]
 input_pickable = true
 collision_layer = 0
 collision_mask = 0
@@ -70,10 +71,6 @@ collision_mask = 0
 [node name="LightCast" type="RayCast2D" parent="."]
 collision_mask = 7
 
-[node name="marker" type="Sprite" parent="."]
-visible = false
-texture = ExtResource( 5 )
-
 [node name="controlCast" type="RayCast2D" parent="."]
 enabled = true
 collision_mask = 4
@@ -82,5 +79,4 @@ collision_mask = 4
 
 [node name="ControlLine" parent="." instance=ExtResource( 2 )]
 visible = false
-extend_to = Vector2( 0, 0 )
 [connection signal="tween_completed" from="takeOverTween" to="." method="_on_takeOverTween_tween_completed"]

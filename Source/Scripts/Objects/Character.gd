@@ -24,7 +24,8 @@ func move(input, delta):
 	else: #Otherwise, slow down cause friction
 		velocity = velocity.move_toward(Vector2.ZERO, Helper.FRICTION * delta)
 	velocity = move_and_slide(velocity) #Move
-	self.rotation += (get_local_mouse_position().angle()+PI/2) *TURN_SPEED #Direction rotation
+	if marker != null and global_position.distance_to(marker.global_position) > 0.5:
+		self.rotation += (get_angle_to(marker.global_position)+PI/2) *TURN_SPEED #Direction rotation
 
 func set_rotation(value):
 	if check_if_can_turn(value) == true:
