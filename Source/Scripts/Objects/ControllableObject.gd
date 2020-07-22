@@ -133,7 +133,7 @@ func set_control(value):
 		$marker.visible = true
 		$Camera2D.current = true #Sets the camera to the current controlled object
 	else:
-		$ControlEffect.visible = true
+		$ControlEffect.visible = false
 		$marker.visible = false
 		$Camera2D.current = false #Turns object's camera off when not controlled
 
