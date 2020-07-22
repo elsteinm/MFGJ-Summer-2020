@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Resources/Theme/Wall Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Source/Scripts/Level.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Graphics Files/lights/background light.png" type="Texture" id=4]
 [ext_resource path="res://Resources/shaders/tilemap glow.shader" type="Shader" id=5]
 [ext_resource path="res://Source/Scripts/Objects/TileMapOcclusion.gd" type="Script" id=6]
+[ext_resource path="res://Source/Scenes/Interface/PlayerUI.tscn" type="PackedScene" id=7]
 
 [sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 5 )
@@ -20,6 +21,8 @@ glow_hdr_threshold = 0.1
 [node name="Level" type="Node2D"]
 script = ExtResource( 2 )
 
+[node name="PlayerUI" parent="." instance=ExtResource( 7 )]
+
 [node name="Navigation2D" type="Navigation2D" parent="."]
 __meta__ = {
 "_edit_lock_": true
@@ -33,7 +36,6 @@ script = ExtResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
-generate = false
 
 [node name="base global light" type="Light2D" parent="Navigation2D"]
 position = Vector2( 449.792, 331.359 )
@@ -55,4 +57,7 @@ __meta__ = {
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
 
-[node name="Tween" type="Tween" parent="."]
+[node name="LevelTimer" type="Timer" parent="."]
+wait_time = 0.01
+autostart = true
+[connection signal="timeout" from="LevelTimer" to="." method="_on_LevelTimer_timeout"]

@@ -9,11 +9,10 @@ signal retry
 signal next
 signal menu
 
-func set_result(num_objects, dim_num):
-	var ratio = stepify((float(dim_num) / float(num_objects)) * 100, 0.01) #Ratio of objects dimmed in level
-	label.text = "You have dimmed " + str(ratio) + "% of the world."
-	if ratio == 100:
-		label.text += "\nGood Job."
+func set_result(progress, time, completed):
+	label.text = "You have dimmed " + progress + " objects in the world in " + time
+	if completed == true:
+		label.text += "\nWORLD HAS BEEN DIMMED"
 		#next_button.disabled = false
 
 func _on_RetryButton_pressed():
