@@ -2,10 +2,11 @@ extends KinematicBody2D
 
 onready var sprite = $Sprite
 onready var control_effect = $ControlEffect
-onready var camera = $Camera2D
+
 onready var light_area_collision = $LightArea/CollisionShape2D
 onready var light = $Light2D
 
+var marker
 var freeze = false
 var is_moveable = false
 var strech_location = Vector2.ZERO setget set_strech_location
@@ -15,6 +16,8 @@ export var radius_of_control = 256
 var control_target = null setget set_control_target
 var in_range = false
 var control_state = false
+
+
 signal switch_control(new_host) #Signals switching to this object
 
 func _init(control = false, moveable = false):
@@ -26,10 +29,10 @@ func _ready():
 	$ControlEffect.set_material($ControlEffect.get_material().duplicate())
 	if is_controlled == true:
 		$ControlEffect.visible = true
-		$Camera2D.current = true #Sets the camera to the current controlled object
+
 	else:
 		$ControlEffect.visible = false
-		$Camera2D.current = false #Turns object's camera off when not controlled
+
 	
 	if is_active == false:
 		sprite.modulate = Color.black #Turns the character dark
@@ -45,8 +48,15 @@ func _enter_tree():
 func _physics_process(_delta):
 	if is_controlled == true and is_active == true and control_state == false:
 		if $takeOverTween.is_active() == false:
+			if marker != null:
+				if global_position.distance_to(marker.global_position) < radius_of_control:
+					marker.modulate = Color(1,1,1)
+					in_range = true
+				else:
+					marker.modulate = Color(1,0,0)
+					in_range = false	
 			if in_range == true:
-				var target = $marker.position
+				var target = to_local(marker.global_position)
 				target = target.clamped(radius_of_control)
 				$controlCast.cast_to = target
 				if $controlCast.get_collider() != null:
@@ -55,24 +65,11 @@ func _physics_process(_delta):
 				else:
 					set_control_target(null)
 			else:
-				
 				set_control_target(null)
 	if control_state == true:
 		set_strech_location(control_target.global_position)
 
-func move_marker(mouse_control,move_vector = Vector2.ZERO,delta = 0):
-	if mouse_control == true:
-		$marker.position = get_local_mouse_position()
-	else:
-		$marker.position += move_vector * delta
-	if global_position.distance_to($marker.global_position) < radius_of_control:
-		$marker.modulate = Color(1,1,1)
-		in_range = true
-	else:
-		$marker.modulate = Color(1,0,0)
-		in_range = false
-	$marker.rotation = -rotation
-		
+
 func make_target(make):
 	if make == true:
 		$Sprite.modulate = Color(0.113725, 0.027451, 0.329412)
@@ -130,18 +127,20 @@ func set_control(value):
 		control_state = false
 		freeze = false
 		set_process(true)
-		$marker.visible = true
-		$Camera2D.current = true #Sets the camera to the current controlled object
+
+
 	else:
 		$ControlEffect.visible = false
-		$marker.visible = false
-		$Camera2D.current = false #Turns object's camera off when not controlled
+
+
 
 func _exit_tree():
 	queue_free()
 
 
 func set_strech_location(value):
+	if is_controlled == true:
+		PlayerInput.move_camera(value)
 	value = to_local(value)
 	$ControlLine.extend_to = value
 #	$ControlEffect.material.set_shader_param('target_strech',value)
@@ -152,3 +151,5 @@ func _on_takeOverTween_tween_completed(_object = null, _key = null):
 	emit_signal('switch_control',control_target)
 	control_state = true
 #	$Camera2D.position = Vector2(0,0)
+func set_marker(marker):
+	self.marker = marker

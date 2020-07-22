@@ -218,7 +218,8 @@ func move(input, delta):
 	else: #Otherwise, slow down cause friction
 		velocity = velocity.move_toward(Vector2.ZERO, Helper.FRICTION * delta)
 	velocity = move_and_slide(velocity) #Move
-	self.rotation += (get_local_mouse_position().angle()) *TURN_SPEED #Direction rotation
+	if marker != null and global_position.distance_to(marker.global_position) > 0.5:
+		self.rotation += (get_angle_to(marker.global_position)) *TURN_SPEED #Direction rotation
 
 #not really needed function, loops the patrol index
 func set_patrol_index(value):
