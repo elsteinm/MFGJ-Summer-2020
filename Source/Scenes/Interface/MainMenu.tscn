@@ -26,9 +26,9 @@ __meta__ = {
 }
 
 [node name="CenterContainer" type="CenterContainer" parent="GamePanel"]
-margin_top = 31.0
+margin_top = 18.0
 margin_right = 640.0
-margin_bottom = 231.0
+margin_bottom = 218.0
 rect_min_size = Vector2( 640, 200 )
 
 [node name="TextureRect" type="TextureRect" parent="GamePanel/CenterContainer"]
@@ -40,9 +40,9 @@ texture = ExtResource( 2 )
 expand = true
 
 [node name="ButtonContainer" type="VBoxContainer" parent="GamePanel"]
-margin_top = 235.0
+margin_top = 222.0
 margin_right = 640.0
-margin_bottom = 329.0
+margin_bottom = 342.0
 custom_constants/separation = 10
 alignment = 1
 
@@ -54,11 +54,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OptionsButton" type="Button" parent="GamePanel/ButtonContainer"]
+[node name="SettingsButton" type="Button" parent="GamePanel/ButtonContainer"]
 margin_top = 26.0
 margin_right = 640.0
 margin_bottom = 42.0
-text = "Options"
+text = "Settings"
 
 [node name="HelpButton" type="Button" parent="GamePanel/ButtonContainer"]
 margin_top = 52.0
@@ -66,10 +66,16 @@ margin_right = 640.0
 margin_bottom = 68.0
 text = "How To Play"
 
-[node name="QuitButton" type="Button" parent="GamePanel/ButtonContainer"]
+[node name="CreditsButton" type="Button" parent="GamePanel/ButtonContainer"]
 margin_top = 78.0
 margin_right = 640.0
 margin_bottom = 94.0
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="GamePanel/ButtonContainer"]
+margin_top = 104.0
+margin_right = 640.0
+margin_bottom = 120.0
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -105,7 +111,9 @@ Mouse Move - look around
 
 Left Mouse Click on objects and enemies - take control.
 
-Right Mouse Click - Dim currently controlled character[/center]"
+Right Mouse Click - Dim currently controlled character
+
+ESC - Pause game[/center]"
 text = "DIM THE WORLD.
 
 Take control of every object in the level and dim it.
@@ -122,7 +130,9 @@ Mouse Move - look around
 
 Left Mouse Click on objects and enemies - take control.
 
-Right Mouse Click - Dim currently controlled character"
+Right Mouse Click - Dim currently controlled character
+
+ESC - Pause game"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
@@ -136,8 +146,68 @@ text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="CreditsPanel" type="VBoxContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CenterContainer2" type="CenterContainer" parent="CreditsPanel"]
+margin_right = 640.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 640, 100 )
+
+[node name="TextureRect" type="TextureRect" parent="CreditsPanel/CenterContainer2"]
+margin_left = 257.0
+margin_right = 383.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 126, 100 )
+texture = ExtResource( 2 )
+expand = true
+
+[node name="Creators" type="Label" parent="CreditsPanel"]
+margin_top = 115.0
+margin_right = 640.0
+margin_bottom = 150.0
+text = "A game by Dror Schein & Elad Steinmetz
+Made for My First Game Jam: Summer 2020 on itch.io"
+align = 1
+valign = 1
+
+[node name="Music" type="Label" parent="CreditsPanel"]
+margin_top = 165.0
+margin_right = 640.0
+margin_bottom = 257.0
+text = "\"Dark Fog\", \"Envision\"
+Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0
+http://creativecommons.org/licenses/by/3.0/
+"
+align = 1
+valign = 1
+
+[node name="Shaders" type="Label" parent="CreditsPanel"]
+margin_top = 272.0
+margin_right = 640.0
+margin_bottom = 307.0
+text = "Smoke shader from https://github.com/Gonkee/Gonkees-Shadersת 
+MIT license"
+align = 1
+valign = 1
+
+[node name="BackButton" type="Button" parent="CreditsPanel"]
+margin_top = 322.0
+margin_right = 640.0
+margin_bottom = 338.0
+text = "Back"
 [connection signal="pressed" from="GamePanel/ButtonContainer/StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="pressed" from="GamePanel/ButtonContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="GamePanel/ButtonContainer/SettingsButton" to="." method="_on_SettingsButton_pressed"]
 [connection signal="pressed" from="GamePanel/ButtonContainer/HelpButton" to="." method="_on_HelpButton_pressed"]
+[connection signal="pressed" from="GamePanel/ButtonContainer/CreditsButton" to="." method="_on_CreditsButton_pressed"]
 [connection signal="pressed" from="GamePanel/ButtonContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="HelpPanel/BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="CreditsPanel/BackButton" to="." method="_on_BackButton_pressed"]
