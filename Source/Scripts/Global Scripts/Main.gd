@@ -40,7 +40,6 @@ func erase_level():
 #Pauses game
 func pause_game():
 	pause_screen = Helper.PauseScreen.instance()
-	var _error
 	current_level.add_child(pause_screen)
 	AudioPlayer.get_node("MusicPlayer").volume_db = -16
 	self.game_paused = true

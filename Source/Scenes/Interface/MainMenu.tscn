@@ -17,64 +17,77 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0, 0, 0, 1 )
 
-[node name="GamePanel" type="Panel" parent="."]
+[node name="GamePanel" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
+alignment = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Game Name" type="TextureRect" parent="GamePanel"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -156.0
-margin_top = -145.0
-margin_right = 315.0
-margin_bottom = 250.0
-rect_scale = Vector2( 0.5, 0.5 )
+[node name="CenterContainer" type="CenterContainer" parent="GamePanel"]
+margin_top = 31.0
+margin_right = 640.0
+margin_bottom = 231.0
+rect_min_size = Vector2( 640, 200 )
+
+[node name="TextureRect" type="TextureRect" parent="GamePanel/CenterContainer"]
+margin_left = 162.0
+margin_right = 477.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 315, 200 )
 texture = ExtResource( 2 )
+expand = true
 
-[node name="StartButton" type="Button" parent="GamePanel"]
-anchor_left = 0.4
-anchor_top = 0.694
-anchor_right = 0.6
-anchor_bottom = 0.694
-margin_top = -9.84
-margin_bottom = 10.16
+[node name="ButtonContainer" type="VBoxContainer" parent="GamePanel"]
+margin_top = 235.0
+margin_right = 640.0
+margin_bottom = 329.0
+custom_constants/separation = 10
+alignment = 1
+
+[node name="StartButton" type="Button" parent="GamePanel/ButtonContainer"]
+margin_right = 640.0
+margin_bottom = 16.0
 text = "Start Game"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="HelpButton" type="Button" parent="GamePanel"]
-anchor_left = 0.4
-anchor_top = 0.806
-anchor_right = 0.6
-anchor_bottom = 0.806
-margin_top = -10.16
-margin_bottom = 9.83997
+[node name="OptionsButton" type="Button" parent="GamePanel/ButtonContainer"]
+margin_top = 26.0
+margin_right = 640.0
+margin_bottom = 42.0
+text = "Options"
+
+[node name="HelpButton" type="Button" parent="GamePanel/ButtonContainer"]
+margin_top = 52.0
+margin_right = 640.0
+margin_bottom = 68.0
 text = "How To Play"
 
-[node name="QuitButton" type="Button" parent="GamePanel"]
-anchor_left = 0.4
-anchor_top = 0.917
-anchor_right = 0.6
-anchor_bottom = 0.917
-margin_top = -10.12
-margin_bottom = 9.87997
+[node name="QuitButton" type="Button" parent="GamePanel/ButtonContainer"]
+margin_top = 78.0
+margin_right = 640.0
+margin_bottom = 94.0
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HelpPanel" type="Panel" parent="."]
+[node name="HelpPanel" type="VBoxContainer" parent="."]
 visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HelpPanel"]
-anchor_right = 1.0
-anchor_bottom = 0.833
-margin_bottom = 0.119965
+margin_right = 640.0
+margin_bottom = 340.0
+size_flags_vertical = 3
 bbcode_enabled = true
 bbcode_text = "[center]DIM THE WORLD.
 
@@ -116,17 +129,15 @@ __meta__ = {
 }
 
 [node name="BackButton" type="Button" parent="HelpPanel"]
-anchor_left = 0.4
-anchor_top = 0.917
-anchor_right = 0.6
-anchor_bottom = 0.917
-margin_top = -10.12
-margin_bottom = 9.87997
+margin_top = 344.0
+margin_right = 640.0
+margin_bottom = 360.0
 text = "Back"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="GamePanel/StartButton" to="." method="_on_StartButton_pressed"]
-[connection signal="pressed" from="GamePanel/HelpButton" to="." method="_on_HelpButton_pressed"]
-[connection signal="pressed" from="GamePanel/QuitButton" to="." method="_on_QuitButton_pressed"]
+[connection signal="pressed" from="GamePanel/ButtonContainer/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="GamePanel/ButtonContainer/OptionsButton" to="." method="_on_OptionsButton_pressed"]
+[connection signal="pressed" from="GamePanel/ButtonContainer/HelpButton" to="." method="_on_HelpButton_pressed"]
+[connection signal="pressed" from="GamePanel/ButtonContainer/QuitButton" to="." method="_on_QuitButton_pressed"]
 [connection signal="pressed" from="HelpPanel/BackButton" to="." method="_on_BackButton_pressed"]

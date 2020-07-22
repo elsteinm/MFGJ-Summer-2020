@@ -30,7 +30,7 @@ func _ready():
 	if err != OK:
 		err = config.save(config_file)
 		err = config.load(config_file)
-	self.display_mode = config.get_value("Display Settings", "display mode", DisplayMode.WINDOWED)
+	self.display_mode = config.get_value("Display Settings", "display_mode", DisplayMode.WINDOWED)
 	self.borderless = config.get_value("Display Settings", "borderless", false)
 	self.master_volume = config.get_value("Audio Settings", "master_volume", 100)
 	self.music_volume = config.get_value("Audio Settings", "music_volume", 100)
@@ -44,7 +44,7 @@ func set_display_mode(value):
 			OS.window_fullscreen = false
 		DisplayMode.FULLSCREEN:
 			OS.window_fullscreen = true
-	config.set_value("Display Settings", "display mode", display_mode)
+	config.set_value("Display Settings", "display_mode", display_mode)
 
 func set_borderless(value):
 	borderless = value
@@ -70,5 +70,5 @@ func set_control_type(value):
 	control_type = value
 	config.set_value("Control Settings", "control_type", control_type)
 
-func _exit_tree():
+func save_settings():
 	config.save(config_file)

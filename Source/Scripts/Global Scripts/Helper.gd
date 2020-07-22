@@ -1,6 +1,7 @@
 extends Node
 
 var MainMenu = preload("res://Source/Scenes/Interface/MainMenu.tscn")
+var SettingsMenu = preload("res://Source/Scenes/Interface/SettingsMenu.tscn")
 var PauseScreen = preload("res://Source/Scenes/Interface/PauseScreen.tscn")
 var LevelFinishedScreen = preload("res://Source/Scenes/Interface/LevelFinishedScreen.tscn")
 var GameOverScreen = preload("res://Source/Scenes/Interface/GameOverScreen.tscn")
