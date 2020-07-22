@@ -25,9 +25,9 @@ func _physics_process(delta):
 		if Settings.control_type == Settings.ControlType.KEYBOARD:
 			input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 			input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
-			control.move_cursor(false,input_vector,delta)
+			control.move_marker(false,input_vector,delta)
 		else:
-			control.move_cursor(true) 
+			control.move_marker(true) 
 #		if last_control != null:
 #			last_control.set_strech_location(last_control.global_position.distance_to(control.global_position))
 	#Turn off command
