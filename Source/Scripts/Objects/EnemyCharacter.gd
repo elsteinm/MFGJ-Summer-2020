@@ -5,7 +5,8 @@ enum State {
 	PATROL,
 	CHASE,
 	SEARCH,
-	RETURN
+	RETURN,
+	HUNT
 }
 
 onready var timer = $WaitTimer #timer for search state
@@ -108,6 +109,12 @@ func _physics_process(delta):
 					last_player_location = player.get_global_position()
 					current_state = State.CHASE
 					look_at(player.transform.get_origin())
+			State.HUNT:
+				hunt_state(delta)
+				if awareness >= 0.9:
+					last_player_location = player.get_global_position()
+					current_state = State.CHASE
+					look_at(player.transform.get_origin())
 #this funcion handles the behavior of the guard in the patrol state
 #we check if the next point is to close, and then move to it if not
 func patrol_state(delta):
@@ -172,6 +179,9 @@ func return_state(delta):
 		path_points = original_path
 		path_index = patrol_index
 		current_state = State.PATROL
+		
+func hunt_state(delta):
+	pass
 #this function is responsible for the level of awareness the guard has of the player
 func detect_player(facing, pos):
 	if player_exists == true:
