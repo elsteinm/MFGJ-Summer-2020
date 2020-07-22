@@ -13,6 +13,7 @@ export var is_controlled : bool setget set_control
 export var radius_of_control = 192
 var control_target = null setget set_control_target
 var in_range = false
+var control_effect_base_position
 signal switch_control(new_host) #Signals switching to this object
 
 func _init(control = false, moveable = false):
@@ -21,6 +22,7 @@ func _init(control = false, moveable = false):
 	is_controlled = control
 
 func _ready():
+	control_effect_base_position = $ControlEffect.position
 	$ControlEffect.set_material($ControlEffect.get_material().duplicate())
 	if is_controlled == true:
 		$ControlEffect.visible = true
@@ -95,8 +97,8 @@ func set_control_target(value):
 func _input(event):
 	if is_controlled == true and is_active == true:
 		if control_target != null and event.is_action_pressed("p_action"):
-#			start_take_over(control_target)
-			_on_takeOverTween_tween_completed()
+			start_take_over(control_target)
+#			_on_takeOverTween_tween_completed()
 
 func start_take_over(target):
 	$ControlEffect.scale.x = 0.5
@@ -139,7 +141,16 @@ func _exit_tree():
 
 
 func set_strech_location(value):
-	$ControlEffect.material.set_shader_param('target_strech',value)
+	if value == 0:
+		$ControlEffect.scale.y = 1
+		if control_effect_base_position != null:
+			$ControlEffect.position.y = control_effect_base_position.y
+	else:
+		$ControlEffect.scale.y = value/($ControlEffect.texture.get_width() *3)
+		if control_effect_base_position != null:
+			$ControlEffect.position.y = -value
+		
+#	$ControlEffect.material.set_shader_param('target_strech',value)
 	strech_location = value
 
 func _on_takeOverTween_tween_completed(object = null, key = null):

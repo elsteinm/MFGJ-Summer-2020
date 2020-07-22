@@ -102,3 +102,7 @@ func _on_LightArea_area_shape_exited(_area_id, area, area_shape, _self_shape):
 			red_lights.erase(light_shape)
 			if red_lights.empty() == true:
 				in_red_light = false
+func set_control(value):
+	.set_control(value)
+	print(value)
+	print(is_controlled)
