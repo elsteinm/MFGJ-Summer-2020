@@ -3,19 +3,21 @@
 [ext_resource path="res://Source/Scripts/Objects/ControlLine.gd" type="Script" id=1]
 [ext_resource path="res://Resources/shaders/line_fog_shader.shader" type="Shader" id=2]
 
-[sub_resource type="ShaderMaterial" id=2]
+[sub_resource type="ShaderMaterial" id=1]
 shader = ExtResource( 2 )
 shader_param/center = Vector2( 0.5, 0.6 )
 shader_param/OCTAVES = 6
 shader_param/target_strech = null
 shader_param/need_strech = false
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 0, 0 )
 
 [node name="ControlLine" type="Area2D"]
 self_modulate = Color( 0.113725, 0.027451, 0.329412, 1 )
-material = SubResource( 2 )
+material = SubResource( 1 )
+collision_layer = 32
+collision_mask = 0
 script = ExtResource( 1 )
 width = 15
 
@@ -23,4 +25,4 @@ width = 15
 visible = false
 position = Vector2( 25, 4.37114e-06 )
 rotation = 3.14159
-shape = SubResource( 1 )
+shape = SubResource( 2 )

@@ -44,7 +44,6 @@ func _enter_tree():
 
 func _physics_process(_delta):
 	if is_controlled == true and is_active == true and control_state == false:
-		move_marker()
 		if $takeOverTween.is_active() == false:
 			if in_range == true:
 				var target = $marker.position

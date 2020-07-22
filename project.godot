@@ -112,6 +112,7 @@ move_left={
 2d_physics/layer_3="Objects & Enemies"
 2d_physics/layer_4="Normal Lights"
 2d_physics/layer_5="Hurting Lights"
+2d_physics/layer_6="Control lines"
 
 [rendering]
 
