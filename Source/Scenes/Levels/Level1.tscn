@@ -14,13 +14,28 @@ void fragment(){
 	}
 	COLOR = current;
 }"
-custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
 shader_param/color_of_border = null
 
 [node name="Level1" instance=ExtResource( 1 )]
+
+[node name="Instruction" type="CanvasLayer" parent="." index="1"]
+
+[node name="Label" type="Label" parent="Instruction" index="0"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -68.0
+margin_top = 100.0
+margin_right = 68.0
+margin_bottom = 116.0
+text = "DIM THE WORLD"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="TileMap" parent="Navigation2D" index="0"]
 material = SubResource( 2 )
@@ -29,39 +44,8 @@ tile_data = PoolIntArray( -327684, 1, 0, -327683, 1, 0, -327682, 1, 0, -327681, 
 [node name="base global light" parent="Navigation2D" index="1"]
 energy = 0.6
 
-[node name="PlayerCharacter" parent="." index="1"]
+[node name="PlayerCharacter" parent="." index="3"]
 position = Vector2( 320, 192 )
 
-[node name="CanvasModulate" parent="." index="2"]
+[node name="CanvasModulate" parent="." index="4"]
 color = Color( 0.176471, 0.164706, 0.164706, 1 )
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="4"]
-
-[node name="turn off the light" type="Label" parent="CanvasLayer" index="0"]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -66.0
-margin_top = 40.0
-margin_right = 66.0
-margin_bottom = 14.0
-text = "turn of the light!"
-align = 1
-valign = 1
-uppercase = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="CanvasLayer" index="1"]
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-margin_left = -91.0
-margin_top = -60.0
-margin_right = 91.0
-margin_bottom = -50.0
-text = "right click to turn of the light"
-__meta__ = {
-"_edit_use_anchors_": false
-}

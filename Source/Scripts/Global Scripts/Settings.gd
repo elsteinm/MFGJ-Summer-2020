@@ -24,8 +24,11 @@ var sfx_volume setget set_sfx_volume
 
 #Control settings
 var control_type setget set_control_type
+var controls = Dictionary()
 
 func _ready():
+	controls[Helper.Commands.MOVE] = "WASD"
+	controls[Helper.Commands.PAUSE] = "ESC"
 	var err = config.load(config_file)
 	if err != OK:
 		err = config.save(config_file)
@@ -68,6 +71,15 @@ func set_sfx_volume(value):
 
 func set_control_type(value):
 	control_type = value
+	match control_type:
+		ControlType.KEYBOARD_MOUSE:
+			controls[Helper.Commands.DIM] = "Right Click"
+			controls[Helper.Commands.CHANGE] = "Left Click"
+			controls[Helper.Commands.TURN] = "Move Mouse"
+		ControlType.KEYBOARD:
+			controls[Helper.Commands.DIM] = "Shift"
+			controls[Helper.Commands.CHANGE] = "Space"
+			controls[Helper.Commands.TURN] = "Arrow Keys"
 	config.set_value("Control Settings", "control_type", control_type)
 
 func save_settings():

@@ -14,7 +14,7 @@ var enemies
 var timer_ms = 0
 var timer_sec = 0
 var timer_min = 0
-var time = "00:00:00"
+var time = "0:0:0"
 
 func _init():
 	Main.current_level = self
@@ -26,6 +26,7 @@ func _ready():
 	AudioPlayer.play_music(level_music)
 	AudioPlayer.music_pitch = 0.8
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
+	ui.update_time(time)
 	ui.update_progress(progress)
 	
 func _process(_delta):
@@ -49,8 +50,8 @@ func remove_object():
 	progress = str(object_number) + "/" + str(objects_dimmed)
 	ui.update_progress(progress)
 
-func _exit_tree():
-	queue_free()
+func set_tutorial(command):
+	ui.set_tutorial(command)
 
 func _on_LevelTimer_timeout():
 	timer_ms += 1
@@ -62,3 +63,6 @@ func _on_LevelTimer_timeout():
 		timer_min +=1
 	time = str(timer_min) + ":" + str(timer_sec) + ":" + str(timer_ms)
 	ui.update_time(time)
+
+func _exit_tree():
+	queue_free()

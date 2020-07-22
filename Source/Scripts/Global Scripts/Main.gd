@@ -15,7 +15,7 @@ func _ready():
 	var _error
 	_error = PlayerInput.connect("switch_control", self, "switch_player_host") #Tells the level that the player has changed host
 	_error = PlayerInput.connect("finish_level", self, "finish_level") #Tells the level when the player has been turned off
-	self.level_number = 2020
+	self.level_number = 1
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -29,6 +29,7 @@ func load_level(lvl_num):
 	self.level_number = lvl_num
 	current_level = LevelPackedScene.instance()
 	get_tree().root.add_child(current_level)
+	current_level.set_tutorial(Helper.level_tutorials[level_number])
 	PlayerInput.playing = true
 	self.game_paused = false
 
@@ -80,7 +81,6 @@ func game_over():
 	AudioPlayer.stop_music()
 	AudioPlayer.play_effect(Helper.end_level_effect)
 	self.game_paused = true
-	
 
 func reload_level():
 	erase_level()
