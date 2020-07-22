@@ -6,6 +6,7 @@ var control setget set_control #The object the player is currently controlling
 var control_queue = Array() #The queue of previously controlled objects
 var playing = false setget set_playing
 var current_level
+var returning = false
 signal switch_control(new_host) #Switches control over to the new host
 signal finish_level #Signals the player turning off the player character to finish the level
 
@@ -34,7 +35,7 @@ func _physics_process(delta):
 #			last_control.set_strech_location(last_control.global_position.distance_to(control.global_position))
 	#Turn off command
 	if Input.is_action_just_pressed("p_turn_off"):
-		if control != null and control.returning != null:
+		if returning == false:
 			turn_off()
 
 func set_playing(value):
@@ -67,8 +68,10 @@ func turn_off():
 			emit_signal("finish_level") #Finish the level
 		else:
 			control_queue.front().reverse_control_line()
+			returning = true
 func move_camera(value):
 	if current_level != null:
 		current_level.move_camera(value)
 func remove_first_after_return():
+	returning = false
 	emit_signal("switch_control", control_queue.pop_front()) #Set the new controlled object with the one before the object we just turned off

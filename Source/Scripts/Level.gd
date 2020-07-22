@@ -19,7 +19,7 @@ var time = "00:00:00"
 
 func _init():
 	Main.current_level = self
-	PlayerInput.playing = true
+	PlayerInput.playing= true
 
 func _ready():
 	$Marker.position = $PlayerCharacter.position
@@ -44,12 +44,12 @@ func _process(_delta):
 #Add object to objectives array
 func add_object():
 	object_number += 1
-	progress = str(object_number) + "/" + str(objects_dimmed)
+	progress = str(objects_dimmed) + "/" + str(object_number)
 
 #Remove object from objectives array
 func remove_object():
 	objects_dimmed += 1
-	progress = str(object_number) + "/" + str(objects_dimmed)
+	progress = str(objects_dimmed) + "/" + str(object_number)
 	ui.update_progress(progress)
 
 func set_tutorial(command):
