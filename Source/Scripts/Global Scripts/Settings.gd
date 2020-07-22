@@ -75,11 +75,11 @@ func set_control_type(value):
 		ControlType.KEYBOARD_MOUSE:
 			controls[Helper.Commands.DIM] = "Right Click"
 			controls[Helper.Commands.CHANGE] = "Left Click"
-			controls[Helper.Commands.TURN] = "Move Mouse"
+			controls[Helper.Commands.AIM] = "Move Mouse"
 		ControlType.KEYBOARD:
 			controls[Helper.Commands.DIM] = "Shift"
 			controls[Helper.Commands.CHANGE] = "Space"
-			controls[Helper.Commands.TURN] = "Arrow Keys"
+			controls[Helper.Commands.AIM] = "Arrow Keys"
 	config.set_value("Control Settings", "control_type", control_type)
 
 func save_settings():

@@ -9,19 +9,20 @@ var GameOverScreen = preload("res://Source/Scenes/Interface/GameOverScreen.tscn"
 var end_level_effect = load("res://Resources/Audio/SFX/Envision-EndEffect.wav")
 
 const FRICTION = 750 #Floor friction
-const LEVELS = 1 #Number of levels in the game
+const LEVELS = 2020 #Number of levels in the game
 
 enum Commands {
 	DIM,
 	CHANGE,
 	MOVE,
-	TURN,
+	AIM,
 	PAUSE
 }
 var command_names = Commands.keys()
 
 var level_tutorials = {
-	1: [Commands.DIM]
+	1: [Commands.DIM],
+	2020: []
 }
 
 func get_polygon_area(points : PoolVector2Array):
