@@ -30,6 +30,7 @@ Helper="*res://Source/Scripts/Global Scripts/Helper.gd"
 Main="*res://Source/Scripts/Global Scripts/Main.gd"
 PlayerInput="*res://Source/Scripts/Global Scripts/PlayerInput.gd"
 AudioPlayer="*res://Source/Scenes/Global Scenes/AudioPlayer.tscn"
+Settings="*res://Source/Scripts/Global Scripts/Settings.gd"
 
 [display]
 

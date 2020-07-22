@@ -1,0 +1,149 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Source/Scripts/Interface/SettingsMenu.gd" type="Script" id=1]
+
+[node name="SettingsMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TabContainer" type="TabContainer" parent="."]
+anchor_right = 1.0
+margin_bottom = 38.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Display" type="GridContainer" parent="TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 34.0
+margin_right = -4.0
+margin_bottom = -4.0
+columns = 2
+
+[node name="DisplayModeLabel" type="Label" parent="TabContainer/Display"]
+margin_top = 3.0
+margin_right = 109.0
+margin_bottom = 19.0
+text = "Display Mode:"
+align = 1
+valign = 1
+
+[node name="DisplayModeOption" type="OptionButton" parent="TabContainer/Display"]
+margin_left = 113.0
+margin_right = 632.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+
+[node name="BorderlessLabel" type="Label" parent="TabContainer/Display"]
+margin_top = 29.0
+margin_right = 109.0
+margin_bottom = 45.0
+text = "Borderless:"
+align = 1
+valign = 1
+
+[node name="BorderlessOption" type="OptionButton" parent="TabContainer/Display"]
+margin_left = 113.0
+margin_top = 26.0
+margin_right = 632.0
+margin_bottom = 48.0
+size_flags_horizontal = 3
+
+[node name="Audio" type="GridContainer" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 34.0
+margin_right = -4.0
+margin_bottom = -4.0
+columns = 2
+
+[node name="MasterVolumeLabel" type="Label" parent="TabContainer/Audio"]
+margin_right = 126.0
+margin_bottom = 16.0
+text = "Master Volume:"
+align = 1
+valign = 1
+
+[node name="MasterVolumeSlider" type="HSlider" parent="TabContainer/Audio"]
+margin_left = 130.0
+margin_right = 632.0
+margin_bottom = 16.0
+size_flags_horizontal = 3
+value = 100.0
+
+[node name="MusicVolumeLabel" type="Label" parent="TabContainer/Audio"]
+margin_top = 20.0
+margin_right = 126.0
+margin_bottom = 36.0
+text = "Music Volume:"
+align = 1
+valign = 1
+
+[node name="MusicVolumeSlider" type="HSlider" parent="TabContainer/Audio"]
+margin_left = 130.0
+margin_top = 20.0
+margin_right = 632.0
+margin_bottom = 36.0
+size_flags_horizontal = 3
+value = 100.0
+
+[node name="SFXVolumeLabel" type="Label" parent="TabContainer/Audio"]
+margin_top = 40.0
+margin_right = 126.0
+margin_bottom = 56.0
+text = "SFX Volume:"
+align = 1
+valign = 1
+
+[node name="SFXVolumeSlider" type="HSlider" parent="TabContainer/Audio"]
+margin_left = 130.0
+margin_top = 40.0
+margin_right = 632.0
+margin_bottom = 56.0
+size_flags_horizontal = 3
+value = 100.0
+
+[node name="Controls" type="GridContainer" parent="TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 34.0
+margin_right = -4.0
+margin_bottom = -4.0
+columns = 2
+
+[node name="ControlTypeLabel" type="Label" parent="TabContainer/Controls"]
+margin_right = 109.0
+margin_bottom = 35.0
+text = "Control Type:
+"
+
+[node name="ControlTypeOption" type="OptionButton" parent="TabContainer/Controls"]
+margin_left = 113.0
+margin_right = 632.0
+margin_bottom = 22.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+[connection signal="item_selected" from="TabContainer/Display/DisplayModeOption" to="." method="_on_DisplayModeOption_item_selected"]
+[connection signal="item_selected" from="TabContainer/Display/BorderlessOption" to="." method="_on_BorderlessOption_item_selected"]
+[connection signal="value_changed" from="TabContainer/Audio/MasterVolumeSlider" to="." method="_on_MasterVolumeSlider_value_changed"]
+[connection signal="value_changed" from="TabContainer/Audio/MusicVolumeSlider" to="." method="_on_MusicVolumeSlider_value_changed"]
+[connection signal="value_changed" from="TabContainer/Audio/SFXVolumeSlider" to="." method="_on_SFXVolumeSlider_value_changed"]
+[connection signal="item_selected" from="TabContainer/Controls/ControlTypeOption" to="." method="_on_ControlTypeOption_item_selected"]
