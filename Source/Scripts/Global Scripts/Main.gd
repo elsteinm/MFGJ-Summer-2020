@@ -15,7 +15,7 @@ func _ready():
 	var _error
 	_error = PlayerInput.connect("switch_control", self, "switch_player_host") #Tells the level that the player has changed host
 	_error = PlayerInput.connect("finish_level", self, "finish_level") #Tells the level when the player has been turned off
-	self.level_number = 1
+	self.level_number = 2020
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
