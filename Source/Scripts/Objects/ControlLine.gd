@@ -18,7 +18,7 @@ func _ready():
 	color_array.append(Color(1,1,1))
 	points = PoolVector2Array()
 	rect_of_line = Rect2(Vector2.ZERO,Vector2.ZERO)
-	for i in range(4):
+	for _i in range(4):
 		points.append(Vector2(0,0))
 	collision.shape.extents = Vector2(0,0)
 func set_extenstion(value):
@@ -29,7 +29,7 @@ func set_extenstion(value):
 		rect_of_line = Rect2(Vector2.ZERO,Vector2.ZERO)
 	if points == null:
 		points = PoolVector2Array()
-		for i in range(4):
+		for _i in range(4):
 			points.append(Vector2(0,0))
 	if color_array == null:
 		color_array = PoolColorArray()

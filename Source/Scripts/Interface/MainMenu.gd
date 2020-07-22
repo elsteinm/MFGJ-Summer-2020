@@ -13,6 +13,11 @@ func _on_StartButton_pressed():
 	get_tree().root.remove_child(self)
 	Main.load_level(2020)
 
+func _on_OptionsButton_pressed():
+	var settings_menu = Helper.SettingsMenu.instance()
+	settings_menu.parent_menu = self
+	add_child(settings_menu)
+
 func _on_HelpButton_pressed():
 	game_panel.visible = false
 	help_panel.visible = true

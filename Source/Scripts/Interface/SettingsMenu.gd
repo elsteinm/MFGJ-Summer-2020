@@ -1,13 +1,15 @@
 extends Control
 
-onready var display_mode_option = $TabContainer/Display/DisplayModeOption
-onready var borderless_option = $TabContainer/Display/BorderlessOption
+onready var display_mode_option = $VSplitContainer/TabContainer/Display/DisplayModeOption
+onready var borderless_option = $VSplitContainer/TabContainer/Display/BorderlessOption
 
-onready var master_volume_slider = $TabContainer/Audio/MasterVolumeSlider
-onready var music_volume_slider = $TabContainer/Audio/MusicVolumeSlider
-onready var sfx_volume_slider = $TabContainer/Audio/SFXVolumeSlider
+onready var master_volume_slider = $VSplitContainer/TabContainer/Audio/MasterVolumeSlider
+onready var music_volume_slider = $VSplitContainer/TabContainer/Audio/MusicVolumeSlider
+onready var sfx_volume_slider = $VSplitContainer/TabContainer/Audio/SFXVolumeSlider
 
-onready var control_type_option = $TabContainer/Controls/ControlTypeOption
+onready var control_type_option = $VSplitContainer/TabContainer/Controls/ControlTypeOption
+
+var parent_menu = null
 
 func _ready():
 	display_mode_option.add_item("Windowed", Settings.DisplayMode.WINDOWED)
@@ -44,3 +46,9 @@ func _on_SFXVolumeSlider_value_changed(value):
 
 func _on_ControlTypeOption_item_selected(id):
 	Settings.control_type = id
+
+func _on_ReturnButton_pressed():
+	if parent_menu != null:
+		Settings.save_settings()
+		parent_menu.remove_child(self)
+		queue_free()
