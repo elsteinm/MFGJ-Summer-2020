@@ -34,13 +34,13 @@ func _ready():
 		set_process(false) #Turns off process so the object stops
 		light.enabled = false
 		light_area_collision.disabled = true
-		Main.remove_object_from_level(self)
+		Main.remove_object_from_level()
 
 func _enter_tree():
 	var _error = self.connect("switch_control", Main, "switch_player_host")
-	Main.add_object_to_level(self)
+	Main.add_object_to_level()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if is_controlled == true and is_active == true:
 		move_marker()
 		if in_range == true:
@@ -112,7 +112,7 @@ func set_active(value):
 		set_process(false) #Turns off process so the object stops
 		light.enabled = false
 		light_area_collision.disabled = true
-		Main.remove_object_from_level(self)
+		Main.remove_object_from_level()
 		$ControlEffect.visible = false
 
 func _notification(what):
@@ -142,6 +142,6 @@ func set_strech_location(value):
 	$ControlEffect.material.set_shader_param('target_strech',value)
 	strech_location = value
 
-func _on_takeOverTween_tween_completed(object = null, key = null):
+func _on_takeOverTween_tween_completed(_object = null, _key = null):
 	emit_signal('switch_control',control_target)
 	set_control_target(null)

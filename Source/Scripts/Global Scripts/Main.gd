@@ -67,7 +67,10 @@ func finish_level():
 	AudioPlayer.stop_music()
 	AudioPlayer.play_effect(Helper.end_level_effect)
 	self.game_paused = true
-	finished_screen.set_result(current_level.object_number, current_level.objects_dimmed)
+	var level_finished = false
+	if current_level.objects_dimmed == current_level.object_number:
+		level_finished = true
+	finished_screen.set_result(current_level.progress, current_level.time, level_finished)
 
 func game_over():
 	var game_over_screen = Helper.GameOverScreen.instance()
@@ -113,12 +116,12 @@ func set_level_number(num):
 	LevelPackedScene = load("res://Source/Scenes/Levels/Level" + str(level_number) + ".tscn") #Get level scene
 
 #Add object to the current level objectives
-func add_object_to_level(o):
-	current_level.add_object(o)
+func add_object_to_level():
+	current_level.add_object()
 
 #Remove object from the current level objectives
-func remove_object_from_level(o):
-	current_level.remove_object(o)
+func remove_object_from_level():
+	current_level.remove_object()
 
 func _exit_tree():
 	queue_free()
