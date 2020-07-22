@@ -21,7 +21,7 @@ enum Commands {
 var command_names = Commands.keys()
 
 var level_tutorials = {
-	1: [Commands.DIM, Commands.CHANGE]
+	1: [Commands.DIM]
 }
 
 func get_polygon_area(points : PoolVector2Array):

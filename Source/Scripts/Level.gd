@@ -53,6 +53,9 @@ func remove_object():
 	progress = str(object_number) + "/" + str(objects_dimmed)
 	ui.update_progress(progress)
 
+func set_tutorial(command):
+	ui.set_tutorial(command)
+
 func _exit_tree():
 	queue_free()
 
