@@ -16,7 +16,7 @@ export var radius_of_control = 256
 var control_target = null setget set_control_target
 var in_range = false
 var control_state = false
-
+var returning = false
 
 signal switch_control(new_host) #Signals switching to this object
 
@@ -94,6 +94,7 @@ func _input(event):
 func start_take_over(target):
 #	$ControlEffect.scale.x = 0.5
 	$ControlLine.visible = true
+	returning = false
 	$takeOverTween.interpolate_method(self,'set_strech_location',global_position,target.global_position,0.5)
 	$takeOverTween.start()
 	control_target.freeze = true
@@ -127,8 +128,6 @@ func set_control(value):
 		control_state = false
 		freeze = false
 		set_process(true)
-
-
 	else:
 		$ControlEffect.visible = false
 
@@ -139,17 +138,27 @@ func _exit_tree():
 
 
 func set_strech_location(value):
-	if is_controlled == true:
+	if control_target != null and control_target.freeze == true:
 		PlayerInput.move_camera(value)
 	value = to_local(value)
 	$ControlLine.extend_to = value
 #	$ControlEffect.material.set_shader_param('target_strech',value)
 	strech_location = value
 #	$Camera2D.position = (value)
-	
+func reverse_control_line():
+	$ControlLine.visible = true
+	$takeOverTween.interpolate_method(self,'set_strech_location',to_global($ControlLine.extend_to),global_position,0.5)
+	$takeOverTween.start()
+	control_target.freeze = true
+	returning = true
+
 func _on_takeOverTween_tween_completed(_object = null, _key = null):
-	emit_signal('switch_control',control_target)
-	control_state = true
+	if returning == false:
+		emit_signal('switch_control',control_target)
+		control_state = true
+	else:
+		PlayerInput.remove_first_after_return()
 #	$Camera2D.position = Vector2(0,0)
 func set_marker(marker):
 	self.marker = marker
+

@@ -213,13 +213,14 @@ func move_on_path(path, index, _delta):
 
 #function for movement when player is in control
 func move(input, delta):
-	if input != Vector2.ZERO: #If there is movement, do the moving calculations
-		velocity = velocity.move_toward(input * max_speed, acceleration * delta)
-	else: #Otherwise, slow down cause friction
-		velocity = velocity.move_toward(Vector2.ZERO, Helper.FRICTION * delta)
-	velocity = move_and_slide(velocity) #Move
-	if marker != null and global_position.distance_to(marker.global_position) > 0.5:
-		self.rotation += (get_angle_to(marker.global_position)) *TURN_SPEED #Direction rotation
+	if freeze != true:
+		if input != Vector2.ZERO: #If there is movement, do the moving calculations
+			velocity = velocity.move_toward(input * max_speed, acceleration * delta)
+		else: #Otherwise, slow down cause friction
+			velocity = velocity.move_toward(Vector2.ZERO, Helper.FRICTION * delta)
+		velocity = move_and_slide(velocity) #Move
+		if marker != null and global_position.distance_to(marker.global_position) > 0.5:
+			self.rotation += (get_angle_to(marker.global_position)) *TURN_SPEED #Direction rotation
 
 #not really needed function, loops the patrol index
 func set_patrol_index(value):

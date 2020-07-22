@@ -19,13 +19,14 @@ func check_if_can_turn(angle_to_add):
 
 #Move the character with an input vector recieved from PlayerInput
 func move(input, delta):
-	if input != Vector2.ZERO: #If there is movement, do the moving calculations
-		velocity = velocity.move_toward(input * max_speed, acceleration * delta)
-	else: #Otherwise, slow down cause friction
-		velocity = velocity.move_toward(Vector2.ZERO, Helper.FRICTION * delta)
-	velocity = move_and_slide(velocity) #Move
-	if marker != null and global_position.distance_to(marker.global_position) > 0.5:
-		self.rotation += (get_angle_to(marker.global_position)+PI/2) *TURN_SPEED #Direction rotation
+	if freeze != true:
+		if input != Vector2.ZERO: #If there is movement, do the moving calculations
+			velocity = velocity.move_toward(input * max_speed, acceleration * delta)
+		else: #Otherwise, slow down cause friction
+			velocity = velocity.move_toward(Vector2.ZERO, Helper.FRICTION * delta)
+		velocity = move_and_slide(velocity) #Move
+		if marker != null and global_position.distance_to(marker.global_position) > 0.5:
+			self.rotation += (get_angle_to(marker.global_position)+PI/2) *TURN_SPEED #Direction rotation
 
 func set_rotation(value):
 	if check_if_can_turn(value) == true:
