@@ -44,7 +44,6 @@ func _enter_tree():
 
 func _physics_process(_delta):
 	if is_controlled == true and is_active == true and control_state == false:
-		move_marker()
 		if $takeOverTween.is_active() == false:
 			if in_range == true:
 				var target = $marker.position
@@ -61,18 +60,11 @@ func _physics_process(_delta):
 	if control_state == true:
 		set_strech_location(control_target.global_position)
 
-func move_marker():
-	if Main.mouse_control == true:
+func move_marker(mouse_control,move_vector = Vector2.ZERO,delta = 0):
+	if mouse_control == true:
 		$marker.position = get_local_mouse_position()
 	else:
-		if Input.is_action_pressed("ui_right"):
-			$marker.position.x += 2
-		if Input.is_action_pressed("ui_left"):
-			$marker.position.x -= 2
-		if Input.is_action_pressed("ui_down"):
-			$marker.position.y += 2
-		if Input.is_action_pressed("ui_up"):
-			$marker.position.y -= 2
+		$marker.position += move_vector * delta
 	if global_position.distance_to($marker.global_position) < radius_of_control:
 		$marker.modulate = Color(1,1,1)
 		in_range = true
