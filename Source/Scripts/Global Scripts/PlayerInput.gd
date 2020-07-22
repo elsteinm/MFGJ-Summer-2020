@@ -9,6 +9,7 @@ var current_level
 signal switch_control(new_host) #Switches control over to the new host
 signal finish_level #Signals the player turning off the player character to finish the level
 
+
 func _physics_process(delta):
 	if playing == false:
 		return
@@ -33,7 +34,8 @@ func _physics_process(delta):
 #			last_control.set_strech_location(last_control.global_position.distance_to(control.global_position))
 	#Turn off command
 	if Input.is_action_just_pressed("p_turn_off"):
-		turn_off()
+		if control != null and control.returning != null:
+			turn_off()
 
 func set_playing(value):
 	playing = value
@@ -64,7 +66,9 @@ func turn_off():
 			set_process(false) #Turn off PlayerInput process
 			emit_signal("finish_level") #Finish the level
 		else:
-			emit_signal("switch_control", control_queue.pop_front()) #Set the new controlled object with the one before the object we just turned off
+			control_queue.front().reverse_control_line()
 func move_camera(value):
 	if current_level != null:
 		current_level.move_camera(value)
+func remove_first_after_return():
+	emit_signal("switch_control", control_queue.pop_front()) #Set the new controlled object with the one before the object we just turned off
