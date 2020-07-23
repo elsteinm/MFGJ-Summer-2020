@@ -13,10 +13,17 @@ onready var timer = $WaitTimer #timer for search state
 onready var patrol_path = get_parent() #base patrol path defined in the editor
 onready var player = PlayerInput.player_character 
 onready var raycast = $LightCast #raycast used to search whether the player is in light
-
+onready var line = load("res://Source/Scenes/Objects/ControlLine.tscn")
 var navigation_source #source to get the navigation information from
 export(State) var current_state = State.PATROL
 
+export(NodePath) var protecting1 setget set_protecting1
+export(NodePath) var protecting2 setget set_protecting2
+export(NodePath) var protecting3 setget set_protecting3
+var protecters = []
+
+var protected = false
+var lines = {}
 var last_player_location = Vector2.ZERO
 
 var player_in_cone = false
@@ -73,7 +80,7 @@ func _process(_delta):
 			player_in_view = false
 	var current_position = transform.get_origin()
 	detect_player(direction, current_position)
-
+	update_lines()
 #in this function we handle the actual movement of the guard, depending on his state
 func _physics_process(delta):
 	#if the character isn't controlled by player and is active	
@@ -268,3 +275,65 @@ func find_shortest_distance_patrol():
 	#save the shortest path
 	path_points = shortest_path
 	patrol_index = shortest_goal
+
+func set_protecting1(value):
+	if protecting1 is NodePath:
+		protecting1 = get_node(protecting1)
+	if not protecting1 is NodePath and protecting1 != null:
+		remove_child(lines[protecting1])
+		protecting1.remove_protecter(self)
+		lines.erase(protecting1)
+	if value != null:	
+		protecting1 = get_node(value)
+		if protecting1 != null:
+			add_line(protecting1)
+func set_protecting2(value):
+	if protecting2 is NodePath:
+		protecting2 = get_node(protecting2)
+	if protecting2 != null:
+		remove_child(lines[protecting2])
+		protecting2.remove_protecter(self)
+		lines.erase(protecting2)
+	if value != null:	
+		protecting2 = get_node(value)
+		if protecting2 != null:
+			add_line(protecting2)
+func set_protecting3(value):
+	if protecting3 is NodePath:
+		protecting3 = get_node(protecting3)
+	if protecting3 != null:
+		remove_child(lines[protecting3])
+		protecting3.remove_protecter(self)
+		lines.erase(protecting3)
+	if value != null:
+		protecting3 = get_node(value)
+		if protecting3 != null:
+			add_line(protecting3)
+func add_line(target):
+	if line == null:
+		line = load("res://Source/Scenes/Objects/ControlLine.tscn")
+	var new_line = line.instance()
+	if modulate != Color(1,1,1):
+		new_line.modulate = modulate
+	else:
+		new_line.modulate = Color(0.941176, 0.101961, 0.113725)
+	add_child(new_line)
+	lines[target] = new_line
+	new_line.extend_to = target.global_position
+	target.add_protecter(self)
+func add_protecter(value):
+	if protecters == null:
+		protecters = []
+	if value != null:
+		protecters.append(value)
+		protected = true
+func remove_protecter(value):
+	if protecters != null and value != null:
+		if protecters.has(value):
+			protecters.remove(value)
+		if protecters.size() > 0:
+			protected = true
+func update_lines():
+	for i in lines:
+		print(to_local(i.global_position))
+		lines[i].extend_to = to_local(i.global_position)
