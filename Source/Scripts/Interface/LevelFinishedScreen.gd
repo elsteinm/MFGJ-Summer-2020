@@ -13,7 +13,7 @@ func set_result(progress, time, completed):
 	label.text = "You have dimmed " + progress + " objects in the world in " + time
 	if completed == true:
 		label.text += "\nWORLD HAS BEEN DIMMED"
-		#next_button.disabled = false
+		next_button.disabled = false
 
 func _on_RetryButton_pressed():
 	emit_signal("retry")

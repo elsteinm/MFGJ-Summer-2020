@@ -2,6 +2,7 @@ extends "res://Source/Scripts/Objects/Character.gd"
 
 #enum to describe the current state of the guard
 enum State {
+	SENTRY,
 	PATROL,
 	CHASE,
 	SEARCH,
@@ -14,15 +15,22 @@ onready var patrol_path = get_parent() #base patrol path defined in the editor
 onready var player = PlayerInput.player_character 
 onready var raycast = $LightCast #raycast used to search whether the player is in light
 onready var line = load("res://Source/Scenes/Objects/ControlLine.tscn")
+onready var rotation_tween = $RotationTween
+
 var navigation_source #source to get the navigation information from
-export(State) var current_state = State.PATROL
+export(State) var origin_state
+var current_state
+var original_rotation
 
-export(NodePath) var protecting1 setget set_protecting1
-export(NodePath) var protecting2 setget set_protecting2
-export(NodePath) var protecting3 setget set_protecting3
-var protecters = []
+export(NodePath) var protector1_path #setget set_protector1
+export(NodePath) var protector2_path #setget set_protector2
+export(NodePath) var protector3_path #setget set_protector3
 
-var protected = false
+var protector1
+var protector2
+var protector3
+var protectors = Array()
+
 var lines = {}
 var last_player_location = Vector2.ZERO
 
@@ -56,21 +64,52 @@ func _ready():
 	#pre bake the patrol path into path_points
 	original_path = PoolVector2Array()
 	#get actual patrol path
-	var path = patrol_path.get_parent().curve.get_baked_points()
+	if patrol_path is PathFollow2D:
+		var path = patrol_path.get_parent().curve.get_baked_points()
+		var step = 1.0/path.size() * 5
+		for _i in range(path.size() * 5):
+			original_path.append(patrol_path.get_global_position())
+			patrol_path.unit_offset += step 
+	else:
+		original_path.append(global_position)
+	original_rotation = global_rotation
 	#for every point on the curve, we make 5 points on our original path variable 
 	#to make a smooth path
 	#the step is based on unit_offset, which ranges from 0-1
 	#the step is the full range of the path devided by the amount of points we want
-	var step = 1.0/path.size() * 5
-	for _i in range(path.size() * 5):
-		original_path.append(patrol_path.get_global_position())
-		patrol_path.unit_offset += step 
 	path_points = original_path
+	current_state = origin_state
+	
+	yield(Main, "level_loaded")
+	if protector1_path.is_empty() != true:
+		protector1 = get_node(protector1_path)
+		add_line(protector1)
+		protectors.append(protector1)
+	if protector2_path.is_empty() != true:
+		protector2 = get_node(protector2_path)
+		add_line(protector2)
+		protectors.append(protector2)
+	if protector3_path.is_empty() != true:
+		protector3 = get_node(protector3_path)
+		add_line(protector3)
+		protectors.append(protector3)
+	if protectors.empty() != true:
+		is_protected = true
 
 #in the process function we handle player detection. has 2 parts:
 #	1. check if the player is directly in view(based on a raycast)
 #	2. call detect player which handles the rest of the detection
 func _process(_delta):
+	if is_protected == true:
+		for protector in protectors:
+			if protector.is_active == false:
+				protectors.erase(protector)
+				var line = lines[protector]
+				lines.erase(line)
+				line.queue_free()
+				if protectors.empty() == true:
+					is_protected = false
+		update_lines()
 	if player_in_cone == true:
 		var space = get_world_2d().direct_space_state
 		var result = space.intersect_ray(global_position, player.transform.get_origin(), [self], raycast.collision_mask)
@@ -80,12 +119,17 @@ func _process(_delta):
 			player_in_view = false
 	var current_position = transform.get_origin()
 	detect_player(direction, current_position)
-	update_lines()
+
 #in this function we handle the actual movement of the guard, depending on his state
 func _physics_process(delta):
 	#if the character isn't controlled by player and is active	
 	if is_active == true and is_controlled == false and freeze == false:
 		match current_state:
+			State.SENTRY:
+				if awareness >= 1:
+					last_player_location = player.get_global_position()
+					current_state = State.CHASE
+					look_at(player.transform.get_origin())
 			State.PATROL:
 				patrol_state(delta)
 				#if the awareness is over 1, we need to start chasing
@@ -177,7 +221,9 @@ func return_state(delta):
 				#if we reached the point on the patrol point, we move back to there
 				path_points = original_path
 				path_index = patrol_index
-				current_state = State.PATROL
+				rotation_tween.interpolate_property(self, "global_rotation", global_rotation, original_rotation, 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
+				rotation_tween.start()
+				current_state = origin_state
 				return
 			else:
 				path_index += 1
@@ -185,10 +231,13 @@ func return_state(delta):
 	else:
 		path_points = original_path
 		path_index = patrol_index
-		current_state = State.PATROL
-		
-func hunt_state(delta):
+		rotation_tween.interpolate_property(self, "global_rotation", global_rotation, original_rotation, 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
+		rotation_tween.start()
+		current_state = origin_state
+
+func hunt_state(_delta):
 	pass
+
 #this function is responsible for the level of awareness the guard has of the player
 func detect_player(facing, pos):
 	if player_exists == true:
@@ -276,63 +325,45 @@ func find_shortest_distance_patrol():
 	path_points = shortest_path
 	patrol_index = shortest_goal
 
-func set_protecting1(value):
-	if protecting1 is NodePath:
-		protecting1 = get_node(protecting1)
-	if not protecting1 is NodePath and protecting1 != null:
-		remove_child(lines[protecting1])
-		protecting1.remove_protecter(self)
-		lines.erase(protecting1)
-	if value != null:	
-		protecting1 = get_node(value)
-		if protecting1 != null:
-			add_line(protecting1)
-func set_protecting2(value):
-	if protecting2 is NodePath:
-		protecting2 = get_node(protecting2)
-	if protecting2 != null:
-		remove_child(lines[protecting2])
-		protecting2.remove_protecter(self)
-		lines.erase(protecting2)
-	if value != null:	
-		protecting2 = get_node(value)
-		if protecting2 != null:
-			add_line(protecting2)
-func set_protecting3(value):
-	if protecting3 is NodePath:
-		protecting3 = get_node(protecting3)
-	if protecting3 != null:
-		remove_child(lines[protecting3])
-		protecting3.remove_protecter(self)
-		lines.erase(protecting3)
-	if value != null:
-		protecting3 = get_node(value)
-		if protecting3 != null:
-			add_line(protecting3)
+#func set_protector1(value):
+#	if protector1 != null:
+#		remove_child(lines[protector1])
+#		lines.erase(protector1)
+#	if value != null:
+#		protector1 = get_node(value)
+#		if protector1 != null:
+#			add_line(protector1)
+#
+#func set_protector2(value):
+#	if protector2 != null:
+#		remove_child(lines[protector2])
+#		lines.erase(protector2)
+#	if value != null:
+#		protector2 = get_node(value)
+#		if protector2 != null:
+#			add_line(protector2)
+#
+#func set_protector3(value):
+#	if protector3 != null:
+#		remove_child(lines[protector3])
+#		lines.erase(protector3)
+#	if value != null:
+#		protector3 = get_node(value)
+#		if protector3 != null:
+#			add_line(protector3)
+
 func add_line(target):
 	if line == null:
 		line = load("res://Source/Scenes/Objects/ControlLine.tscn")
 	var new_line = line.instance()
-	if modulate != Color(1,1,1):
-		new_line.modulate = modulate
+	if target.modulate != Color(1,1,1):
+		new_line.modulate = target.modulate
 	else:
 		new_line.modulate = Color(0.941176, 0.101961, 0.113725)
 	add_child(new_line)
 	lines[target] = new_line
 	new_line.extend_to = target.global_position
-	target.add_protecter(self)
-func add_protecter(value):
-	if protecters == null:
-		protecters = []
-	if value != null:
-		protecters.append(value)
-		protected = true
-func remove_protecter(value):
-	if protecters != null and value != null:
-		if protecters.has(value):
-			protecters.remove(value)
-		if protecters.size() > 0:
-			protected = true
+
 func update_lines():
 	for i in lines:
 		print(to_local(i.global_position))

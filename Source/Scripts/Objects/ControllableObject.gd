@@ -2,9 +2,9 @@ extends KinematicBody2D
 
 onready var sprite = $Sprite
 onready var control_effect = $ControlEffect
-
 onready var light_area_collision = $LightArea/CollisionShape2D
 onready var light = $Light2D
+onready var control_cast = $ControlCast
 
 var marker
 var freeze = false
@@ -17,6 +17,7 @@ var control_target = null setget set_control_target
 var in_range = false
 var control_state = false
 var returning = false
+var is_protected = false
 
 signal switch_control(new_host) #Signals switching to this object
 
@@ -58,10 +59,11 @@ func _physics_process(_delta):
 			if in_range == true:
 				var target = to_local(marker.global_position)
 				target = target.clamped(radius_of_control)
-				$controlCast.cast_to = target
-				if $controlCast.get_collider() != null:
-					if $controlCast.get_collider().is_active == true and $controlCast.get_collider().is_controlled == false:
-						set_control_target($controlCast.get_collider())
+				control_cast.cast_to = target
+				var collider = control_cast.get_collider()
+				if collider != null:
+					if collider.is_active == true and collider.is_controlled == false and collider.is_protected == false:
+						set_control_target(collider)
 				else:
 					set_control_target(null)
 			else:
@@ -72,9 +74,9 @@ func _physics_process(_delta):
 
 func make_target(make):
 	if make == true:
-		$Sprite.modulate = Color(0.113725, 0.027451, 0.329412)
+		sprite.modulate = Color(0.113725, 0.027451, 0.329412)
 	else:
-		$Sprite.modulate = Color(1,1,1)
+		sprite.modulate = Color(1,1,1)
 
 func set_control_target(value):
 	if control_target != null and control_target != value:
@@ -131,11 +133,8 @@ func set_control(value):
 	else:
 		$ControlEffect.visible = false
 
-
-
 func _exit_tree():
 	queue_free()
-
 
 func set_strech_location(value):
 	if control_target != null and control_target.freeze == true:
@@ -145,6 +144,7 @@ func set_strech_location(value):
 #	$ControlEffect.material.set_shader_param('target_strech',value)
 	strech_location = value
 #	$Camera2D.position = (value)
+
 func reverse_control_line():
 	$ControlLine.visible = true
 	$takeOverTween.interpolate_method(self,'set_strech_location',to_global($ControlLine.extend_to),global_position,0.5)

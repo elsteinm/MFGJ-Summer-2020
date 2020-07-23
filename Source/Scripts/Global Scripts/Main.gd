@@ -10,12 +10,14 @@ var pause_screen = null
 var level_number setget set_level_number
 var current_level
 
+signal level_loaded
+
 func _ready():
 	pause_mode = Node.PAUSE_MODE_PROCESS
 	var _error
 	_error = PlayerInput.connect("switch_control", self, "switch_player_host") #Tells the level that the player has changed host
 	_error = PlayerInput.connect("finish_level", self, "finish_level") #Tells the level when the player has been turned off
-	self.level_number = 2020
+	self.level_number = 1
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -32,6 +34,7 @@ func load_level(lvl_num):
 	current_level.set_tutorial(Helper.level_tutorials[level_number])
 	self.game_paused = false
 	PlayerInput.playing = true
+	emit_signal("level_loaded")
 
 #Erase and remove the current level
 func erase_level():
@@ -111,7 +114,7 @@ func set_level_number(num):
 	if num <= Helper.LEVELS: #If level X exists
 		level_number = num
 	else:
-		level_number = 2020
+		level_number = 1
 	LevelPackedScene = load("res://Source/Scenes/Levels/Level" + str(level_number) + ".tscn") #Get level scene
 
 #Add object to the current level objectives

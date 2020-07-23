@@ -39,14 +39,15 @@ func _process(_delta):
 	if in_light == true:
 		for light_shape in lights:
 			var result = space.intersect_ray(global_position, light_shape.get_global_position(), [self], raycast.collision_mask)
-			if result["collider"].is_a_parent_of(light_shape):
-				var overlap = calculate_intersect(light_shape)
-				if overlap != null:
-					var area = Helper.get_polygon_area(overlap)
-					var ratio = float(area)/float(player_area)
-					detectability += ratio/2
-					if red_lights.has(light_shape):
-						self.brightness += ratio/10
+			if result.empty() != true:
+				if result["collider"].is_a_parent_of(light_shape):
+					var overlap = calculate_intersect(light_shape)
+					if overlap != null:
+						var area = Helper.get_polygon_area(overlap)
+						var ratio = float(area)/float(player_area)
+						detectability += ratio/2
+						if red_lights.has(light_shape):
+							self.brightness += ratio/10
 
 func calculate_intersect(light_shape):
 	var global_player_polygon = get_global_shape()

@@ -72,6 +72,15 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="controlArea" index="0"]
 rotation = -1.5708
 shape = SubResource( 4 )
+
+[node name="controlCast" type="RayCast2D" parent="." index="10"]
+enabled = true
+collision_mask = 4
+
+[node name="ControlLine" parent="." index="12"]
+self_modulate = Color( 1, 1, 1, 1 )
+
+[node name="RotationTween" type="Tween" parent="." index="13"]
 [connection signal="body_entered" from="LightArea" to="." method="_on_LightArea_body_entered"]
 [connection signal="body_exited" from="LightArea" to="." method="_on_LightArea_body_exited"]
 [connection signal="timeout" from="WaitTimer" to="." method="_on_WaitTimer_timeout"]
