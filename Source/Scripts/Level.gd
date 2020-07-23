@@ -19,7 +19,8 @@ var time = "00:00:00"
 
 func _init():
 	Main.current_level = self
-	PlayerInput.playing= true
+	PlayerInput.current_level = self
+	PlayerInput.playing = true
 
 func _ready():
 	$Marker.position = $PlayerCharacter.position

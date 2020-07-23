@@ -28,7 +28,6 @@ func _input(event):
 func load_level(lvl_num):
 	self.level_number = lvl_num
 	current_level = LevelPackedScene.instance()
-	PlayerInput.current_level = current_level
 	get_tree().root.add_child(current_level)
 	current_level.set_tutorial(Helper.level_tutorials[level_number])
 	self.game_paused = false

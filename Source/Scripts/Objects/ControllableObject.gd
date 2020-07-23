@@ -99,7 +99,7 @@ func start_take_over(target):
 	$takeOverTween.start()
 	control_target.freeze = true
 #	$ControlEffect.material.set_shader_param('need_strech',true)
-	set_process(false)
+#	set_process(false)
 #Sets the is_active variable
 func set_active(value):
 	is_active = value
