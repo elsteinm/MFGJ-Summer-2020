@@ -77,10 +77,10 @@ shape = SubResource( 4 )
 enabled = true
 collision_mask = 4
 
-[node name="ControlLine" parent="." index="12"]
-self_modulate = Color( 1, 1, 1, 1 )
-
 [node name="RotationTween" type="Tween" parent="." index="13"]
+
+[node name="ControlLine" parent="." index="14"]
+self_modulate = Color( 1, 1, 1, 1 )
 [connection signal="body_entered" from="LightArea" to="." method="_on_LightArea_body_entered"]
 [connection signal="body_exited" from="LightArea" to="." method="_on_LightArea_body_exited"]
 [connection signal="timeout" from="WaitTimer" to="." method="_on_WaitTimer_timeout"]

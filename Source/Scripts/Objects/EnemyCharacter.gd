@@ -80,6 +80,9 @@ func _ready():
 	path_points = original_path
 	current_state = origin_state
 	
+	if modulate != Color(1,1,1):
+		light.color = modulate
+	
 	yield(Main, "level_loaded")
 	if protector1_path.is_empty() != true:
 		protector1 = get_node(protector1_path)
