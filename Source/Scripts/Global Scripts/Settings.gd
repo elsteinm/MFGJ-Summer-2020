@@ -87,15 +87,27 @@ func set_control_type(value):
 			controls[Helper.Commands.CHANGE] = "Space"
 			controls[Helper.Commands.AIM] = "Arrow Keys"
 	config.set_value("Control Settings", "control_type", control_type)
+	update_input_map()
 
 func save_settings():
 	config.save(config_file)
 
-func update_input_map(control_type):
+func update_input_map():
 	if control_type == ControlType.KEYBOARD:
-		pass
+		var change_key = InputEventKey.new()
+		change_key.scancode = KEY_SPACE
+		change_mapping_of_action("p_action", change_key)
+		var dim_key = InputEventKey.new()
+		dim_key.scancode = KEY_SHIFT
+		change_mapping_of_action("p_turn_off", dim_key)
 	elif control_type == ControlType.KEYBOARD_MOUSE:
-		pass
-func change_maping_of_action(action,key,old):
-	InputMap.action_erase_event(action,old)
-	InputMap.add_action(action,key)
+		var change_key = InputEventMouseButton.new()
+		change_key.button_index = BUTTON_LEFT
+		change_mapping_of_action("p_action", change_key)
+		var dim_key = InputEventMouseButton.new()
+		dim_key.button_index = BUTTON_RIGHT
+		change_mapping_of_action("p_turn_off", dim_key)
+
+func change_mapping_of_action(action,key):
+	InputMap.action_erase_events(action)
+	InputMap.action_add_event(action,key)
