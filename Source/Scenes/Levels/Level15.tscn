@@ -41,7 +41,7 @@ _data = {
 
 [sub_resource type="Curve2D" id=8]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, -160, -992, 0, 0, 0, 0, -672, -992, 0, 0, 0, 0, -672, -600 )
+"points": PoolVector2Array( 0, 0, 0, 0, -160, -992, 0, 0, 0, 0, -672, -992 )
 }
 
 [node name="Level15" instance=ExtResource( 1 )]
