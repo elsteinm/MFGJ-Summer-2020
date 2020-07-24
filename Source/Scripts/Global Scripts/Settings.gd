@@ -84,3 +84,12 @@ func set_control_type(value):
 
 func save_settings():
 	config.save(config_file)
+
+func update_input_map(control_type):
+	if control_type == ControlType.KEYBOARD:
+		pass
+	elif control_type == ControlType.KEYBOARD_MOUSE:
+		pass
+func change_maping_of_action(action,key,old):
+	InputMap.action_erase_event(action,old)
+	InputMap.add_action(action,key)
