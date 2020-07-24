@@ -134,13 +134,14 @@ func _exit_tree():
 	queue_free()
 
 func set_strech_location(value):
-	if control_target != null and control_target.freeze == true:
-		PlayerInput.move_camera(value)
-	value = to_local(value)
-	$ControlLine.extend_to = value
-#	$ControlEffect.material.set_shader_param('target_strech',value)
-	strech_location = value
-#	$Camera2D.position = (value)
+	if is_inside_tree():
+		if control_target != null and control_target.freeze == true:
+			PlayerInput.move_camera(value)
+		value = to_local(value)
+		$ControlLine.extend_to = value
+	#	$ControlEffect.material.set_shader_param('target_strech',value)
+		strech_location = value
+	#	$Camera2D.position = (value)
 
 func reverse_control_line():
 	$ControlLine.visible = true
