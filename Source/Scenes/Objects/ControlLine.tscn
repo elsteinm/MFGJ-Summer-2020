@@ -14,6 +14,7 @@ shader_param/need_strech = false
 extents = Vector2( 0, 0 )
 
 [node name="ControlLine" type="Area2D"]
+modulate = Color( 0.113725, 0.027451, 0.329412, 1 )
 material = SubResource( 1 )
 collision_layer = 32
 collision_mask = 0

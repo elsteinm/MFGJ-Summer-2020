@@ -100,6 +100,7 @@ func start_take_over(target):
 	$takeOverTween.interpolate_method(self,'set_strech_location',global_position,target.global_position,0.5)
 	$takeOverTween.start()
 	control_target.freeze = true
+	PlayerInput.returning = true
 #	$ControlEffect.material.set_shader_param('need_strech',true)
 #	set_process(false)
 #Sets the is_active variable
@@ -151,11 +152,13 @@ func reverse_control_line():
 	$takeOverTween.start()
 	control_target.freeze = true
 	returning = true
+	
 
 func _on_takeOverTween_tween_completed(_object = null, _key = null):
 	if returning == false:
 		emit_signal('switch_control',control_target)
 		control_state = true
+		PlayerInput.returning = false
 	else:
 		PlayerInput.remove_first_after_return()
 #	$Camera2D.position = Vector2(0,0)

@@ -21,6 +21,7 @@ void fragment() {
 	
 }
 "
+custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
@@ -78,5 +79,4 @@ collision_mask = 4
 
 [node name="ControlLine" parent="." instance=ExtResource( 2 )]
 visible = false
-self_modulate = Color( 0.113725, 0.027451, 0.329412, 1 )
 [connection signal="tween_completed" from="takeOverTween" to="." method="_on_takeOverTween_tween_completed"]
