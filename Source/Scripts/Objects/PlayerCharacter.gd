@@ -29,10 +29,12 @@ func _ready():
 	var global_player_polygon = get_global_shape()
 	player_area = Helper.get_polygon_area(global_player_polygon)
 	var _error = connect("dead", Main, "game_over")
-
+	is_moveable = true
+	PlayerInput.returning = false
 func _enter_tree():
 	emit_signal("switch_control", self) #Makes the Player Character the initial control
 	PlayerInput.player_character = self
+
 
 func _process(_delta):
 	detectability = 0.45 + brightness

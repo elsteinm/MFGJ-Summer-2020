@@ -71,7 +71,6 @@ func _on_LevelTimer_timeout():
 	ui.update_time(time)
 func move_camera(new_position):
 	$Camera2D.position = to_local(new_position)
-
 func move_marker(mouse_control,move_vector = Vector2.ZERO,delta = 0):
 	if mouse_control == true:
 		$Marker.position = get_local_mouse_position()

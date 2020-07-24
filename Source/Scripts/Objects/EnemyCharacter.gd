@@ -51,7 +51,7 @@ var patrol_index = 0 setget set_patrol_index #used to save the location we are r
 var original_path #original path for patrol, calculated based on the patrol path
 var path_points #current navigation path
 var path_index = 0 #current navigation index, based on path_points
-
+var frame_number = 0
 func _init().(false, 500, 100):
 	pass
 
@@ -68,8 +68,8 @@ func _ready():
 	#get actual patrol path
 	if patrol_path is PathFollow2D:
 		var path = patrol_path.get_parent().curve.get_baked_points()
-		var step = 1.0/path.size() * 5
-		for _i in range(path.size() * 5):
+		var step = 1.0/path.size() * 3
+		for _i in range(path.size() * 3):
 			original_path.append(patrol_path.get_global_position())
 			patrol_path.unit_offset += step 
 	else:
@@ -113,6 +113,8 @@ func _process(_delta):
 				line.queue_free()
 				if protectors.empty() == true:
 					is_protected = false
+		#frame_number = (frame_number + 1) % 2
+		#if frame_number == 0:
 		update_lines()
 	if player_in_cone == true:
 		var space = get_world_2d().direct_space_state
@@ -323,7 +325,6 @@ func move_on_path(path, index, _delta):
 				var to_turn = PI/2 - global_position.angle_to_point(coll.position)
 				if to_turn >  PI/2:
 					to_turn -= PI
-				print("original vector: " + str(move_vector.normalized()) + "new vector: " + str(move_vector.rotated(to_turn).normalized() * 42))
 				target_location += move_vector.rotated(to_turn).normalized() * 42
 				state_stack.push_front(current_state)
 				current_state = State.PASSING
@@ -396,7 +397,7 @@ func find_shortest_distance_patrol():
 	path_points = shortest_path
 	path_index = 0
 	patrol_index = shortest_goal
-	print(patrol_index)
+
 
 #func set_protector1(value):
 #	if protector1 != null:
@@ -439,8 +440,7 @@ func add_line(target):
 
 func update_lines():
 	for i in lines:
-		print(to_local(i.global_position))
-		if lines[i].is_queued_for_deletion() != true:
+		if lines[i] != null and lines[i].is_queued_for_deletion() != true:
 			lines[i].extend_to = to_local(i.global_position)
 
 #Sets the is_controlled variable, overriden to allow return to patrol route

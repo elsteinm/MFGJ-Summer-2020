@@ -34,7 +34,7 @@ func set_extenstion(value):
 	if color_array == null:
 		color_array = PoolColorArray()
 		color_array.append(Color(1,1,1))
-	if value != Vector2.ZERO:
+	if value != Vector2.ZERO and position.distance_to(value) > 1:
 		var angle_to_point = position.angle_to_point(value)
 #		points[0] = position + Vector2(1,0).rotated(angle_to_point + PI/2) * width/2
 #		points[1] = position + Vector2(1,0).rotated(angle_to_point - PI/2) * width/2

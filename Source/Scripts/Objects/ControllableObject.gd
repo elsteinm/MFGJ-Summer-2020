@@ -116,10 +116,6 @@ func set_active(value):
 		$ControlLine.visible = false
 		control_state = false
 
-func _notification(what):
-	match what:
-		NOTIFICATION_PAUSED:
-			$ControlEffect.visible = false
 
 #Sets the is_controlled variable
 func set_control(value):
@@ -152,7 +148,7 @@ func reverse_control_line():
 	$takeOverTween.start()
 	control_target.freeze = true
 	returning = true
-	
+	PlayerInput.returning = true
 
 func _on_takeOverTween_tween_completed(_object = null, _key = null):
 	if returning == false:
@@ -161,6 +157,7 @@ func _on_takeOverTween_tween_completed(_object = null, _key = null):
 		PlayerInput.returning = false
 	else:
 		PlayerInput.remove_first_after_return()
+
 #	$Camera2D.position = Vector2(0,0)
 func set_marker(marker_loc):
 	self.marker = marker_loc
