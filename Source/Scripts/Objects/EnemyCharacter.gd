@@ -200,9 +200,14 @@ func passing_state(delta):
 				else:
 					state_stack.push_front(current_state)
 					current_state = State.RETURN
-					path_points = navigation_source.get_simple_path(global_position,original_path[pass_target],true)
-					path_index = 0
-					patrol_index = pass_target
+					if origin_state == State.SENTRY:
+						path_points = navigation_source.get_simple_path(global_position,original_path[0],true)
+						path_index = 0
+						patrol_index = 0
+					else:
+						path_points = navigation_source.get_simple_path(global_position,original_path[pass_target],true)
+						path_index = 0
+						patrol_index = pass_target
 				return
 			else:
 				path_index += 1
