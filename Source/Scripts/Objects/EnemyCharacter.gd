@@ -440,7 +440,8 @@ func add_line(target):
 func update_lines():
 	for i in lines:
 		print(to_local(i.global_position))
-		lines[i].extend_to = to_local(i.global_position)
+		if lines[i].is_queued_for_deletion() != true:
+			lines[i].extend_to = to_local(i.global_position)
 
 #Sets the is_controlled variable, overriden to allow return to patrol route
 func set_control(value):
