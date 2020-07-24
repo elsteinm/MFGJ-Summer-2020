@@ -4,6 +4,7 @@ extends "res://Source/Scripts/Objects/Character.gd"
 enum State {
 	SENTRY,
 	PATROL,
+	PASSING,
 	CHASE,
 	SEARCH,
 	RETURN,
@@ -21,7 +22,8 @@ var navigation_source #source to get the navigation information from
 export(State) var origin_state
 var current_state
 var original_rotation
-
+var state_stack = []
+var pass_target = null
 export(NodePath) var protector1_path #setget set_protector1
 export(NodePath) var protector2_path #setget set_protector2
 export(NodePath) var protector3_path #setget set_protector3
@@ -79,7 +81,6 @@ func _ready():
 	#the step is the full range of the path devided by the amount of points we want
 	path_points = original_path
 	current_state = origin_state
-	
 	if modulate != Color(1,1,1):
 		light.color = modulate
 	
@@ -141,6 +142,14 @@ func _physics_process(delta):
 					current_state = State.CHASE
 					look_at(player.transform.get_origin())
 					#raycast.set_cast_to(direction)
+			State.PASSING:
+				passing_state(delta)
+				#if the awareness is over 1, we need to start chasing
+				if awareness >= 1:
+					last_player_location = player.get_global_position()
+					current_state = State.CHASE
+					look_at(player.transform.get_origin())
+					#raycast.set_cast_to(direction)
 			State.CHASE:
 				chase_state(delta)
 				#if the player manages to run away, we switch to searching for the player
@@ -177,7 +186,32 @@ func patrol_state(delta):
 	if distance < min_distance:
 		path_index = wrapi(path_index+1,0,path_points.size())
 	move_on_path(path_points,path_index,delta)
-
+func passing_state(delta):
+	if path_points.size() != 0:
+		var distance = global_position.distance_to(path_points[path_index])
+		if distance < min_distance:
+			if path_index == path_points.size() - 1:
+				#if we reached the point on the patrol point, we move back to there
+				current_state = state_stack.pop_front()
+				if current_state == State.RETURN:
+					find_shortest_distance_patrol()
+				else:
+					state_stack.push_front(current_state)
+					current_state = State.RETURN
+					path_points = navigation_source.get_simple_path(global_position,original_path[pass_target],true)
+					path_index = 0
+					patrol_index = pass_target
+				return
+			else:
+				path_index += 1
+		move_on_path(path_points,path_index,delta)
+	else:
+		path_points = original_path
+		path_index = patrol_index
+		if current_state == State.SENTRY:
+			rotation_tween.interpolate_property(self, "global_rotation", global_rotation, original_rotation, 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
+			rotation_tween.start()
+		current_state = origin_state
 #this function gets the path to the player, and then goes towards him
 func chase_state(delta):
 	var new_path = navigation_source.get_simple_path(global_position, last_player_location, true)
@@ -224,8 +258,9 @@ func return_state(delta):
 				#if we reached the point on the patrol point, we move back to there
 				path_points = original_path
 				path_index = patrol_index
-				rotation_tween.interpolate_property(self, "global_rotation", global_rotation, original_rotation, 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
-				rotation_tween.start()
+				if origin_state == State.SENTRY:
+					rotation_tween.interpolate_property(self, "global_rotation", global_rotation, original_rotation, 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
+					rotation_tween.start()
 				current_state = origin_state
 				return
 			else:
@@ -234,9 +269,11 @@ func return_state(delta):
 	else:
 		path_points = original_path
 		path_index = patrol_index
-		rotation_tween.interpolate_property(self, "global_rotation", global_rotation, original_rotation, 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
-		rotation_tween.start()
+		if origin_state == State.SENTRY:
+			rotation_tween.interpolate_property(self, "global_rotation", global_rotation, original_rotation, 1, Tween.TRANS_LINEAR, Tween.EASE_IN)
+			rotation_tween.start()
 		current_state = origin_state
+		state_stack.pop_front()
 
 func hunt_state(_delta):
 	pass
@@ -262,11 +299,41 @@ func move_on_path(path, index, _delta):
 	#move vector is target of movement
 	var move_vector = path[index] - global_position
 	#calculate new speed with accelration, maxed at max speed
-	speed = clamp(speed + acceleration,0,max_speed)
+	speed = clamp(speed + acceleration,0,max_speed)	
 	var _v = move_and_slide(move_vector.normalized() * speed)
 	#turn to where we are going, smoothed out
 	direction = (path[index] + move_vector)
 	self.rotation += get_angle_to(direction) * 0.1
+	if get_slide_count() > 0:
+		for i in range(get_slide_count()):
+			var coll = get_slide_collision(i)
+			if not coll.collider is TileMap and not coll.collider == player and current_state != State.PASSING:
+				pass_target = null
+				if path_index == 0:
+					pass_target = path_index
+				else:
+					for j in range(path_index,path_points.size()):
+						if global_position.distance_to(path_points[j]) > 60:
+							pass_target = j
+							break;
+					if pass_target == null:
+						pass_target = 0
+				var target_location = global_position
+#				var to_turn =  global_position.angle_to(coll.position) * PI/2 * 20
+				var to_turn = PI/2 - global_position.angle_to_point(coll.position)
+				if to_turn >  PI/2:
+					to_turn -= PI
+				print("original vector: " + str(move_vector.normalized()) + "new vector: " + str(move_vector.rotated(to_turn).normalized() * 42))
+				target_location += move_vector.rotated(to_turn).normalized() * 42
+				state_stack.push_front(current_state)
+				current_state = State.PASSING
+				var new_path = PoolVector2Array()
+				new_path.append(target_location)
+				new_path.append(target_location + move_vector.normalized() * 42)
+#				new_path.append(path_points[path_index])
+				path_points = new_path
+				path_index = 0
+				return false
 	#not sure why this return false
 	return false
 
@@ -300,6 +367,7 @@ func get_nav(nav_source):
 
 #end of search state, calls the calculation of the return route
 func _on_WaitTimer_timeout():
+	state_stack.push_front(current_state)
 	current_state = State.RETURN
 	find_shortest_distance_patrol()
 
@@ -326,7 +394,9 @@ func find_shortest_distance_patrol():
 			shortest_goal = j
 	#save the shortest path
 	path_points = shortest_path
+	path_index = 0
 	patrol_index = shortest_goal
+	print(patrol_index)
 
 #func set_protector1(value):
 #	if protector1 != null:
@@ -371,3 +441,20 @@ func update_lines():
 	for i in lines:
 		print(to_local(i.global_position))
 		lines[i].extend_to = to_local(i.global_position)
+
+#Sets the is_controlled variable, overriden to allow return to patrol route
+func set_control(value):
+	is_controlled = value
+	if is_controlled == true:
+		$ControlEffect.visible = true
+		set_strech_location(Vector2.ZERO)
+		$ControlLine.visible = false
+		control_state = false
+		freeze = false
+		set_process(true)
+	else:
+		if original_path != null:
+			find_shortest_distance_patrol() 
+			state_stack.push_front(current_state)
+			current_state = State.RETURN
+			$ControlEffect.visible = false

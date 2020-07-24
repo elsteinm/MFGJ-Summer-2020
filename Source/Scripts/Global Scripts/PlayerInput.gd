@@ -24,7 +24,8 @@ func _physics_process(delta):
 			input_vector.y += Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")			
 		input_vector = input_vector.normalized()
 		control.move(input_vector, delta)
-	current_level.move_camera(control.global_position)
+	if not returning:
+		current_level.move_camera(control.global_position)
 	if Settings.control_type == Settings.ControlType.KEYBOARD:
 		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
