@@ -92,7 +92,7 @@ __meta__ = {
 
 [node name="RichTextLabel" type="RichTextLabel" parent="HelpPanel"]
 margin_right = 640.0
-margin_bottom = 340.0
+margin_bottom = 168.0
 size_flags_vertical = 3
 bbcode_enabled = true
 bbcode_text = "[center]DIM THE WORLD.
@@ -104,16 +104,7 @@ Lighting up too much can result in Game Over.
 
 Dim yourself to finish the level.
 
-
-WASD/Arrow Keys - move
-
-Mouse Move - look around
-
-Left Mouse Click on objects and enemies - take control.
-
-Right Mouse Click - Dim currently controlled character
-
-ESC - Pause game[/center]"
+[/center]"
 text = "DIM THE WORLD.
 
 Take control of every object in the level and dim it.
@@ -123,20 +114,22 @@ Lighting up too much can result in Game Over.
 
 Dim yourself to finish the level.
 
-
-WASD/Arrow Keys - move
-
-Mouse Move - look around
-
-Left Mouse Click on objects and enemies - take control.
-
-Right Mouse Click - Dim currently controlled character
-
-ESC - Pause game"
+"
 scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ControlGrid" type="GridContainer" parent="HelpPanel"]
+margin_left = 320.0
+margin_top = 172.0
+margin_right = 320.0
+margin_bottom = 340.0
+size_flags_horizontal = 6
+size_flags_vertical = 6
+custom_constants/vseparation = 5
+custom_constants/hseparation = 20
+columns = 2
 
 [node name="BackButton" type="Button" parent="HelpPanel"]
 margin_top = 344.0

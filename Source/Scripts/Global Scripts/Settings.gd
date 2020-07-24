@@ -24,7 +24,13 @@ var sfx_volume setget set_sfx_volume
 
 #Control settings
 var control_type setget set_control_type
-var controls = Dictionary()
+var controls = {
+	Helper.Commands.MOVE: "",
+	Helper.Commands.DIM: "",
+	Helper.Commands.CHANGE: "",
+	Helper.Commands.AIM: "",
+	Helper.Commands.PAUSE: ""
+}
 
 func _ready():
 	controls[Helper.Commands.MOVE] = "WASD"
