@@ -114,6 +114,10 @@ move_left={
 2d_physics/layer_5="Hurting Lights"
 2d_physics/layer_6="Control lines"
 
+[physics]
+
+common/physics_fps=30
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
