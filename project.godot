@@ -17,7 +17,11 @@ _global_script_class_icons={
 
 config/name="Dim"
 run/main_scene="res://Source/Scenes/Interface/MainMenu.tscn"
+<<<<<<< Updated upstream
 config/icon="res://Resources/Icon.png"
+=======
+config/icon="res://Resources/Cover.png"
+>>>>>>> Stashed changes
 config/windows_native_icon="res://Resources/game icon.ico"
 
 [audio]
