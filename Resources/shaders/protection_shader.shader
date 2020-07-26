@@ -8,6 +8,9 @@ uniform vec2 center = vec2(.5, .6);
 uniform int OCTAVES = 6;
 uniform float target_strech;
 uniform bool need_strech = false;
+uniform vec4 first_color : hint_color;
+uniform vec4 second_color : hint_color;
+uniform vec4 third_color : hint_color;
 void vertex()
 {
 	if (UV.y > 0.5)
@@ -85,6 +88,7 @@ void fragment() {
 	smoke_fbm = sqrt(smoke_fbm);
 	smoke_fbm = clamp(smoke_fbm, 0.0, 1.0);
 //	COLOR = vec4(1.0);
-	COLOR = vec4(smoke_fbm);
+	vec4 result_of_mix =  texture(TEXTURE,UV) ;
+	COLOR = vec4(smoke_fbm) * result_of_mix * 2.0;
 //	COLOR = vec4(vec3(egg_s), 1.0);
 }

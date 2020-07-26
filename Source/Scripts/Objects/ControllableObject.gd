@@ -18,6 +18,7 @@ var in_range = false
 var control_state = false
 var returning = false
 var is_protected = false
+var aim_target
 
 signal switch_control(new_host) #Signals switching to this object
 
@@ -62,7 +63,7 @@ func _physics_process(_delta):
 				control_cast.cast_to = target
 				var collider = control_cast.get_collider()
 				if collider != null:
-					if collider.is_active == true and collider.is_controlled == false and collider.is_protected == false:
+					if collider.is_active == true and collider.is_controlled == false:
 						set_control_target(collider)
 				else:
 					set_control_target(null)
@@ -82,11 +83,21 @@ func set_control_target(value):
 	if control_target != null and control_target != value:
 		control_target.make_target(false)
 		control_target = null
+	if aim_target != null and aim_target != value:
+		if aim_target.is_protected == true:
+			for line in aim_target.lines:
+				aim_target.lines[line].visible = false
+		aim_target = null
 	if value != null:
-		value.make_target(true)
-		control_target = value
+		if value.is_protected == false:
+			value.make_target(true)
+			control_target = value
+			aim_target = value
+		else:
+			for line in value.lines:
+				value.lines[line].visible = true
+				aim_target = value
 	
-
 func _input(event):
 	if is_controlled == true and is_active == true:
 		if control_target != null and event.is_action_pressed("p_action"):

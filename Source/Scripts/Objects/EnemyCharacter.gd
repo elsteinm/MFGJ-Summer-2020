@@ -17,7 +17,7 @@ onready var player = PlayerInput.player_character
 onready var raycast = $LightCast #raycast used to search whether the player is in light
 onready var line = load("res://Source/Scenes/Objects/ControlLine.tscn")
 onready var rotation_tween = $RotationTween
-
+onready var protection_effect = $ProtectionEffect
 var navigation_source #source to get the navigation information from
 export(State) var origin_state
 var current_state
@@ -87,15 +87,15 @@ func _ready():
 	yield(Main, "level_loaded")
 	if protector1_path.is_empty() != true:
 		protector1 = get_node(protector1_path)
-		add_line(protector1)
+		add_line(protector1,0.0)
 		protectors.append(protector1)
 	if protector2_path.is_empty() != true:
 		protector2 = get_node(protector2_path)
-		add_line(protector2)
+		add_line(protector2,0.5)
 		protectors.append(protector2)
 	if protector3_path.is_empty() != true:
 		protector3 = get_node(protector3_path)
-		add_line(protector3)
+		add_line(protector3,1.0)
 		protectors.append(protector3)
 	if protectors.empty() != true:
 		is_protected = true
@@ -107,12 +107,14 @@ func _process(_delta):
 	if is_protected == true:
 		for protector in protectors:
 			if protector.is_active == false:
+				protection_effect.texture.gradient.remove_point(protectors.find(protector) / 2.0)
 				protectors.erase(protector)
 				var line = lines[protector]
 				lines.erase(protector)
 				line.queue_free()
 				if protectors.empty() == true:
 					is_protected = false
+					protection_effect.visible = false
 		#frame_number = (frame_number + 1) % 2
 		#if frame_number == 0:
 		update_lines()
@@ -431,15 +433,19 @@ func find_shortest_distance_patrol():
 #		if protector3 != null:
 #			add_line(protector3)
 
-func add_line(target):
+func add_line(target,location):
 	if line == null:
 		line = load("res://Source/Scenes/Objects/ControlLine.tscn")
 	var new_line = line.instance()
+	protection_effect.visible = true
 	if target.modulate != Color(1,1,1):
 		new_line.modulate = target.modulate
+		protection_effect.texture.gradient.add_point(location,target.modulate)
 	else:
 		new_line.modulate = Color(0.941176, 0.101961, 0.113725)
+		protection_effect.texture.gradient.add_point(location,Color(0.941176, 0.101961, 0.113725))
 	add_child(new_line)
+	new_line.visible = false
 	lines[target] = new_line
 	new_line.extend_to = target.global_position
 
@@ -465,3 +471,4 @@ func set_control(value):
 			state_stack.push_front(current_state)
 			current_state = State.RETURN
 			$ControlEffect.visible = false
+

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Source/Scenes/Objects/Character.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Resources/Graphics/Objects/character sprite sheet.png" type="Texture" id=2]
 [ext_resource path="res://Source/Scripts/Objects/EnemyCharacter.gd" type="Script" id=3]
 [ext_resource path="res://Graphics Files/lights/triangle.png" type="Texture" id=4]
+[ext_resource path="res://Resources/shaders/protection_shader.shader" type="Shader" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 16.5, 16.5, 16.5, -16.5, -16.5, 0 )
@@ -18,6 +19,24 @@ polygon = PoolVector2Array( -16, 0, 16, -16, 16, 16 )
 
 [sub_resource type="RayShape2D" id=4]
 length = 64.0
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 6 )
+shader_param/center = Vector2( 0.5, 0.6 )
+shader_param/OCTAVES = 6
+shader_param/target_strech = null
+shader_param/need_strech = false
+shader_param/first_color = null
+shader_param/second_color = null
+shader_param/third_color = null
+
+[sub_resource type="Gradient" id=6]
+offsets = PoolRealArray(  )
+colors = PoolColorArray(  )
+
+[sub_resource type="GradientTexture" id=7]
+gradient = SubResource( 6 )
+width = 48
 
 [node name="EnemyCharacter" groups=[
 "enemy",
@@ -34,6 +53,9 @@ region_rect = Rect2( 39, 0, 35, 35 )
 
 [node name="ObjectCollision" parent="." index="1"]
 shape = SubResource( 1 )
+
+[node name="ControlEffect" parent="." index="3"]
+visible = false
 
 [node name="Light2D" parent="." index="4"]
 position = Vector2( -16, 0 )
@@ -78,6 +100,14 @@ enabled = true
 collision_mask = 4
 
 [node name="RotationTween" type="Tween" parent="." index="13"]
+
+[node name="ProtectionEffect" type="Sprite" parent="." index="15"]
+visible = false
+material = SubResource( 5 )
+position = Vector2( 6.0965, 0.525562 )
+rotation = -1.5708
+scale = Vector2( 1, 34.8142 )
+texture = SubResource( 7 )
 [connection signal="body_entered" from="LightArea" to="." method="_on_LightArea_body_entered"]
 [connection signal="body_exited" from="LightArea" to="." method="_on_LightArea_body_exited"]
 [connection signal="timeout" from="WaitTimer" to="." method="_on_WaitTimer_timeout"]
