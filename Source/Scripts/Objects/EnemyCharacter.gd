@@ -32,7 +32,7 @@ var protector1
 var protector2
 var protector3
 var protectors = Array()
-
+var grad = GradientTexture.new()
 var lines = {}
 var last_player_location = Vector2.ZERO
 
@@ -85,21 +85,30 @@ func _ready():
 		light.color = modulate
 	
 	yield(Main, "level_loaded")
+	grad.gradient = Gradient.new()
+	grad.width = 50
+	var new_grad = grad.gradient
+	grad.gradient.offsets = PoolRealArray()
+	grad.gradient.colors = PoolColorArray()
+	print(grad.gradient.get_point_count())
 	if protector1_path.is_empty() != true:
 		protector1 = get_node(protector1_path)
-		add_line(protector1,0.0)
 		protectors.append(protector1)
+		add_line(protector1)
 	if protector2_path.is_empty() != true:
 		protector2 = get_node(protector2_path)
-		add_line(protector2,0.5)
 		protectors.append(protector2)
+		add_line(protector2)
 	if protector3_path.is_empty() != true:
 		protector3 = get_node(protector3_path)
-		add_line(protector3,1.0)
 		protectors.append(protector3)
+		add_line(protector3)
+	if grad.gradient.get_point_count() > 0:
+		pass	
 	if protectors.empty() != true:
 		is_protected = true
-
+		protection_effect.texture = grad
+	
 #in the process function we handle player detection. has 2 parts:
 #	1. check if the player is directly in view(based on a raycast)
 #	2. call detect player which handles the rest of the detection
@@ -433,17 +442,20 @@ func find_shortest_distance_patrol():
 #		if protector3 != null:
 #			add_line(protector3)
 
-func add_line(target,location):
+func add_line(target):
 	if line == null:
 		line = load("res://Source/Scenes/Objects/ControlLine.tscn")
 	var new_line = line.instance()
 	protection_effect.visible = true
+	var location = protectors.find(target) / 2.0
 	if target.modulate != Color(1,1,1):
 		new_line.modulate = target.modulate
-		protection_effect.texture.gradient.add_point(location,target.modulate)
+		grad.gradient.add_point(location,target.modulate)
+		print("added at location: " +str(location))
 	else:
 		new_line.modulate = Color(0.941176, 0.101961, 0.113725)
-		protection_effect.texture.gradient.add_point(location,Color(0.941176, 0.101961, 0.113725))
+		grad.gradient.add_point(location,Color(0.941176, 0.101961, 0.113725))
+		print("added at location: " +str(location))
 	add_child(new_line)
 	new_line.visible = false
 	lines[target] = new_line

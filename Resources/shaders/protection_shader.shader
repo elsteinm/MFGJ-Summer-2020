@@ -89,6 +89,6 @@ void fragment() {
 	smoke_fbm = clamp(smoke_fbm, 0.0, 1.0);
 //	COLOR = vec4(1.0);
 	vec4 result_of_mix =  texture(TEXTURE,UV) ;
-	COLOR = vec4(smoke_fbm) * result_of_mix * 2.0;
+	COLOR = vec4(smoke_fbm) * result_of_mix;
 //	COLOR = vec4(vec3(egg_s), 1.0);
 }

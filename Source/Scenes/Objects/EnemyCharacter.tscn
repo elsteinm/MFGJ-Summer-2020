@@ -23,7 +23,7 @@ length = 64.0
 [sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 6 )
 shader_param/center = Vector2( 0.5, 0.6 )
-shader_param/OCTAVES = 6
+shader_param/OCTAVES = 2
 shader_param/target_strech = null
 shader_param/need_strech = false
 shader_param/first_color = null

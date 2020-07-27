@@ -79,5 +79,4 @@ collision_mask = 4
 
 [node name="ControlLine" parent="." instance=ExtResource( 2 )]
 visible = false
-extend_to = Vector2( 0, 0 )
 [connection signal="tween_completed" from="takeOverTween" to="." method="_on_takeOverTween_tween_completed"]
