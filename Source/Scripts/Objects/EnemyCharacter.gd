@@ -93,21 +93,21 @@ func _ready():
 	if protector1_path.is_empty() != true:
 		protector1 = get_node(protector1_path)
 		protectors.append(protector1)
-		add_line(protector1)
 	if protector2_path.is_empty() != true:
 		protector2 = get_node(protector2_path)
 		protectors.append(protector2)
-		add_line(protector2)
 	if protector3_path.is_empty() != true:
 		protector3 = get_node(protector3_path)
 		protectors.append(protector3)
-		add_line(protector3)
-	if protectors.empty() != true:
-		is_protected = true
-		protection_effect.texture = grad
+
 	var tex = protection_effect.texture
 	if grad.gradient.get_point_count() > 0:
-		pass		
+		pass	
+	for protecter in protectors:
+		add_line(protecter)
+	if protectors.empty() != true:
+		is_protected = true
+		protection_effect.texture = grad			
 #in the process function we handle player detection. has 2 parts:
 #	1. check if the player is directly in view(based on a raycast)
 #	2. call detect player which handles the rest of the detection
@@ -446,7 +446,14 @@ func add_line(target):
 		line = load("res://Source/Scenes/Objects/ControlLine.tscn")
 	var new_line = line.instance()
 	protection_effect.visible = true
-	var location = protectors.find(target) / 2.0
+	var location_in_arr = protectors.find(target)
+	var location
+	if location_in_arr == 0:
+		location = 0.3
+	elif location_in_arr == protectors.size() - 1:
+		location = 0.7
+	else:
+		location = 0.5 
 	if target.modulate != Color(1,1,1):
 		new_line.modulate = target.modulate
 		grad.gradient.add_point(location,target.modulate)
