@@ -73,8 +73,8 @@ void fragment() {
 	}
 	
 	vec2 warp_vec = vec2(warp, 0.0);
-	float motion_fbm = fbm(scaled_coord + vec2(TIME * 0.4, TIME * 1.3)); // used for distorting the smoke_fbm texture
-	float smoke_fbm = fbm(scaled_coord + vec2(0.0, TIME * 1.0) + motion_fbm + warp_vec * dist_from_center);
+	float motion_fbm = fbm(scaled_coord + vec2(TIME * 1.0, TIME * 6.0)); // used for distorting the smoke_fbm texture
+	float smoke_fbm = fbm(scaled_coord + vec2(0.0, TIME * 5.0) + motion_fbm + warp_vec * dist_from_center);
 	
 	float egg_s = egg_shape(UV, 0.5);
 	

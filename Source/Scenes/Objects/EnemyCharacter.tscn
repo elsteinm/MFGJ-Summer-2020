@@ -23,7 +23,7 @@ length = 64.0
 [sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 6 )
 shader_param/center = Vector2( 0.5, 0.6 )
-shader_param/OCTAVES = 2
+shader_param/OCTAVES = 3
 shader_param/target_strech = null
 shader_param/need_strech = false
 shader_param/first_color = null
@@ -104,9 +104,9 @@ collision_mask = 4
 [node name="ProtectionEffect" type="Sprite" parent="." index="15"]
 visible = false
 material = SubResource( 5 )
-position = Vector2( 6.0965, 0.525562 )
+position = Vector2( 4.83515, 0.946009 )
 rotation = -1.5708
-scale = Vector2( 1, 34.8142 )
+scale = Vector2( 1, 37.7892 )
 texture = SubResource( 7 )
 [connection signal="body_entered" from="LightArea" to="." method="_on_LightArea_body_entered"]
 [connection signal="body_exited" from="LightArea" to="." method="_on_LightArea_body_exited"]
