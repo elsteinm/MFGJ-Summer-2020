@@ -38,7 +38,7 @@ float fbm(vec2 coord){
 	float value = 0.0;
 	float scale = 0.5;
 
-	for(int i = 0; i < OCTAVES; i++){
+	for(int i = 0; i < 6; i++){
 		value += noise(coord) * scale;
 		coord *= 2.0;
 		scale *= 0.5;
@@ -74,7 +74,7 @@ void fragment() {
 	float smoke_fbm = fbm(scaled_coord + vec2(0.0, TIME * 1.0) + motion_fbm + warp_vec * dist_from_center);
 	
 	float egg_s = egg_shape(UV, 0.5);
-	
+
 	float thres = 0.1;
 	smoke_fbm *= egg_s;
 	smoke_fbm = clamp(smoke_fbm - thres, 0.0, 1.0) / (1.0 - thres);
@@ -84,7 +84,14 @@ void fragment() {
 	smoke_fbm /= egg_s;
 	smoke_fbm = sqrt(smoke_fbm);
 	smoke_fbm = clamp(smoke_fbm, 0.0, 1.0);
-//	COLOR = vec4(1.0);
-	COLOR = vec4(smoke_fbm);
+//	COLOR = vec4(0.0);
+	if (egg_s < 0.05)
+	{
+		COLOR = vec4(0.0)
+	}
+	else{
+		COLOR = vec4(smoke_fbm);
+	}
+
 //	COLOR = vec4(vec3(egg_s), 1.0);
 }

@@ -55,7 +55,7 @@ region_rect = Rect2( 39, 0, 35, 35 )
 shape = SubResource( 1 )
 
 [node name="ControlEffect" parent="." index="3"]
-visible = false
+visible = true
 
 [node name="Light2D" parent="." index="4"]
 position = Vector2( -16, 0 )

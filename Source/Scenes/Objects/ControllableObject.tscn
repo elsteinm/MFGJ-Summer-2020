@@ -21,7 +21,6 @@ void fragment() {
 	
 }
 "
-custom_defines = ""
 
 [sub_resource type="ShaderMaterial" id=2]
 shader = SubResource( 1 )
@@ -51,6 +50,7 @@ material = SubResource( 2 )
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="ControlEffect" type="Sprite" parent="."]
+visible = false
 modulate = Color( 0.113725, 0.027451, 0.329412, 1 )
 material = SubResource( 3 )
 position = Vector2( -10, 0 )
