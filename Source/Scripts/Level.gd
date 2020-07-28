@@ -83,3 +83,14 @@ func move_marker(mouse_control,move_vector = Vector2.ZERO,delta = 0):
 		$Marker.position += to_add
 		$Marker.position.x = clamp($Marker.position.x,view_port_rect.position.x,view_port_rect.end.x)
 		$Marker.position.y = clamp($Marker.position.y,view_port_rect.position.y,view_port_rect.end.y)
+
+
+func adapt_marker_to_movement(move_vector):
+	var view_port_rect = get_viewport().get_visible_rect()
+		#var real_view_port = 
+	view_port_rect.position = view_port_rect.position + $Camera2D.position - view_port_rect.size / 2
+	view_port_rect.end = view_port_rect.position + view_port_rect.size
+	var to_add = move_vector
+	$Marker.position += to_add
+	$Marker.position.x = clamp($Marker.position.x,view_port_rect.position.x,view_port_rect.end.x)
+	$Marker.position.y = clamp($Marker.position.y,view_port_rect.position.y,view_port_rect.end.y)

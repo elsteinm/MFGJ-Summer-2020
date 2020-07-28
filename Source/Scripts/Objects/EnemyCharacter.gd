@@ -457,11 +457,9 @@ func add_line(target):
 	if target.modulate != Color(1,1,1):
 		new_line.modulate = target.modulate
 		grad.gradient.add_point(location,target.modulate)
-		print("added at location: " +str(location))
 	else:
 		new_line.modulate = Color(0.941176, 0.101961, 0.113725)
 		grad.gradient.add_point(location,Color(0.941176, 0.101961, 0.113725))
-		print("added at location: " +str(location))
 	add_child(new_line)
 	new_line.visible = false
 	lines[target] = new_line

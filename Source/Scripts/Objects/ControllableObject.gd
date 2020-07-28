@@ -63,7 +63,7 @@ func _physics_process(_delta):
 				control_cast.cast_to = target
 				var collider = control_cast.get_collider()
 				if collider != null:
-					if collider.is_active == true and collider.is_controlled == false:
+					if collider.is_active == true and collider.is_controlled == false and collider.control_state == false:
 						set_control_target(collider)
 				else:
 					set_control_target(null)
@@ -81,8 +81,8 @@ func make_target(make):
 
 func set_control_target(value):
 	if control_target != null and control_target != value:
-		control_target.make_target(false)
-		control_target = null
+			control_target.make_target(false)
+			control_target = null
 	if aim_target != null and aim_target != value:
 		if aim_target.is_protected == true:
 			for line in aim_target.lines:
@@ -148,6 +148,7 @@ func set_strech_location(value):
 	if is_inside_tree():
 		if control_target != null and control_target.freeze == true:
 			PlayerInput.move_camera(value)
+			print(value)
 		value = to_local(value)
 		$ControlLine.extend_to = value
 	#	$ControlEffect.material.set_shader_param('target_strech',value)

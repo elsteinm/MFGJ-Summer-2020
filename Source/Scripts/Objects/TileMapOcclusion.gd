@@ -17,10 +17,8 @@ func _ready():
 #	pass
 func generate_occlusion(_value):
 	var used = get_used_rect()
-	print("before: " + str(used))
 	used.position = used.position - Vector2(4,4)
 	used.size = used.size + Vector2(8,8)
-	print("after: " + str(used))
 	for i in range(used.size.x):
 		for j in range(used.size.y):
 			if get_cell(used.position.x + i,used.position.y + j) != 0:

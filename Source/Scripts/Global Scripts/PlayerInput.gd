@@ -15,8 +15,10 @@ func _physics_process(delta):
 	if playing == false:
 		return
 	var input_vector = Vector2.ZERO
+	var change_vector = Vector2.ZERO
 	if control.is_moveable == true:
 		#Gets the direction the player wants to move
+		change_vector = control.global_position
 		input_vector.x = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 		input_vector.y = Input.get_action_strength("move_down") - Input.get_action_strength("move_up")
 		if Settings.control_type == Settings.ControlType.KEYBOARD_MOUSE:
@@ -24,12 +26,14 @@ func _physics_process(delta):
 			input_vector.y += Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")			
 		input_vector = input_vector.normalized()
 		control.move(input_vector, delta)
+		change_vector -= control.global_position
 	if not returning:
 		current_level.move_camera(control.global_position)
 	if Settings.control_type == Settings.ControlType.KEYBOARD:
 		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
 		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 		current_level.move_marker(false,input_vector,delta)
+		current_level.adapt_marker_to_movement(-change_vector)
 	else:
 		current_level.move_marker(true) 
 #		if last_control != null:
